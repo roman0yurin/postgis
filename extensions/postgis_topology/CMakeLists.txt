@@ -37,7 +37,7 @@ macro(prepare_extension_sql2 input_path output_path)
 endmacro()
 
 #sed -e 's/BEGIN;//g' -e 's/COMMIT;//g' -e '/^CREATE SCHEMA/d;'  ../../topology/topology.sql > sql_bits/topology.sql
-prepare_extension_sql2(${CMAKE_BINARY_DIR}/topology/topology.sql ${CMAKE_CURRENT_BINARY_DIR}/topology.sql)
+prepare_extension_sql2(${CMAKE_POSTGIS_BINARY_DIR}/topology/topology.sql ${CMAKE_CURRENT_BINARY_DIR}/topology.sql)
 
 #mkdir -p sql
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/sql)
@@ -47,7 +47,7 @@ set(APPEND_POSTGIS
     ${CMAKE_CURRENT_SOURCE_DIR}/extlock.sql
     ${CMAKE_CURRENT_BINARY_DIR}/topology.sql
     ${CMAKE_CURRENT_SOURCE_DIR}/sql_bits/mark_editable_objects.sql.in
-    ${CMAKE_SOURCE_DIR}/doc/topology_comments.sql
+    ${CMAKE_POSTGIS_SOURCE_DIR}/doc/topology_comments.sql
 )
 
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/sql/postgis_topology.sql "-- postgis_topology\n")
@@ -63,13 +63,13 @@ configure_file(${CMAKE_CURRENT_BINARY_DIR}/sql/postgis_topology.sql
 
 #cat ../../topology/topology.sql | /usr/bin/perl ../../utils/create_unpackaged.pl postgis_topology > sql/postgis_topology--unpackaged--2.2.2.sql
 execute_process(COMMAND ${PERL_EXECUTABLE}
-                    ${CMAKE_SOURCE_DIR}/utils/create_unpackaged.pl
+                    ${CMAKE_POSTGIS_SOURCE_DIR}/utils/create_unpackaged.pl
                     postgis_topology
-                    ${CMAKE_BINARY_DIR}/topology/topology.sql
+                    ${CMAKE_POSTGIS_BINARY_DIR}/topology/topology.sql
                 OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/sql/postgis_topology--unpackaged--${POSTGIS_LIB_VERSION}.sql)
 
 #sed -e 's/BEGIN;//g' -e 's/COMMIT;//g' -e '/^CREATE SCHEMA/d;'  ../../topology/topology_upgrade.sql > sql/topology_upgrade.sql
-prepare_extension_sql2(${CMAKE_BINARY_DIR}/topology/topology_upgrade.sql ${CMAKE_CURRENT_BINARY_DIR}/sql/topology_upgrade.sql)
+prepare_extension_sql2(${CMAKE_POSTGIS_BINARY_DIR}/topology/topology_upgrade.sql ${CMAKE_CURRENT_BINARY_DIR}/sql/topology_upgrade.sql)
 
 #cat extlock.sql ../postgis_extension_helper.sql sql_bits/remove_from_extension.sql.in sql/topology_upgrade.sql sql_bits/mark_editable_objects.sql.in sql_bits/topology_comments.sql ../postgis_extension_helper_uninstall.sql > sql/postgis_topology--2.2.2--2.2.2next.sql
 set(APPEND_POSTGIS
@@ -78,7 +78,7 @@ set(APPEND_POSTGIS
     ${CMAKE_CURRENT_SOURCE_DIR}/sql_bits/remove_from_extension.sql.in
     ${CMAKE_CURRENT_BINARY_DIR}/sql/topology_upgrade.sql
     ${CMAKE_CURRENT_SOURCE_DIR}/sql_bits/mark_editable_objects.sql.in
-    ${CMAKE_SOURCE_DIR}/doc/topology_comments.sql
+    ${CMAKE_POSTGIS_SOURCE_DIR}/doc/topology_comments.sql
     ${CMAKE_CURRENT_SOURCE_DIR}/../postgis_extension_helper_uninstall.sql
 )
 

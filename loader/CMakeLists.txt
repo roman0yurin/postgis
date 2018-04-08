@@ -80,8 +80,8 @@ target_link_extlibraries(${SHP2PGSQL_CLI})
 
 set(TARGETS_OUT ${PGSQL2SHP_CLI} ${SHP2PGSQL_CLI})
 set(MAN_FILES
-    ${CMAKE_SOURCE_DIR}/doc/man/pgsql2shp.1
-    ${CMAKE_SOURCE_DIR}/doc/man/shp2pgsql.1
+    ${CMAKE_POSTGIS_SOURCE_DIR}/doc/man/pgsql2shp.1
+    ${CMAKE_POSTGIS_SOURCE_DIR}/doc/man/shp2pgsql.1
 )
 
 find_package(GTK2)

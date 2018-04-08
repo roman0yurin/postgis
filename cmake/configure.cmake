@@ -133,12 +133,12 @@ endif()
 find_package(BISON)
 find_package(FLEX)
 if(FLEX_FOUND)
-    execute_process(COMMAND ${FLEX_EXECUTABLE} -o ${CMAKE_BINARY_DIR}/lexyy.c
-                            ${CMAKE_SOURCE_DIR}/cmake/lex_test.l)
+    execute_process(COMMAND ${FLEX_EXECUTABLE} -o ${CMAKE_POSTGIS_BINARY_DIR}/lexyy.c
+                            ${CMAKE_POSTGIS_SOURCE_DIR}/cmake/lex_test.l)
 
     try_compile(YYTEXT_POINTER
-      ${CMAKE_BINARY_DIR}
-      ${CMAKE_BINARY_DIR}/lexyy.c
+      ${CMAKE_POSTGIS_BINARY_DIR}
+      ${CMAKE_POSTGIS_BINARY_DIR}/lexyy.c
       LINK_LIBRARIES ${FLEX_LIBRARIES}
       COMPILE_DEFINITIONS  "-DYYTEXT_POINTER=1"
       CMAKE_FLAGS "-DINCLUDE_DIRECTORIES:STRING=${FLEX_INCLUDE_DIRS}")
@@ -162,9 +162,9 @@ set(TARGET_LINK_LIB ${TARGET_LINK_LIB} ${M_LIBRARY})
 
 ################################################################################
 # Generate config header
-configure_file(${CMAKE_SOURCE_DIR}/postgis_config.h.cmake.in
-    ${CMAKE_BINARY_DIR}/postgis_config.h)
-configure_file(${CMAKE_SOURCE_DIR}/cmake/uninstall.cmake.in
-    ${CMAKE_BINARY_DIR}/cmake_uninstall.cmake IMMEDIATE @ONLY)
+configure_file(${CMAKE_POSTGIS_SOURCE_DIR}/postgis_config.h.cmake.in
+    ${CMAKE_POSTGIS_BINARY_DIR}/postgis_config.h)
+configure_file(${CMAKE_POSTGIS_SOURCE_DIR}/cmake/uninstall.cmake.in
+    ${CMAKE_POSTGIS_BINARY_DIR}/cmake_uninstall.cmake IMMEDIATE @ONLY)
 
 
