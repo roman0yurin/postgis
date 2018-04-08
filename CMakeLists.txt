@@ -13,6 +13,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_C_STANDARD 11)
 
+#модульные зависимости Postgis
+set(POSTGIS_SUBMODULES pq geos-static geos_c gdal proj4 sfcgal CGAL CGAL_Core CGAL_ImageIO)
+
 #Устанавливаем корневые папки для модуля CGAL
 set(CMAKE_POSTGIS_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(CMAKE_POSTGIS_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR})
@@ -76,8 +79,6 @@ set(POSTGIS_RASTER_VERSION "${POSTGIS_RASTER_MAJOR_VERSION}.${POSTGIS_RASTER_MIN
 set(POSTGIS_RASTER_LIB_VERSION "${POSTGIS_RASTER_MAJOR_VERSION}.${POSTGIS_RASTER_MINOR_VERSION}.${POSTGIS_RASTER_MICRO_VERSION}")
 set(POSTGIS_RASTER_SCRIPTS_VERSION "${POSTGIS_RASTER_LIB_VERSION}")
 
-check_svn_revision(POSTGIS_SVN_REVISION)
-
 report_version(${PROJECT_NAME} ${POSTGIS_VERSION})
 
 set(TARGET_OBJECTS)
@@ -92,43 +93,34 @@ if(NOT SUPPRESS_VERBOSE_OUTPUT)
 endif()
 
 ################################################################################
-# Dependency (required): PostgreSQL
-
-find_package(PostgreSQL 9.1) # version 9.1 support extensions
-if(POSTGRESQL_FOUND)
-    set(WITH_POSTGRESQL ${POSTGRESQL_FOUND})
-endif()
-
-if(NOT PG_CONFIG)
-    message(FATAL ERROR " Please check your PostgreSQL installation")
-endif(NOT PG_CONFIG)
+#Продключаем модуль Postgres
+set(WITH_POSTGRESQL ON)
+set(POSTGIS_POSTGRESQL_VERSION 103)
+set(PGSQL_VERSION_MAJOR 10)
+set(PGSQL_VERSION_MINOR 3)
+get_property(POSTGRES_INCLUDE_DIRS GLOBAL PROPERTY POSTGRES_INCLUDE_DIRS)
+get_property(PGSQL_INCLUDEDIR GLOBAL PROPERTY POSTGRES_INCLUDE_ROOT)
+include_directories(${POSTGRES_INCLUDE_DIRS})
+set(PGSQL_INCLUDEDIR_SERVER ${PGSQL_INCLUDEDIR}/server)
 
 set(HAVE_LIBPQ 1)
+set(POSTGIS_PGSQL_VERSION ${PGSQL_VERSION_MAJOR}${PGSQL_VERSION_MINOR})
 
-if(POSTGRESQL_VERSION)
-    string(REGEX REPLACE
-        "([0-9]+)\\.([0-9]+)\\.([0-9]+)" "\\1"
-        PGSQL_VERSION_MAJOR "${POSTGRESQL_VERSION}")
-    string(REGEX REPLACE
-        "([0-9]+)\\.([0-9]+)\\.([0-9]+)" "\\2"
-        PGSQL_VERSION_MINOR "${POSTGRESQL_VERSION}")
 
-    set(POSTGIS_PGSQL_VERSION ${PGSQL_VERSION_MAJOR}${PGSQL_VERSION_MINOR})
-endif()
-
-exec_program(${PG_CONFIG} ARGS --includedir
-    OUTPUT_VARIABLE PGSQL_INCLUDEDIR)
-exec_program(${PG_CONFIG} ARGS --includedir-server
-    OUTPUT_VARIABLE PGSQL_INCLUDEDIR_SERVER)
-exec_program(${PG_CONFIG} ARGS --pgxs
-    OUTPUT_VARIABLE PGSQL_PGXS)
-
-if(NOT EXISTS ${PGSQL_PGXS})
-    message(FATAL_ERROR "The PGXS Makefile '${PGSQL_PGXS}' cannot be found. Please install the PostgreSQL server development packages")
-endif()
+#exec_program(${PG_CONFIG} ARGS --includedir
+#    OUTPUT_VARIABLE PGSQL_INCLUDEDIR)
+#exec_program(${PG_CONFIG} ARGS --includedir-server
+#    OUTPUT_VARIABLE PGSQL_INCLUDEDIR_SERVER)
+#exec_program(${PG_CONFIG} ARGS --pgxs
+#    OUTPUT_VARIABLE PGSQL_PGXS)
+#
+#if(NOT EXISTS ${PGSQL_PGXS})
+#    message(FATAL_ERROR "The PGXS Makefile '${PGSQL_PGXS}' cannot be found. Please install the PostgreSQL server development packages")
+#endif()
 
 include_directories(${PGSQL_INCLUDEDIR})
 include_directories(${PGSQL_INCLUDEDIR_SERVER})
+message("Postgres server include ${PGSQL_INCLUDEDIR}")
 if(WIN32)
     include_directories(${PGSQL_INCLUDEDIR_SERVER}/port/win32)
     if(MSVC)
@@ -136,12 +128,16 @@ if(WIN32)
     endif()
 endif()
 
-exec_program(${PG_CONFIG} ARGS --pkglibdir OUTPUT_VARIABLE PGSQL_PKGLIBDIR)
-exec_program(${PG_CONFIG} ARGS --sharedir OUTPUT_VARIABLE PGSQL_SHAREDIR)
-exec_program(${PG_CONFIG} ARGS --bindir OUTPUT_VARIABLE PGSQL_PKGBINDIR)
-exec_program(${PG_CONFIG} ARGS --localedir OUTPUT_VARIABLE PGSQL_LOCALEDIR)
+#exec_program(${PG_CONFIG} ARGS --pkglibdir OUTPUT_VARIABLE PGSQL_PKGLIBDIR)
+get_property(PGSQL_PKGLIBDIR GLOBAL PROPERTY POSTGRES_DISTRIB_LIB_DIR)
+#exec_program(${PG_CONFIG} ARGS --sharedir OUTPUT_VARIABLE PGSQL_SHAREDIR)
+get_property(PGSQL_SHAREDIR GLOBAL PROPERTY POSTGRES_DISTRIB_SHARE_DIR)
+#exec_program(${PG_CONFIG} ARGS --bindir OUTPUT_VARIABLE PGSQL_PKGBINDIR)
+get_property(PGSQL_PKGBINDIR GLOBAL PROPERTY POSTGRES_DISTRIB_BIN_DIR)
+#exec_program(${PG_CONFIG} ARGS --localedir OUTPUT_VARIABLE PGSQL_LOCALEDIR)
+get_property(PGSQL_LOCALEDIR GLOBAL PROPERTY POSTGRES_DISTRIB_LOCALE_DIR)
 
-set(TARGET_LINK_LIB ${TARGET_LINK_LIB} ${POSTGRESQL_LIBRARIES})
+#set(TARGET_LINK_LIB ${TARGET_LINK_LIB} ${POSTGRESQL_LIBRARIES})
 
 find_anyproject(ICONV DEFAULT ON) #default OFF, to set ON add DEFAULT ON
 if(ICONV_FOUND)
@@ -152,15 +148,21 @@ endif()
 # Dependency (required): PROJ.4
 get_property(PROJ4_INDLUDE_DIRS GLOBAL PROPERTY PROJ4_INDLUDE_DIRS)
 include_directories(${PROJ4_INDLUDE_DIRS})
+set(POSTGIS_PROJ4_VERSION 49)
+set(WITH_PROJ4 ON)
 ################################################################################
 # Dependency (required): GEOS
 get_property(GEOS_INCLUDE_DIRS GLOBAL PROPERTY GEOS_INCLUDE_DIRS)
 include_directories(${GEOS_INCLUDE_DIRS})
+set(POSTGIS_GEOS_VERSION 36)
+set(WITH_GEOS ON)
 ################################################################################
 # Dependency (optional): GDAL
 if(POSTGIS_WITH_RASTER)
     get_property(GDAL_INCLUDE_DIRS GLOBAL PROPERTY GDAL_INCLUDE_DIRS)
     include_directories(${GDAL_INCLUDE_DIRS})
+    set(POSTGIS_GDAL_VERSION 22)
+    set(WITH_GDAL ON)
 endif()
 
 find_anyproject(LibXml2 REQUIRED)
@@ -179,7 +181,7 @@ string(TIMESTAMP POSTGIS_RASTER_BUILD_DATE "%Y-%m-%d %H:%M:%S" UTC)
 include(configure)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_POSTGIS_SOURCE_DIR})
 
 if(WIN32)
     add_definitions(-DDLL_EXPORT)
@@ -217,20 +219,27 @@ endif()
 if(POSTGIS_WITH_SFCGAL)
     get_property(SFCGAL_INCLUDE_DIRS GLOBAL PROPERTY SFCGAL_INCLUDE_DIRS)
     include_directories(${SFCGAL_INCLUDE_DIRS})
+    set(POSTGIS_SFCGAL_VERSION 13)
+    set(HAVE_SFCGAL_RESULT yes)
 endif()
 
 ### Shared libraries
 add_subdirectory(postgis)
 add_subdirectory(extensions)
 
-set(TARGET_LINK_LIB ${TARGET_LINK_LIB} ${PostgreSQL_LIBRARIES})
+#set(TARGET_LINK_LIB ${TARGET_LINK_LIB} ${PostgreSQL_LIBRARIES})
 add_subdirectory(loader)
 
 ################################################################################
 # uninstall
-add_custom_target(uninstall COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
+add_custom_target(uninstall_postgis COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
 
 # info
 if(NOT SUPPRESS_VERBOSE_OUTPUT)
     include(summary)
 endif()
+
+#add_custom_target(installPostgisDb
+#        COMMAND ${check_make_command} install -j 8
+#        DEPENDS postgis
+#)

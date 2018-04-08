@@ -41,20 +41,9 @@ MACRO(THREE_PART_VERSION_TO_VARS version major minor patch)
   ENDIF(${version} MATCHES ${THREE_PART_VERSION_REGEX})
 ENDMACRO(THREE_PART_VERSION_TO_VARS)
 
-function(check_svn_revision rev)
-    file(READ "${CMAKE_SOURCE_DIR}/postgis_svn_revision.h" _POSTGIS_SVN)
-    string(STRIP ${_POSTGIS_SVN} _POSTGIS_SVN)
-
-    string(REGEX MATCH "POSTGIS_SVN_REVISION[t\ ]([0-9]+)"
-        POSTGIS_SVN_REVISION ${_POSTGIS_SVN})
-    string (REGEX MATCH "([0-9]+)"
-      POSTGIS_SVN_REVISION ${POSTGIS_SVN_REVISION})
-    set(${rev} ${POSTGIS_SVN_REVISION} PARENT_SCOPE)
-endfunction()
-
 function(check_version major minor rev)
 
-    file(READ "${CMAKE_SOURCE_DIR}/Version.config" _POSTGIS_VERSION_CONFIG)
+    file(READ "${CMAKE_POSTGIS_SOURCE_DIR}/Version.config" _POSTGIS_VERSION_CONFIG)
     string(STRIP ${_POSTGIS_VERSION_CONFIG} _POSTGIS_VERSION_CONFIG)
 
     string(REGEX REPLACE ".*POSTGIS_MAJOR_VERSION=([0-9]+)[\r\n\t\ ].*" "\\1"
@@ -71,7 +60,7 @@ endfunction()
 
 function(check_lwgeom_version major minor rev)
 
-    file(READ "${CMAKE_SOURCE_DIR}/Version.config" _POSTGIS_VERSION_CONFIG)
+    file(READ "${CMAKE_POSTGIS_SOURCE_DIR}/Version.config" _POSTGIS_VERSION_CONFIG)
     string(STRIP ${_POSTGIS_VERSION_CONFIG} _POSTGIS_VERSION_CONFIG)
 
     string(REGEX REPLACE ".*LIBLWGEOM_IFACE_CUR=([0-9]+)[\r\n\t\ ].*" "\\1"
@@ -88,7 +77,7 @@ endfunction()
 
 function(check_raster_version major minor rev)
 
-    file(READ "${CMAKE_SOURCE_DIR}/raster/Version.config" _POSTGIS_VERSION_CONFIG)
+    file(READ "${CMAKE_POSTGIS_SOURCE_DIR}/raster/Version.config" _POSTGIS_VERSION_CONFIG)
     string(STRIP ${_POSTGIS_VERSION_CONFIG} _POSTGIS_VERSION_CONFIG)
 
     string(REGEX REPLACE ".*POSTGIS_RASTER_MAJOR_VERSION=([0-9a-z]+)[\r\n\t\ ].*" "\\1"
@@ -131,7 +120,7 @@ endfunction()
 function(create_undef name)
 #/usr/bin/perl ../utils/create_undef.pl postgis.sql 94 > uninstall_postgis.sql
     execute_process(COMMAND ${PERL_EXECUTABLE}
-                    ${CMAKE_SOURCE_DIR}/utils/create_undef.pl
+                    ${CMAKE_POSTGIS_SOURCE_DIR}/utils/create_undef.pl
                     ${CMAKE_CURRENT_BINARY_DIR}/${name}.sql ${POSTGIS_PGSQL_VERSION}
                 OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/uninstall_${name}.sql)
 

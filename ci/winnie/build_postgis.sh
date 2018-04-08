@@ -6,7 +6,6 @@ set -e
 #export PG_VER=9.2beta2
 #export PGHOST=localhost
 #export PGPORT=8442
-#POSTGIS_SVN_REVISION=passed_in_by_buildbot
 
 export GEOS_VER=3.7.0dev
 export GDAL_VER=2.2.2

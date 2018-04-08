@@ -20,8 +20,8 @@
 # along with this script.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 
-set(TARGET_LINK_LIB) # ${TARGET_LINK_LIB} ""
-set(DEPENDENCY_LIB) # ${DEPENDENCY_LIB} ""
+set(TARGET_LINK_LIB ${POSTGIS_SUBMODULES}) # ${TARGET_LINK_LIB} ""
+set(DEPENDENCY_LIB ${POSTGIS_SUBMODULES}) # ${DEPENDENCY_LIB} ""
 set(WITHOPT ${WITHOPT} "")
 set(EXPORTS_PATHS)
 set(LINK_SEARCH_PATHS)
@@ -273,7 +273,6 @@ function(target_link_extlibraries name)
         #list(REMOVE_DUPLICATES TARGET_LINK_LIB) debug;...;optimised;... etc. if filter out
         target_link_libraries(${name} ${TARGET_LINK_LIB})
     endif()
-
 endfunction()
 
 macro(any_project_var_to_parent_scope)
@@ -299,5 +298,5 @@ macro(write_ext_options IS_SHARED)
         endforeach()
         set(OUTPUT_STR "${OUTPUT_STR}set(INCLUDE_LINK_SEARCH_PATHS \${INCLUDE_LINK_SEARCH_PATHS} ${LINK_SEARCH_PATHS_STR})\n")
     endif()
-    file(WRITE ${CMAKE_BINARY_DIR}/ext_options.cmake ${OUTPUT_STR})
+    file(WRITE ${CMAKE_POSTGIS_BINARY_DIR}/ext_options.cmake ${OUTPUT_STR})
 endmacro()

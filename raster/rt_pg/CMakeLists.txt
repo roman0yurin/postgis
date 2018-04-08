@@ -61,7 +61,7 @@ file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis_upgrade.sql "BEGIN;\n")
 append_file(${CMAKE_CURRENT_BINARY_DIR}/rtpostgis_upgrade.sql
             ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis_upgrade_cleanup.sql)
 execute_process(COMMAND ${PERL_EXECUTABLE}
-                    ${CMAKE_SOURCE_DIR}/utils/postgis_proc_upgrade.pl
+                    ${CMAKE_POSTGIS_SOURCE_DIR}/utils/postgis_proc_upgrade.pl
                     ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis.sql "UNUSED"
                 OUTPUT_VARIABLE PG_UPGRADE_OUT)
 
@@ -75,7 +75,7 @@ file(APPEND ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis_upgrade.sql "COMMIT;")
 
 # create rtpostgis_proc_set_search_path.sql
 execute_process(COMMAND ${PERL_EXECUTABLE}
-                    ${CMAKE_SOURCE_DIR}/utils/postgis_proc_set_search_path.pl
+                    ${CMAKE_POSTGIS_SOURCE_DIR}/utils/postgis_proc_set_search_path.pl
                     ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis.sql "UNUSED"
                 OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis_proc_set_search_path.sql)
 
@@ -83,7 +83,7 @@ execute_process(COMMAND ${PERL_EXECUTABLE}
 create_undef(rtpostgis)
 
 set(RTPOSTGIS_CONTRIB_FILES
-    ${CMAKE_SOURCE_DIR}/doc/raster_comments.sql
+    ${CMAKE_POSTGIS_SOURCE_DIR}/doc/raster_comments.sql
     ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis.sql
     ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis_legacy.sql
     ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis_upgrade.sql

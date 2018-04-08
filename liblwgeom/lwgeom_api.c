@@ -30,7 +30,6 @@
 #include <stdio.h>
 #include <errno.h>
 #include <assert.h>
-#include "../postgis_svn_revision.h"
 
 const char *
 lwgeom_version()
@@ -40,7 +39,7 @@ lwgeom_version()
   if ( ! ptr )
   {
     ptr = buf;
-    snprintf(ptr, 256, LIBLWGEOM_VERSION" r%d", POSTGIS_SVN_REVISION);
+    snprintf(ptr, 256, LIBLWGEOM_VERSION" r%d", "C60");
   }
 
   return ptr;

@@ -23,7 +23,9 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 # DEALINGS IN THE SOFTWARE.
 ################################################################################
-project(address_standardizer C)
+project(address_standardizer C CXX)
+
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH})
 
 set(LIB_NAME ${PROJECT_NAME})
 set(MODULE_PATHNAME "\$libdir/${LIB_NAME}-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}")
@@ -100,7 +102,7 @@ set(POSTGIS_EXTENSION_FILES
 
 set_property(GLOBAL PROPERTY LIBADDRESS_STD_INCLUDE_DIRS
   ${CMAKE_CURRENT_BINARY_DIR}
-  ${CMAKE_CURRENT_SOURCE_DIR})
+  ${CMAKE_POSTGIS_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 
@@ -133,6 +135,11 @@ add_library(${LIB_NAME}
   ${HHEADERS}
 )
 
+#Подключаем библиотеку регулярных выражения PCRE
+find_package(PCRE REQUIRED)
+include_directories(${PCRE_INCLUDE_DIRS})
+
+set(TARGET_LINK_LIB ${TARGET_LINK_LIB};${PCRE_LIBRARIES})
 target_link_extlibraries(${LIB_NAME})
 
 set(TARGET_LINK_LIB ${TARGET_LINK_LIB} ${LIB_NAME} PARENT_SCOPE)
@@ -158,5 +165,7 @@ if(NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
 
     install(FILES ${POSTGIS_EXTENSION_FILES} DESTINATION "${PGSQL_SHAREDIR}/extension/")
 endif()
+
+
 
 

@@ -93,7 +93,7 @@ function(find_extproject name)
 
     # set default third party lib path
     if(NOT DEFINED EP_PREFIX)
-        set(EP_PREFIX "${CMAKE_BINARY_DIR}/third-party")
+        set(EP_PREFIX "${CMAKE_POSTGIS_BINARY_DIR}/third-party")
     endif()
 
     # set default third party build path

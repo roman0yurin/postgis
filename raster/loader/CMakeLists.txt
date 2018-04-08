@@ -40,7 +40,7 @@ add_executable(${RASTER2PGSQL} ${CSOURCES} ${HHEADERS})
 target_link_extlibraries(${RASTER2PGSQL})
 
 set(MAN_FILES
-    ${CMAKE_SOURCE_DIR}/doc/man/raster2pgsql.1
+    ${CMAKE_POSTGIS_SOURCE_DIR}/doc/man/raster2pgsql.1
 )
 
 if(NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
