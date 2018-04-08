@@ -89,10 +89,10 @@ set(PL_SKIP \$skip)
 set(PL_NEWSRID \${newsrid})
 set(SRID_MAXIMUM ${SRID_MAX})
 set(SRID_USER_MAXIMUM ${SRID_USR_MAX})
-configure_file(${CMAKE_SOURCE_DIR}/utils/postgis_restore.pl.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/postgis_restore.pl)
+configure_file(${CMAKE_POSTGIS_SOURCE_DIR}/utils/postgis_restore.pl.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/postgis_restore.pl)
 
 execute_process(COMMAND ${PERL_EXECUTABLE}
-                    ${CMAKE_SOURCE_DIR}/utils/postgis_proc_set_search_path.pl
+                    ${CMAKE_POSTGIS_SOURCE_DIR}/utils/postgis_proc_set_search_path.pl
                     ${CMAKE_CURRENT_BINARY_DIR}/postgis.sql "UNUSED"
                 OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/postgis_proc_set_search_path.sql)
 
@@ -107,7 +107,7 @@ append_file(${CMAKE_CURRENT_BINARY_DIR}/postgis_upgrade.sql
             ${CMAKE_CURRENT_SOURCE_DIR}/postgis_drop_before.sql)
 
 execute_process(COMMAND ${PERL_EXECUTABLE}
-                    ${CMAKE_SOURCE_DIR}/utils/postgis_proc_upgrade.pl
+                    ${CMAKE_POSTGIS_SOURCE_DIR}/utils/postgis_proc_upgrade.pl
                     ${CMAKE_CURRENT_BINARY_DIR}/postgis.sql "UNUSED"
                 OUTPUT_VARIABLE PG_UPGRADE_OUT)
 
@@ -159,7 +159,7 @@ if(POSTGIS_WITH_SFCGAL)
 	# postgis_drop_after.sql
 
     execute_process(COMMAND ${PERL_EXECUTABLE}
-                    ${CMAKE_SOURCE_DIR}/utils/postgis_proc_upgrade.pl
+                    ${CMAKE_POSTGIS_SOURCE_DIR}/utils/postgis_proc_upgrade.pl
                     ${CMAKE_CURRENT_BINARY_DIR}/sfcgal.sql "UNUSED"
                 OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/sfcgal_upgrade.sql)
 
@@ -175,11 +175,11 @@ unset (GEOGRAPHY_SQL) # use in *.cmake.in
 
 set(POSTGIS_CONTRIB_FILES
     ${CMAKE_CURRENT_BINARY_DIR}/postgis.sql
-    ${CMAKE_SOURCE_DIR}/spatial_ref_sys.sql
+    ${CMAKE_POSTGIS_SOURCE_DIR}/spatial_ref_sys.sql
     ${CMAKE_CURRENT_BINARY_DIR}/legacy.sql
     ${CMAKE_CURRENT_BINARY_DIR}/legacy_gist.sql
     ${CMAKE_CURRENT_BINARY_DIR}/legacy_minimal.sql
-    ${CMAKE_SOURCE_DIR}/doc/postgis_comments.sql
+    ${CMAKE_POSTGIS_SOURCE_DIR}/doc/postgis_comments.sql
     ${CMAKE_CURRENT_BINARY_DIR}/postgis_restore.pl
     ${CMAKE_CURRENT_BINARY_DIR}/uninstall_postgis.sql
     ${CMAKE_CURRENT_BINARY_DIR}/uninstall_legacy.sql
@@ -188,7 +188,7 @@ set(POSTGIS_CONTRIB_FILES
 
 if(POSTGIS_WITH_SFCGAL)
     set(POSTGIS_CONTRIB_FILES ${POSTGIS_CONTRIB_FILES}
-        ${CMAKE_SOURCE_DIR}/doc/sfcgal_comments.sql
+        ${CMAKE_POSTGIS_SOURCE_DIR}/doc/sfcgal_comments.sql
     )
 endif()
 

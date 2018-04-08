@@ -334,7 +334,7 @@ append_file(${CMAKE_CURRENT_BINARY_DIR}/topology_upgrade.sql
 create_undef(topology)
 
 set(TOPOLOGY_CONTRIB_FILES
-    ${CMAKE_SOURCE_DIR}/doc/topology_comments.sql
+    ${CMAKE_POSTGIS_SOURCE_DIR}/doc/topology_comments.sql
     ${CMAKE_CURRENT_BINARY_DIR}/topology.sql
     ${CMAKE_CURRENT_BINARY_DIR}/topology_upgrade.sql
     ${CMAKE_CURRENT_BINARY_DIR}/uninstall_topology.sql

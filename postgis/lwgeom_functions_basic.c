@@ -177,15 +177,9 @@ Datum postgis_lib_version(PG_FUNCTION_ARGS)
 PG_FUNCTION_INFO_V1(postgis_svn_version);
 Datum postgis_svn_version(PG_FUNCTION_ARGS)
 {
-	static int rev = POSTGIS_SVN_REVISION;
 	char ver[32];
-	if ( rev > 0 )
-	{
-		snprintf(ver, 32, "%d", rev);
-		PG_RETURN_TEXT_P(cstring_to_text(ver));
-	}
-	else
-		PG_RETURN_NULL();
+	snprintf(ver, 32, "%s", "C60");
+	PG_RETURN_TEXT_P(cstring2text(ver));
 }
 
 PG_FUNCTION_INFO_V1(postgis_lib_build_date);
@@ -202,7 +196,7 @@ Datum postgis_scripts_released(PG_FUNCTION_ARGS)
 	char ver[64];
 	text *result;
 
-	snprintf(ver, 64, "%s r%d", POSTGIS_LIB_VERSION, POSTGIS_SVN_REVISION);
+	snprintf(ver, 64, "%s r%s", POSTGIS_LIB_VERSION, "C60");
 	ver[63] = '\0';
 
 	result = cstring_to_text(ver);

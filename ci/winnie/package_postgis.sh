@@ -104,7 +104,6 @@ if [[ "$reference"  == *trunk* ]] ; then
 	export svnurl="https://svn.osgeo.org/postgis/trunk"
 fi;
 #export POSTGIS_SRC=${PROJECTS}/postgis/trunk
-#POSTGIS_SVN_REVISION=will_be_passed_in_by_bot
 export GDAL_DATA="${PROJECTS}/gdal/rel-${GDAL_VER}w${OS_BUILD}${GCC_TYPE}/share/gdal"
 
 
@@ -168,7 +167,7 @@ cp -p ${PROJECTS}/geos/rel-${GEOS_VER}w${OS_BUILD}${GCC_TYPE}/bin/*.dll $outdir/
 #for protobuf
 cp ${PROJECTS}/protobuf/rel-${PROTOBUF_VER}w${OS_BUILD}${GCC_TYPE}/bin/libprotobuf-c-*.dll $outdir/bin
 
-echo "POSTGIS: ${POSTGIS_MINOR_VER} r${POSTGIS_SVN_REVISION} http://postgis.net/source" > $verfile
+echo "POSTGIS: ${POSTGIS_MINOR_VER} C60 http://postgis.net/source" > $verfile
 
 if [ "$POSTGIS_MAJOR_VERSION" == "2" ] ; then
   ## only copy gdal components if 2+.  1.5 doesn't have raster support

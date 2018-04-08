@@ -26,27 +26,27 @@
 
 configure_file(postgis.control.in ${CMAKE_CURRENT_BINARY_DIR}/postgis.control)
 
-prepare_extension_sql(${CMAKE_BINARY_DIR}/postgis/postgis.sql ${CMAKE_CURRENT_BINARY_DIR}/postgis.sql)
+prepare_extension_sql(${CMAKE_POSTGIS_BINARY_DIR}/postgis/postgis.sql ${CMAKE_CURRENT_BINARY_DIR}/postgis.sql)
 
 execute_process(COMMAND ${PERL_EXECUTABLE}
-                    ${CMAKE_SOURCE_DIR}/utils/create_spatial_ref_sys_config_dump.pl
-                    ${CMAKE_SOURCE_DIR}/spatial_ref_sys.sql
+                    ${CMAKE_POSTGIS_SOURCE_DIR}/utils/create_spatial_ref_sys_config_dump.pl
+                    ${CMAKE_POSTGIS_SOURCE_DIR}/spatial_ref_sys.sql
                 OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/spatial_ref_sys_config_dump.sql)
-prepare_extension_sql(${CMAKE_SOURCE_DIR}/spatial_ref_sys.sql ${CMAKE_CURRENT_BINARY_DIR}/spatial_ref_sys.sql)
+prepare_extension_sql(${CMAKE_POSTGIS_SOURCE_DIR}/spatial_ref_sys.sql ${CMAKE_CURRENT_BINARY_DIR}/spatial_ref_sys.sql)
 
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/sql)
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/sql/postgis.sql "\\echo Use \"CREATE EXTENSION postgis\" to load this file. \\quit\n")
 
 if(POSTGIS_WITH_RASTER)
     #sed -e 's/BEGIN;//g' -e 's/COMMIT;//g'  ../../raster/rt_pg/rtpostgis.sql > sql_bits/rtpostgis.sql
-    prepare_extension_sql(${CMAKE_BINARY_DIR}/raster/rt_pg/rtpostgis.sql ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis.sql)
+    prepare_extension_sql(${CMAKE_POSTGIS_BINARY_DIR}/raster/rt_pg/rtpostgis.sql ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis.sql)
 endif()
 
 #cat sql_bits/postgis.sql sql_bits/postgis_comments.sql sql_bits/rtpostgis.sql sql_bits/spatial_ref_sys_config_dump.sql sql_bits/raster_comments.sql sql_bits/spatial_ref_sys.sql >> sql/postgis.sql
 
 set(APPEND_POSTGIS
     ${CMAKE_CURRENT_BINARY_DIR}/postgis.sql
-    ${CMAKE_SOURCE_DIR}/doc/postgis_comments.sql
+    ${CMAKE_POSTGIS_SOURCE_DIR}/doc/postgis_comments.sql
     ${CMAKE_CURRENT_BINARY_DIR}/spatial_ref_sys_config_dump.sql
     ${CMAKE_CURRENT_BINARY_DIR}/spatial_ref_sys.sql
 )
@@ -54,7 +54,7 @@ set(APPEND_POSTGIS
 if(POSTGIS_WITH_RASTER)
     set(APPEND_POSTGIS ${APPEND_POSTGIS}
         ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis.sql
-        ${CMAKE_SOURCE_DIR}/doc/raster_comments.sql
+        ${CMAKE_POSTGIS_SOURCE_DIR}/doc/raster_comments.sql
     )
 endif()
 
@@ -71,15 +71,15 @@ configure_file(${CMAKE_CURRENT_BINARY_DIR}/sql/postgis.sql
 
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/postgis_unpackaged.sql "-- unpackaged\n")
 append_file(${CMAKE_CURRENT_BINARY_DIR}/postgis_unpackaged.sql
-            ${CMAKE_BINARY_DIR}/postgis/postgis.sql)
+            ${CMAKE_POSTGIS_BINARY_DIR}/postgis/postgis.sql)
 
 if(POSTGIS_WITH_RASTER)
     append_file(${CMAKE_CURRENT_BINARY_DIR}/postgis_unpackaged.sql
-                ${CMAKE_BINARY_DIR}/raster/rt_pg/rtpostgis.sql)
+                ${CMAKE_POSTGIS_BINARY_DIR}/raster/rt_pg/rtpostgis.sql)
 endif()
 
 execute_process(COMMAND ${PERL_EXECUTABLE}
-                    ${CMAKE_SOURCE_DIR}/utils/create_unpackaged.pl
+                    ${CMAKE_POSTGIS_SOURCE_DIR}/utils/create_unpackaged.pl
                     postgis
                     ${CMAKE_CURRENT_BINARY_DIR}/postgis_unpackaged.sql
                 OUTPUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/sql/postgis--unpackaged--${POSTGIS_LIB_VERSION}.sql)
@@ -151,7 +151,7 @@ endmacro()
 #    -e "s/^\(DROP .*\);/SELECT postgis_extension_drop_if_exists('postgis', '\1');\n\1;/" \
 #../../postgis/postgis_upgrade.sql > sql_bits/postgis_upgrade.sql
 
-prepare_extension_drop_sql(${CMAKE_BINARY_DIR}/postgis/postgis_upgrade.sql
+prepare_extension_drop_sql(${CMAKE_POSTGIS_BINARY_DIR}/postgis/postgis_upgrade.sql
                            ${CMAKE_CURRENT_BINARY_DIR}/postgis_upgrade.sql)
 
 
@@ -165,7 +165,7 @@ if(POSTGIS_WITH_RASTER)
 #sed -e 's/BEGIN;//g' -e 's/COMMIT;//g' \
 #    -e "s/^\(DROP .*\);/SELECT postgis_extension_drop_if_exists('postgis', '\1');\n\1;/" \
 #../../raster/rt_pg/rtpostgis_upgrade.sql > sql_bits/rtpostgis_upgrade.sql
-    prepare_extension_drop_sql(${CMAKE_BINARY_DIR}/raster/rt_pg/rtpostgis_upgrade.sql
+    prepare_extension_drop_sql(${CMAKE_POSTGIS_BINARY_DIR}/raster/rt_pg/rtpostgis_upgrade.sql
                                ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis_upgrade.sql)
 
 #echo '\echo Use "CREATE EXTENSION postgis" to load this file. \quit' > sql_bits/postgis_raster_upgrade_minor.sql
@@ -179,9 +179,9 @@ if(POSTGIS_WITH_RASTER)
     append_file(${CMAKE_CURRENT_BINARY_DIR}/postgis_raster_upgrade_minor.sql
                 ${CMAKE_CURRENT_BINARY_DIR}/rtpostgis_upgrade.sql)
     append_file(${CMAKE_CURRENT_BINARY_DIR}/postgis_raster_upgrade_minor.sql
-                ${CMAKE_SOURCE_DIR}/doc/raster_comments.sql)
+                ${CMAKE_POSTGIS_SOURCE_DIR}/doc/raster_comments.sql)
     append_file(${CMAKE_CURRENT_BINARY_DIR}/postgis_raster_upgrade_minor.sql
-                ${CMAKE_SOURCE_DIR}/doc/postgis_comments.sql)
+                ${CMAKE_POSTGIS_SOURCE_DIR}/doc/postgis_comments.sql)
     append_file(${CMAKE_CURRENT_BINARY_DIR}/postgis_raster_upgrade_minor.sql
                 ../postgis_extension_helper_uninstall.sql)
 
