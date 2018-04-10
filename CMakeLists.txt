@@ -26,12 +26,6 @@ set(CMAKE_COLOR_MAKEFILE ON)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_POSTGIS_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH})
 include(util)
 include(GNUInstallDirs)
-
-set(INSTALL_BIN_DIR ${CMAKE_INSTALL_BINDIR} CACHE INTERNAL "Installation directory for executables" FORCE)
-set(INSTALL_LIB_DIR ${CMAKE_INSTALL_LIBDIR} CACHE INTERNAL "Installation directory for libraries" FORCE)
-set(INSTALL_INC_DIR ${CMAKE_INSTALL_INCLUDEDIR} CACHE INTERNAL "Installation directory for headers" FORCE)
-set(INSTALL_MAN_DIR ${CMAKE_INSTALL_MANDIR} CACHE INTERNAL "Installation directory for headers" FORCE)
-
 ################################################################################
 # User options to control PostGIS features
 
@@ -137,6 +131,11 @@ get_property(PGSQL_PKGBINDIR GLOBAL PROPERTY POSTGRES_DISTRIB_BIN_DIR)
 #exec_program(${PG_CONFIG} ARGS --localedir OUTPUT_VARIABLE PGSQL_LOCALEDIR)
 get_property(PGSQL_LOCALEDIR GLOBAL PROPERTY POSTGRES_DISTRIB_LOCALE_DIR)
 
+set(INSTALL_BIN_DIR ${PGSQL_PKGLIBDIR} CACHE INTERNAL "Installation directory for executables" FORCE)
+set(INSTALL_LIB_DIR ${PGSQL_PKGLIBDIR} CACHE INTERNAL "Installation directory for libraries" FORCE)
+set(INSTALL_INC_DIR ${PGSQL_INCLUDEDIR} CACHE INTERNAL "Installation directory for headers" FORCE)
+set(INSTALL_MAN_DIR ${PGSQL_SHAREDIR} CACHE INTERNAL "Installation directory for headers" FORCE)
+
 #set(TARGET_LINK_LIB ${TARGET_LINK_LIB} ${POSTGRESQL_LIBRARIES})
 
 find_anyproject(ICONV DEFAULT ON) #default OFF, to set ON add DEFAULT ON
@@ -239,7 +238,7 @@ if(NOT SUPPRESS_VERBOSE_OUTPUT)
     include(summary)
 endif()
 
-#add_custom_target(installPostgisDb
-#        COMMAND ${check_make_command} install -j 8
-#        DEPENDS postgis
-#)
+add_custom_target(installPostgisDb
+        COMMAND ${check_make_command} install -j 8
+        DEPENDS postgis
+)
