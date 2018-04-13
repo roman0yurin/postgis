@@ -30,7 +30,7 @@ macro(sqlin2sql sqlin sql)
     COMMAND "${CMAKE_C_COMPILER}" -w -x c -E ${sqlin} -I ../../postgis
     COMMAND grep -v "^#"
     COMMAND "${PERL_EXECUTABLE}" -lpe
-      "s'MODULE_PATHNAME'\$libdir/postgis_topology-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}'g"
+      "s'MODULE_PATHNAME'\$libdir/rtpostgis-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}'g"
     OUTPUT_FILE ${sql}
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
   )
@@ -111,12 +111,19 @@ set(CSOURCES
 	rtpg_statistics.c
 )
 
+foreach(s ${CSOURCES})
+	list(APPEND SRC_PATH ${CMAKE_CURRENT_SOURCE_DIR}/${s})
+endforeach()
+
+set_property(GLOBAL PROPERTY RT_PG_SRC ${SRC_PATH})
+
 add_library(${LIB_NAME} SHARED
   ${CSOURCES}
   ${HHEADERS}
 )
 
 target_link_extlibraries(${LIB_NAME})
+target_link_libraries(${LIB_NAME} rtcore)
 
 set(TARGET_LINK_LIB ${TARGET_LINK_LIB} ${LIB_NAME} PARENT_SCOPE)
 
