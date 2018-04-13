@@ -31,11 +31,14 @@ set_property(GLOBAL PROPERTY LIBRTCORE_INCLUDE_DIRS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 set(HHEADERS
-	rt_serialize.h
-	librtcore.h
-	librtcore_internal.h
-	../raster_config.h
+				${CMAKE_CURRENT_SOURCE_DIR}/rt_serialize.h
+				${CMAKE_CURRENT_SOURCE_DIR}/librtcore.h
+				${CMAKE_CURRENT_SOURCE_DIR}/librtcore_internal.h
+				${CMAKE_CURRENT_SOURCE_DIR}/../raster_config.h
 )
+
+set_property(GLOBAL PROPERTY RT_CORE_HEADERS ${HHEADERS})
+set_property(GLOBAL PROPERTY RT_CORE_HEADERS_DIRS ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
 
 set(CSOURCES
 	rt_util.c

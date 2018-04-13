@@ -349,6 +349,7 @@ add_library(${LIB_NAME}
 )
 
 target_link_extlibraries(${LIB_NAME})
+target_link_libraries(${LIB_NAME} rtpostgis)
 
 set(TARGET_LINK_LIB ${TARGET_LINK_LIB} ${LIB_NAME} PARENT_SCOPE)
 
