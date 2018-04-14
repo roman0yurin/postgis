@@ -171,7 +171,7 @@ endif()
 
 find_package(Perl)
 
-find_package(Protobuf)
+#find_package(Protobuf) TODO решить проблемы с подключением protobuf-c
 
 # Determine build date and time
 string(TIMESTAMP POSTGIS_BUILD_DATE "%Y-%m-%d %H:%M:%S" UTC)

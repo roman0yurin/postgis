@@ -298,6 +298,9 @@ add_library(${LIB_NAME} SHARED
   ${CSOURCES}
   ${HHEADERS}
 )
+if(PROTOBUF_FOUND)
+    target_link_libraries(${LIB_NAME}  ${Protobuf_LIBRARIES})
+endif()
 
 target_link_extlibraries(${LIB_NAME})
 
