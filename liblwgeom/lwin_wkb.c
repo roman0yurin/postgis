@@ -28,6 +28,7 @@
 #include "liblwgeom_internal.h" /* NOTE: includes lwgeom_log.h */
 #include "lwgeom_log.h"
 #include <math.h>
+#include <liblwgeom.h>
 #include <limits.h>
 
 /**
@@ -222,6 +223,9 @@ static void lwtype_from_wkb_state(wkb_parse_state *s, uint32_t wkb_type)
 			break;
 		case WKB_TRIANGLE_TYPE:
 			s->lwtype = TRIANGLETYPE;
+			break;
+		case WKB_REF3D_TYPE:
+			s->lwtype = REF3D_TYPE;
 			break;
 
 		/* PostGIS 1.5 emits 13, 14 for CurvePolygon, MultiCurve */
@@ -629,6 +633,20 @@ static LWCURVEPOLY* lwcurvepoly_from_wkb_state(wkb_parse_state *s)
 	return cp;
 }
 
+static LWREF3D* lwref3d_from_wkb_state(wkb_parse_state *s){
+	LWREF3D *ref = lwref3d_construct_empty(s->srid);
+	ref->refId = integer_from_wkb_state(s);
+	GBOX *box = gbox_new(gflags(1, 0, 0));
+	box->xmin = double_from_wkb_state(s);
+	box->ymin = double_from_wkb_state(s);
+	box->zmin = double_from_wkb_state(s);
+	box->xmax = double_from_wkb_state(s);
+	box->ymax = double_from_wkb_state(s);
+	box->zmax = double_from_wkb_state(s);
+	ref->bbox = box;
+	return ref;
+}
+
 /**
 * POLYHEDRALSURFACETYPE
 */
@@ -725,22 +743,18 @@ LWGEOM* lwgeom_from_wkb_state(wkb_parse_state *s)
 	{
 		case POINTTYPE:
 			return (LWGEOM*)lwpoint_from_wkb_state(s);
-			break;
 		case LINETYPE:
 			return (LWGEOM*)lwline_from_wkb_state(s);
-			break;
 		case CIRCSTRINGTYPE:
 			return (LWGEOM*)lwcircstring_from_wkb_state(s);
-			break;
 		case POLYGONTYPE:
 			return (LWGEOM*)lwpoly_from_wkb_state(s);
-			break;
 		case TRIANGLETYPE:
 			return (LWGEOM*)lwtriangle_from_wkb_state(s);
-			break;
 		case CURVEPOLYTYPE:
 			return (LWGEOM*)lwcurvepoly_from_wkb_state(s);
-			break;
+		case REF3D_TYPE:
+			return (LWGEOM*)lwref3d_from_wkb_state(s);
 		case MULTIPOINTTYPE:
 		case MULTILINETYPE:
 		case MULTIPOLYGONTYPE:
@@ -751,8 +765,6 @@ LWGEOM* lwgeom_from_wkb_state(wkb_parse_state *s)
 		case TINTYPE:
 		case COLLECTIONTYPE:
 			return (LWGEOM*)lwcollection_from_wkb_state(s);
-			break;
-
 		/* Unknown type! */
 		default:
 			lwerror("Unsupported geometry type: %s [%d]", lwtype_name(s->lwtype), s->lwtype);

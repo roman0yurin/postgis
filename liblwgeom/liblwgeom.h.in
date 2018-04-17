@@ -97,6 +97,8 @@ const char* lwgeom_version(void);
 #define POLYHEDRALSURFACETYPE   13
 #define TRIANGLETYPE            14
 #define TINTYPE                 15
+/**Ссылка на составную 3D геометрию**/
+#define REF3D_TYPE              16
 
 #define NUMTYPES                16
 
@@ -591,6 +593,20 @@ typedef struct
 }
 LWTIN;
 
+/**
+ * Реляционная геометрия позволяет задействовать механизм инстацирования,
+ * когда объект составляется из сети других объектов с указанием матрицы лин. преобразвания.
+ * Данный тип позволяет использовать реляционную геометрию совместно со скалярной.
+ **/
+typedef struct{
+	uint8_t type;
+	uint8_t flags;
+	GBOX *bbox;
+	int32_t srid;
+	/**Ссылка на реляционную геометрию**/
+	int32_t refId;
+}LWREF3D;
+
 /* Casts LWGEOM->LW* (return NULL if cast is illegal) */
 extern LWMPOLY *lwgeom_as_lwmpoly(const LWGEOM *lwgeom);
 extern LWMLINE *lwgeom_as_lwmline(const LWGEOM *lwgeom);
@@ -607,6 +623,7 @@ extern LWTRIANGLE *lwgeom_as_lwtriangle(const LWGEOM *lwgeom);
 extern LWTIN *lwgeom_as_lwtin(const LWGEOM *lwgeom);
 extern LWGEOM *lwgeom_as_multi(const LWGEOM *lwgeom);
 extern LWGEOM *lwgeom_as_curve(const LWGEOM *lwgeom);
+extern LWREF3D *lwgeom_as_ref3d(const LWGEOM *lwgeom);
 
 /* Casts LW*->LWGEOM (always cast) */
 extern LWGEOM *lwtin_as_lwgeom(const LWTIN *obj);
@@ -622,6 +639,7 @@ extern LWGEOM *lwcurvepoly_as_lwgeom(const LWCURVEPOLY *obj);
 extern LWGEOM *lwpoly_as_lwgeom(const LWPOLY *obj);
 extern LWGEOM *lwline_as_lwgeom(const LWLINE *obj);
 extern LWGEOM *lwpoint_as_lwgeom(const LWPOINT *obj);
+extern LWGEOM *lwref3d_as_lwgeom(const LWREF3D *obj);
 
 
 extern LWCOLLECTION* lwcollection_add_lwgeom(LWCOLLECTION *col, const LWGEOM *geom);
@@ -1139,6 +1157,7 @@ extern void lwpsurface_free(LWPSURFACE *psurf);
 extern void lwtin_free(LWTIN *tin);
 extern void lwcollection_free(LWCOLLECTION *col);
 extern void lwcircstring_free(LWCIRCSTRING *curve);
+extern void lwref3d_free(LWREF3D *ref);
 extern void lwgeom_free(LWGEOM *geom);
 
 /*
@@ -1159,6 +1178,7 @@ extern void lwmpoly_release(LWMPOLY *lwpoly);
 extern void lwpsurface_release(LWPSURFACE *lwpsurface);
 extern void lwtin_release(LWTIN *lwtin);
 extern void lwcollection_release(LWCOLLECTION *lwcollection);
+extern void lwref3d_release(LWREF3D *ref);
 extern void lwgeom_release(LWGEOM *lwgeom);
 
 
@@ -1174,6 +1194,7 @@ extern void printLWPOLY(LWPOLY *poly);
 extern void printLWTRIANGLE(LWTRIANGLE *triangle);
 extern void printLWPSURFACE(LWPSURFACE *psurf);
 extern void printLWTIN(LWTIN *tin);
+extern void printLWREF3d(LWREF3D *ref);
 
 extern float  next_float_down(double d);
 extern float  next_float_up(double d);
@@ -1323,6 +1344,7 @@ extern int lwgeom_dimensionality(const LWGEOM *geom);
 
 /* Is lwgeom1 geometrically equal to lwgeom2 ? */
 extern char lwgeom_same(const LWGEOM *lwgeom1, const LWGEOM *lwgeom2);
+char lwref3d_same(const LWREF3D *ref1, const LWREF3D *ref2);
 
 
 /**
@@ -1354,6 +1376,7 @@ extern LWPOLY* lwpoly_construct(int srid, GBOX *bbox, uint32_t nrings, POINTARRA
 extern LWCURVEPOLY* lwcurvepoly_construct(int srid, GBOX *bbox, uint32_t nrings, LWGEOM **geoms);
 extern LWTRIANGLE* lwtriangle_construct(int srid, GBOX *bbox, POINTARRAY *points);
 extern LWCOLLECTION* lwcollection_construct(uint8_t type, int srid, GBOX *bbox, uint32_t ngeoms, LWGEOM **geoms);
+extern LWREF3D* lwref3d_construct(int srid, GBOX *bbox, uint32_t refId);
 /*
 * Empty geometry constructors.
 */
@@ -1369,6 +1392,7 @@ extern LWMPOINT* lwmpoint_construct_empty(int srid, char hasz, char hasm);
 extern LWMLINE* lwmline_construct_empty(int srid, char hasz, char hasm);
 extern LWMPOLY* lwmpoly_construct_empty(int srid, char hasz, char hasm);
 extern LWCOLLECTION* lwcollection_construct_empty(uint8_t type, int srid, char hasz, char hasm);
+extern LWREF3D* lwref3d_construct_empty(int srid);
 
 
 /* Other constructors */

@@ -69,35 +69,14 @@ extern int wkt_yydebug;
     TRIANGLE_TOK = 275,
     TIN_TOK = 276,
     POLYHEDRALSURFACE_TOK = 277,
-    DOUBLE_TOK = 278,
-    DIMENSIONALITY_TOK = 279,
-    SRID_TOK = 280
+    REF3D_TOK = 278,
+    REF_ID_TOK = 279,
+    REF_BOX_TOK = 280,
+    DOUBLE_TOK = 281,
+    DIMENSIONALITY_TOK = 282,
+    SRID_TOK = 283
   };
 #endif
-/* Tokens.  */
-#define POINT_TOK 258
-#define LINESTRING_TOK 259
-#define POLYGON_TOK 260
-#define MPOINT_TOK 261
-#define MLINESTRING_TOK 262
-#define MPOLYGON_TOK 263
-#define MSURFACE_TOK 264
-#define MCURVE_TOK 265
-#define CURVEPOLYGON_TOK 266
-#define COMPOUNDCURVE_TOK 267
-#define CIRCULARSTRING_TOK 268
-#define COLLECTION_TOK 269
-#define RBRACKET_TOK 270
-#define LBRACKET_TOK 271
-#define COMMA_TOK 272
-#define EMPTY_TOK 273
-#define SEMICOLON_TOK 274
-#define TRIANGLE_TOK 275
-#define TIN_TOK 276
-#define POLYHEDRALSURFACE_TOK 277
-#define DOUBLE_TOK 278
-#define DIMENSIONALITY_TOK 279
-#define SRID_TOK 280
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -139,4 +118,4 @@ extern YYSTYPE wkt_yylval;
 extern YYLTYPE wkt_yylloc;
 int wkt_yyparse (void);
 
-#endif /* !YY_WKT_YY_LWIN_WKT_PARSE_H_INCLUDED  */
+#endif /* !YY_WKT_YY_MEDIA_SSD_DEVELOP_PROJECT_MAP3D_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */

@@ -126,6 +126,7 @@ int lwgeom_parse_wkt(LWGEOM_PARSER_RESULT *parser_result, char *wktstr, int pars
 %token SEMICOLON_TOK
 %token TRIANGLE_TOK TIN_TOK
 %token POLYHEDRALSURFACE_TOK
+%token REF3D_TOK REF_ID_TOK REF_BOX_TOK
 
 %token <doublevalue> DOUBLE_TOK
 %token <stringvalue> DIMENSIONALITY_TOK
@@ -170,6 +171,8 @@ int lwgeom_parse_wkt(LWGEOM_PARSER_RESULT *parser_result, char *wktstr, int pars
 %type <geometryvalue> triangle
 %type <geometryvalue> triangle_list
 %type <geometryvalue> triangle_untagged
+%type <geometryvalue> ref3d_content
+%type <geometryvalue> ref3d
 
 
 /* These clean up memory on errors and parser aborts. */
@@ -209,6 +212,8 @@ int lwgeom_parse_wkt(LWGEOM_PARSER_RESULT *parser_result, char *wktstr, int pars
 %destructor { lwgeom_free($$); } tin
 %destructor { lwgeom_free($$); } triangle
 %destructor { lwgeom_free($$); } triangle_untagged
+%destructor { lwgeom_free($$); } ref3d_content
+%destructor { lwgeom_free($$); } ref3d
 
 %%
 
@@ -233,7 +238,8 @@ geometry_no_srid :
 	tin { $$ = $1; } |
 	polyhedralsurface { $$ = $1; } |
 	triangle { $$ = $1; } |
-	geometrycollection { $$ = $1; } ;
+	geometrycollection { $$ = $1; } |
+	geometrycollectionref3d { $$ = $1; }
 
 geometrycollection :
 	COLLECTION_TOK LBRACKET_TOK geometry_list RBRACKET_TOK
@@ -284,6 +290,17 @@ tin :
 		{ $$ = wkt_parser_collection_finalize(TINTYPE, NULL, $2); WKT_ERROR(); } |
 	TIN_TOK EMPTY_TOK
 		{ $$ = wkt_parser_collection_finalize(TINTYPE, NULL, NULL); WKT_ERROR(); } ;
+
+ref3d : REF3D_TOK LBRACKET_TOK ref3d_content RBRACKET_TOK
+		{ $$ = $3;} |
+		REF3D_TOK DIMENSIONALITY_TOK LBRACKET_TOK ref3d_content RBRACKET_TOK
+		{ $$ = $4;}
+
+
+ref3d_content : REF_ID_TOK DOUBLE_TOK REF_BOX_TOK DOUBLE_TOK DOUBLE_TOK DOUBLE_TOK COMMA_TOK DOUBLE_TOK DOUBLE_TOK DOUBLE_TOK
+{ $$ = wkt_parser_ref3d_new($2, $4, $5, $6, $8, $9, $10); WKT_ERROR(); }
+
+
 
 polyhedralsurface :
 	POLYHEDRALSURFACE_TOK LBRACKET_TOK patch_list RBRACKET_TOK
