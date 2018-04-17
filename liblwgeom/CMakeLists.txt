@@ -134,7 +134,7 @@ set(CSOURCES
 	lwgeom_median.c
 	lwkmeans.c
 	kmeans.c
-)
+		lwref3d.c)
 
 set(LIB_NAME ${PROJECT_NAME})
 #set_property(GLOBAL PROPERTY LIB_NAME_LWGEOM ${LIB_NAME})
@@ -191,3 +191,10 @@ endif()
 if(NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL )
     install(FILES ${HHEADERS_PUB} DESTINATION "${INSTALL_INC_DIR}" COMPONENT headers)
 endif()
+##################### Генерация файлов парсера ##############
+find_package(BISON REQUIRED)
+find_package(FLEX REQUIRED)
+
+FLEX_TARGET(LwGeomLexParser lwin_wkt_lex.l  ${CMAKE_CURRENT_SOURCE_DIR}/lwin_wkt_lex.c)
+BISON_TARGET(LwGeomBisonParser lwin_wkt_parse.y ${CMAKE_CURRENT_SOURCE_DIR}/lwin_wkt_parse.c)
+ADD_FLEX_BISON_DEPENDENCY(LwGeomLexParser LwGeomBisonParser)

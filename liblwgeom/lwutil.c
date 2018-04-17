@@ -74,7 +74,8 @@ static char *lwgeomTypeName[] =
 	"MultiSurface",
 	"PolyhedralSurface",
 	"Triangle",
-	"Tin"
+	"Tin",
+	"Ref3D" //Ссылка на геометрию, содержит 3Д коробку и идентификатор ссылки
 };
 
 /*
@@ -217,7 +218,7 @@ lwdebug(int level, const char *fmt, ...)
 const char*
 lwtype_name(uint8_t type)
 {
-	if ( type > 15 )
+	if ( type > 16 )
 	{
 		/* assert(0); */
 		return "Invalid type";

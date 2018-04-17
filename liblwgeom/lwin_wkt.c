@@ -25,6 +25,7 @@
 
 #include <stdlib.h>
 #include <ctype.h> /* for isspace */
+#include <liblwgeom.h>
 
 #include "lwin_wkt.h"
 #include "lwin_wkt_parse.h"
@@ -912,6 +913,23 @@ LWGEOM *lwgeom_from_wkt(const char *wkt, const char check)
 	}
 
 	return r.geom;
+}
+
+/**
+* Составляе геометрию на основе параметров, полученных из WKT
+*/
+LWGEOM* wkt_parser_ref3d_new(uint32_t refId, double minx, double miny, double minz, double maxx, double maxy, double maxz){
+	LWREF3D *ref = lwref3d_construct_empty(SRID_UNKNOWN);
+	ref->refId = refId;
+	GBOX *box = gbox_new(gflags(1,0,0));
+	ref->bbox = box;
+	box->xmin = minx;
+	box->ymin = miny;
+	box->zmin = minz;
+	box->xmax = maxx;
+	box->ymax = maxy;
+	box->zmax = maxz;
+	return (LWGEOM *) ref;
 }
 
 
