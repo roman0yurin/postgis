@@ -27,6 +27,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <liblwgeom.h>
 
 #include "liblwgeom_internal.h"
 #include "lwgeom_log.h"
@@ -1181,6 +1182,9 @@ void lwgeom_free(LWGEOM *lwgeom)
 	case TINTYPE:
 		lwtin_free((LWTIN *)lwgeom);
 		break;
+	case REF3D_TYPE:
+		lwref3d_free((LWREF3D *)lwgeom);
+		break;
 	case CURVEPOLYTYPE:
 	case COMPOUNDTYPE:
 	case MULTICURVETYPE:
@@ -1221,9 +1225,9 @@ int lwgeom_needs_bbox(const LWGEOM *geom)
 			return LW_FALSE;
 		else
 			return LW_TRUE;
-	}
-	else
-	{
+	}else if( geom->type == REF3D_TYPE){
+		return LW_TRUE;
+	}else{
 		return LW_TRUE;
 	}
 }
@@ -1413,6 +1417,8 @@ int lwgeom_is_empty(const LWGEOM *geom)
 	case TRIANGLETYPE:
 		return lwtriangle_is_empty((LWTRIANGLE*)geom);
 		break;
+	case REF3D_TYPE:
+		return LW_FALSE;
 	case MULTIPOINTTYPE:
 	case MULTILINETYPE:
 	case MULTIPOLYGONTYPE:

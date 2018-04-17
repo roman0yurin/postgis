@@ -77,6 +77,9 @@ TRIANGLE { return TRIANGLE_TOK; }
 TIN { return TIN_TOK; }
 POINT { return POINT_TOK; }
 EMPTY { return EMPTY_TOK; }
+REF3D { return REF3D_TOK; }
+ID= { return REF_ID_TOK; }
+BOX= { return REF_BOX_TOK; }
 
 Z|M|ZM { 
 	LWDEBUG(5,"DIMENSIONALITY");

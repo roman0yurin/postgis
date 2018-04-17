@@ -24,6 +24,7 @@
  **********************************************************************/
 
 
+#include <liblwgeom.h>
 #include "liblwgeom_internal.h"
 #include "lwgeom_log.h"
 #include "lwgeodetic.h"
@@ -749,6 +750,10 @@ static size_t gserialized_from_lwcircstring_size(const LWCIRCSTRING *curve)
 	return size;
 }
 
+static size_t gserialized_from_lwref3d_size(const LWREF3D *ref){
+	return 8; //Тип и сам идентификатор
+}
+
 static size_t gserialized_from_lwcollection_size(const LWCOLLECTION *col)
 {
 	size_t size = 4; /* Type number. */
@@ -786,6 +791,8 @@ static size_t gserialized_from_any_size(const LWGEOM *geom)
 		return gserialized_from_lwtriangle_size((LWTRIANGLE *)geom);
 	case CIRCSTRINGTYPE:
 		return gserialized_from_lwcircstring_size((LWCIRCSTRING *)geom);
+	case REF3D_TYPE:
+		return gserialized_from_lwref3d_size((LWREF3D *)geom);
 	case CURVEPOLYTYPE:
 	case COMPOUNDTYPE:
 	case MULTIPOINTTYPE:
@@ -995,6 +1002,18 @@ static size_t gserialized_from_lwtriangle(const LWTRIANGLE *triangle, uint8_t *b
 	return (size_t)(loc - buf);
 }
 
+static size_t gserialized_from_lwref3d(const LWREF3D *ref, uint8_t *buf){
+	uint8_t *loc = buf;
+	assert(ref->type == REF3D_TYPE);
+	/* Write in the type. */
+	uint32_t tp = ref->type;
+	memcpy(loc, &tp, sizeof(uint32_t));
+	loc += sizeof(uint32_t);
+	memcpy(loc, &ref->refId, sizeof(uint32_t));
+	loc += sizeof(uint32_t);
+	return (size_t)(loc - buf);
+}
+
 static size_t gserialized_from_lwcircstring(const LWCIRCSTRING *curve, uint8_t *buf)
 {
 	uint8_t *loc;
@@ -1086,6 +1105,8 @@ static size_t gserialized_from_lwgeom_any(const LWGEOM *geom, uint8_t *buf)
 		return gserialized_from_lwtriangle((LWTRIANGLE *)geom, buf);
 	case CIRCSTRINGTYPE:
 		return gserialized_from_lwcircstring((LWCIRCSTRING *)geom, buf);
+	case REF3D_TYPE:
+		return gserialized_from_lwref3d((LWREF3D *)geom, buf);
 	case CURVEPOLYTYPE:
 	case COMPOUNDTYPE:
 	case MULTIPOINTTYPE:
@@ -1397,6 +1418,20 @@ static LWTRIANGLE* lwtriangle_from_gserialized_buffer(uint8_t *data_ptr, uint8_t
 	return triangle;
 }
 
+static LWREF3D* lwref3D_from_gserialized_buffer(uint8_t *data_ptr, uint8_t g_flags, size_t *g_size){
+	uint8_t *start_ptr = data_ptr;
+	assert(data_ptr);
+	LWREF3D *ref = lwref3d_construct_empty(SRID_UNKNOWN);
+	ref->flags = g_flags;
+	data_ptr += 4; /* Skip past the type. */
+	ref->refId = gserialized_get_uint32_t(data_ptr);
+	data_ptr += 4; /* Skip refId. */
+	if(g_size)
+		*g_size = data_ptr - start_ptr;
+	return ref;
+}
+
+
 static LWCIRCSTRING* lwcircstring_from_gserialized_buffer(uint8_t *data_ptr, uint8_t g_flags, size_t *g_size)
 {
 	uint8_t *start_ptr = data_ptr;
@@ -1509,6 +1544,8 @@ LWGEOM* lwgeom_from_gserialized_buffer(uint8_t *data_ptr, uint8_t g_flags, size_
 		return (LWGEOM *)lwpoly_from_gserialized_buffer(data_ptr, g_flags, g_size);
 	case TRIANGLETYPE:
 		return (LWGEOM *)lwtriangle_from_gserialized_buffer(data_ptr, g_flags, g_size);
+	case REF3D_TYPE:
+		return (LWGEOM *)lwref3D_from_gserialized_buffer(data_ptr, g_flags, g_size);
 	case MULTIPOINTTYPE:
 	case MULTILINETYPE:
 	case MULTIPOLYGONTYPE:

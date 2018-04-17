@@ -23,6 +23,7 @@
  **********************************************************************/
 
 
+#include <liblwgeom.h>
 #include "liblwgeom_internal.h"
 #include "lwgeom_log.h"
 #include "stringbuffer.h"
@@ -599,6 +600,18 @@ static void lwpsurface_to_wkt_sb(const LWPSURFACE *psurf, stringbuffer_t *sb, in
 	stringbuffer_append(sb, ")");
 }
 
+static void lwref3d_to_wkt_sb(const LWREF3D *ref, stringbuffer_t *sb, int precision, uint8_t variant){
+	if ( ! (variant & WKT_NO_TYPE) ){
+		stringbuffer_append(sb, "REF3D");
+		dimension_qualifiers_to_wkt_sb((LWGEOM*)ref, sb, variant);
+	}
+	assert(ref->bbox);
+	stringbuffer_aprintf(sb, "(ID=%i BOX=%f %f %f, %f %f %f)", ref->refId,
+						 ref->bbox->xmin, ref->bbox->ymin, ref->bbox->zmin,
+						 ref->bbox->xmax, ref->bbox->ymax, ref->bbox->zmax
+	);
+}
+
 
 /*
 * Generic GEOMETRY
@@ -655,6 +668,9 @@ static void lwgeom_to_wkt_sb(const LWGEOM *geom, stringbuffer_t *sb, int precisi
 		break;
 	case POLYHEDRALSURFACETYPE:
 		lwpsurface_to_wkt_sb((LWPSURFACE*)geom, sb, precision, variant);
+		break;
+	case REF3D_TYPE:
+		lwref3d_to_wkt_sb((LWREF3D*)geom, sb, precision, variant);
 		break;
 	default:
 		lwerror("lwgeom_to_wkt_sb: Type %d - %s unsupported.",

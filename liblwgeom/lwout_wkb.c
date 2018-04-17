@@ -24,6 +24,7 @@
 
 
 #include <math.h>
+#include <liblwgeom.h>
 
 #include "liblwgeom_internal.h"
 #include "lwgeom_log.h"
@@ -129,6 +130,9 @@ static uint32_t lwgeom_wkb_type(const LWGEOM *geom, uint8_t variant)
 		break;
 	case TRIANGLETYPE:
 		wkb_type = WKB_TRIANGLE_TYPE;
+		break;
+	case REF3D_TYPE:
+		wkb_type = WKB_REF3D_TYPE;
 		break;
 	default:
 		lwerror("Unsupported geometry type: %s [%d]",
@@ -516,6 +520,14 @@ static size_t lwtriangle_to_wkb_size(const LWTRIANGLE *tri, uint8_t variant)
 	return size;
 }
 
+static size_t lwref3d_to_wkb_size(const LWREF3D *ref, uint8_t variant){
+	/* endian flag + type number + refID + BBOX*/
+	size_t size = WKB_BYTE_SIZE + WKB_INT_SIZE + WKB_INT_SIZE + WKB_DOUBLE_SIZE * 6;
+	if ( lwgeom_wkb_needs_srid((LWGEOM*)ref, variant) )
+		size += WKB_INT_SIZE;
+	return size;
+}
+
 static uint8_t* lwtriangle_to_wkb_buf(const LWTRIANGLE *tri, uint8_t *buf, uint8_t variant)
 {
 	/* Only process empty at this level in the EXTENDED case */
@@ -538,6 +550,26 @@ static uint8_t* lwtriangle_to_wkb_buf(const LWTRIANGLE *tri, uint8_t *buf, uint8
 	/* Write that ring */
 	buf = ptarray_to_wkb_buf(tri->points, buf, variant);
 
+	return buf;
+}
+
+static uint8_t* lwref3d_to_wkb_buf(const LWREF3D *ref, uint8_t *buf, uint8_t variant){
+	/* Set the endian flag */
+	buf = endian_to_wkb_buf(buf, variant);
+
+	/* Set the geometry type */
+	buf = integer_to_wkb_buf(lwgeom_wkb_type((LWGEOM*)ref, variant), buf, variant);
+	/* Set the optional SRID for extended variant */
+	if ( lwgeom_wkb_needs_srid((LWGEOM*)ref, variant) )
+		buf = integer_to_wkb_buf(ref->srid, buf, variant);
+
+	buf = integer_to_wkb_buf(ref->refId, buf, variant);
+	buf = double_to_wkb_buf(ref->bbox->xmin, buf, variant);
+	buf = double_to_wkb_buf(ref->bbox->ymin, buf, variant);
+	buf = double_to_wkb_buf(ref->bbox->zmin, buf, variant);
+	buf = double_to_wkb_buf(ref->bbox->xmax, buf, variant);
+	buf = double_to_wkb_buf(ref->bbox->ymax, buf, variant);
+	buf = double_to_wkb_buf(ref->bbox->zmax, buf, variant);
 	return buf;
 }
 
@@ -680,6 +712,10 @@ static size_t lwgeom_to_wkb_size(const LWGEOM *geom, uint8_t variant)
 			size += lwtriangle_to_wkb_size((LWTRIANGLE*)geom, variant);
 			break;
 
+		case REF3D_TYPE:
+			size += lwref3d_to_wkb_size((LWREF3D*)geom, variant);
+			break;
+
 		/* All these Collection types have ngeoms and geoms elements */
 		case MULTIPOINTTYPE:
 		case MULTILINETYPE:
@@ -728,6 +764,9 @@ static uint8_t* lwgeom_to_wkb_buf(const LWGEOM *geom, uint8_t *buf, uint8_t vari
 		/* Triangle has one ring of three points */
 		case TRIANGLETYPE:
 			return lwtriangle_to_wkb_buf((LWTRIANGLE*)geom, buf, variant);
+
+		case REF3D_TYPE:
+			return lwref3d_to_wkb_buf((LWREF3D*)geom, buf, variant);
 
 		/* All these Collection types have 'ngeoms' and 'geoms' elements */
 		case MULTIPOINTTYPE:

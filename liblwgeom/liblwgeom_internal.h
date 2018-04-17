@@ -112,6 +112,7 @@
 #define WKB_POLYHEDRALSURFACE_TYPE 15
 #define WKB_TIN_TYPE 16
 #define WKB_TRIANGLE_TYPE 17
+#define WKB_REF3D_TYPE 18
 
 /**
 * Macro for reading the size from the GSERIALIZED size attribute.
@@ -340,6 +341,7 @@ POINTARRAY *ptarray_clone(const POINTARRAY *ptarray);
 LWLINE *lwline_clone_deep(const LWLINE *lwgeom);
 LWPOLY *lwpoly_clone_deep(const LWPOLY *lwgeom);
 LWCOLLECTION *lwcollection_clone_deep(const LWCOLLECTION *lwgeom);
+LWREF3D *lwref3d_clone(const LWREF3D *ref);
 GBOX *gbox_clone(const GBOX *gbox);
 
 /*
