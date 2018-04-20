@@ -23,7 +23,9 @@
  **********************************************************************/
 
 
+#include <liblwgeom.h>
 #include "lwgeom_sfcgal.h"
+#include "postgis/CBoxUtils.h"
 
 static int SFCGAL_type_to_lwgeom_type(sfcgal_geometry_type_t type);
 static POINTARRAY* ptarray_from_SFCGAL(const sfcgal_geometry_t* geom, int force3D);
@@ -458,7 +460,6 @@ LWGEOM2SFCGAL(const LWGEOM* geom)
 
 		return ptarray_to_SFCGAL(lwp->point, POINTTYPE);
 	}
-	break;
 
 	case LINETYPE:
 	{
@@ -467,7 +468,6 @@ LWGEOM2SFCGAL(const LWGEOM* geom)
 
 		return ptarray_to_SFCGAL(line->points, LINETYPE);
 	}
-	break;
 
 	case TRIANGLETYPE:
 	{
@@ -475,7 +475,6 @@ LWGEOM2SFCGAL(const LWGEOM* geom)
 		if (lwgeom_is_empty(geom)) return sfcgal_triangle_create();
 		return ptarray_to_SFCGAL(triangle->points, TRIANGLETYPE);
 	}
-	break;
 
 	case POLYGONTYPE:
 	{
@@ -494,7 +493,6 @@ LWGEOM2SFCGAL(const LWGEOM* geom)
 		}
 		return ret_geom;
 	}
-	break;
 
 	case MULTIPOINTTYPE:
 	case MULTILINETYPE:
@@ -515,7 +513,6 @@ LWGEOM2SFCGAL(const LWGEOM* geom)
 
 		return ret_geom;
 	}
-	break;
 
 	case POLYHEDRALSURFACETYPE:
 	{
@@ -536,7 +533,6 @@ LWGEOM2SFCGAL(const LWGEOM* geom)
 
 		return ret_geom;
 	}
-	break;
 
 	case TINTYPE:
 	{
@@ -551,7 +547,11 @@ LWGEOM2SFCGAL(const LWGEOM* geom)
 
 		return ret_geom;
 	}
-	break;
+
+	case REF3D_TYPE: {
+		const LWREF3D *ref = (const LWREF3D *)geom;
+		return c_box2SolidPolyhedron(ref->bbox, ref->srid);
+	}
 
 	default:
 		lwerror("LWGEOM2SFCGAL: Unknown geometry type !");

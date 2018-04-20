@@ -205,6 +205,7 @@ set(HHEADERS
   lwgeom_geos.h
   lwgeom_geos_prepared.h
   lwgeom_rtree.h
+  pg_geometry.h
 
   geobuf.h
   mvt.h
@@ -257,6 +258,7 @@ set(CSOURCES
   geography_measurement.c
   geography_measurement_trees.c
   geometry_inout.c
+  BoxUtils.cpp
 
   geobuf.c
   geography_centroid.c
@@ -265,6 +267,16 @@ set(CSOURCES
   mvt.c
   postgis_libprotobuf.c
 )
+
+
+if(POSTGIS_WITH_SFCGAL)
+    get_property(SFCGAL_INCLUDE_DIRS GLOBAL PROPERTY SFCGAL_INCLUDE_DIRS)
+    get_property(SFCGAL_SYS_INCLUDE_DIRS GLOBAL PROPERTY SFCGAL_SYS_INCLUDE_DIRS)
+    set(CSOURCES ${CSOURCES} lwgeom_sfcgal.c lwgeom_sfcgal.h)
+    include_directories(${SFCGAL_INCLUDE_DIRS} ${SFCGAL_SYS_INCLUDE_DIRS})
+endif()
+
+
 
 if(NOT POSTGIS_PGSQL_VERSION LESS 95)
 

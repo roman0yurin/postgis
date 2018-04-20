@@ -139,6 +139,14 @@ set(CSOURCES
 set(LIB_NAME ${PROJECT_NAME})
 #set_property(GLOBAL PROPERTY LIB_NAME_LWGEOM ${LIB_NAME})
 
+
+if(POSTGIS_WITH_SFCGAL)
+	get_property(SFCGAL_INCLUDE_DIRS GLOBAL PROPERTY SFCGAL_INCLUDE_DIRS)
+	get_property(SFCGAL_SYS_INCLUDE_DIRS GLOBAL PROPERTY SFCGAL_SYS_INCLUDE_DIRS)
+	set(CSOURCES ${CSOURCES} lwgeom_sfcgal.c lwgeom_sfcgal.h ../postgis/BoxUtils.cpp ../postgis/BoxUtils.h)
+	include_directories(${SFCGAL_INCLUDE_DIRS} ${SFCGAL_SYS_INCLUDE_DIRS})
+endif()
+
 add_library(${LIB_NAME} STATIC ${CSOURCES} ${HEADERS})
 
 if(UNIX)

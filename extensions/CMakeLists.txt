@@ -54,10 +54,6 @@ if(POSTGIS_WITH_ADDRESS_STD)
     add_subdirectory(address_standardizer)
 endif()
 
-if(POSTGIS_WITH_SFCGAL)
-#TODO:    add_subdirectory(postgis_sfcgal)
-endif()
-
 if(POSTGIS_WITH_TOPOLOGY)
     add_subdirectory(postgis_topology)
 endif()

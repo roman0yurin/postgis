@@ -174,7 +174,7 @@ int lwgeom_parse_wkt(LWGEOM_PARSER_RESULT *parser_result, char *wktstr, int pars
 
 
 
-#line 178 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:339  */
+#line 178 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -194,8 +194,8 @@ int lwgeom_parse_wkt(LWGEOM_PARSER_RESULT *parser_result, char *wktstr, int pars
 
 /* In a future release of Bison, this section will be replaced
    by #include "lwin_wkt_parse.h".  */
-#ifndef YY_WKT_YY_MEDIA_SSD_DEVELOP_PROJECT_MAP3D_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
-# define YY_WKT_YY_MEDIA_SSD_DEVELOP_PROJECT_MAP3D_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+#ifndef YY_WKT_YY_HOME_ROMAN_DEVELOP_PROJECTS_MAP3D_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+# define YY_WKT_YY_HOME_ROMAN_DEVELOP_PROJECTS_MAP3D_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -252,7 +252,7 @@ union YYSTYPE
 	POINT coordinatevalue;
 	POINTARRAY *ptarrayvalue;
 
-#line 256 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:355  */
+#line 256 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -279,11 +279,11 @@ extern YYSTYPE wkt_yylval;
 extern YYLTYPE wkt_yylloc;
 int wkt_yyparse (void);
 
-#endif /* !YY_WKT_YY_MEDIA_SSD_DEVELOP_PROJECT_MAP3D_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */
+#endif /* !YY_WKT_YY_HOME_ROMAN_DEVELOP_PROJECTS_MAP3D_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
-#line 287 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:358  */
+#line 287 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1382,229 +1382,229 @@ yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep, YYLTYPE *yylocatio
           case 31: /* geometry_no_srid  */
 #line 193 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1386 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1386 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 32: /* geometrycollection  */
 #line 194 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1392 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1392 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 34: /* multisurface  */
 #line 201 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1398 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1398 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 35: /* surface_list  */
 #line 180 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1404 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1404 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 36: /* tin  */
 #line 208 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1410 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1410 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 37: /* ref3d  */
 #line 212 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1416 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1416 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 38: /* ref3d_content  */
 #line 211 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1422 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1422 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 39: /* polyhedralsurface  */
 #line 207 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1428 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1428 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 40: /* multipolygon  */
 #line 200 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1434 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1434 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 41: /* polygon_list  */
 #line 181 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1440 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1440 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 42: /* patch_list  */
 #line 182 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1446 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1446 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 43: /* polygon  */
 #line 204 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1452 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1452 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 44: /* polygon_untagged  */
 #line 206 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1458 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1458 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 45: /* patch  */
 #line 205 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1464 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1464 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 46: /* curvepolygon  */
 #line 191 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1470 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1470 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 47: /* curvering_list  */
 #line 178 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1476 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1476 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 48: /* curvering  */
 #line 192 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1482 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1482 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 49: /* patchring_list  */
 #line 188 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1488 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1488 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 50: /* ring_list  */
 #line 187 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1494 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1494 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 51: /* patchring  */
 #line 177 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { ptarray_free(((*yyvaluep).ptarrayvalue)); }
-#line 1500 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1500 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 52: /* ring  */
 #line 176 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { ptarray_free(((*yyvaluep).ptarrayvalue)); }
-#line 1506 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1506 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 53: /* compoundcurve  */
 #line 190 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1512 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1512 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 54: /* compound_list  */
 #line 186 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1518 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1518 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 55: /* multicurve  */
 #line 197 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1524 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1524 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 56: /* curve_list  */
 #line 185 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1530 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1530 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 57: /* multilinestring  */
 #line 198 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1536 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1536 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 58: /* linestring_list  */
 #line 184 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1542 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1542 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 59: /* circularstring  */
 #line 189 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1548 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1548 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 60: /* linestring  */
 #line 195 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1554 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1554 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 61: /* linestring_untagged  */
 #line 196 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1560 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1560 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 62: /* triangle_list  */
 #line 179 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1566 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1566 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 63: /* triangle  */
 #line 209 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1572 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1572 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 64: /* triangle_untagged  */
 #line 210 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1578 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1578 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 65: /* multipoint  */
 #line 199 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1584 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1584 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 66: /* point_list  */
 #line 183 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1590 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1590 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 67: /* point_untagged  */
 #line 203 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1596 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1596 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 68: /* point  */
 #line 202 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1602 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1602 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 69: /* ptarray  */
 #line 175 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { ptarray_free(((*yyvaluep).ptarrayvalue)); }
-#line 1608 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1608 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
 
@@ -1892,839 +1892,839 @@ yyreduce:
         case 2:
 #line 218 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { wkt_parser_geometry_new((yyvsp[0].geometryvalue), SRID_UNKNOWN); WKT_ERROR(); }
-#line 1896 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1896 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 3:
 #line 220 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { wkt_parser_geometry_new((yyvsp[0].geometryvalue), (yyvsp[-2].integervalue)); WKT_ERROR(); }
-#line 1902 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1902 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 4:
 #line 223 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1908 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1908 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 5:
 #line 224 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1914 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1914 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 6:
 #line 225 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1920 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1920 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 7:
 #line 226 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1926 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1926 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 8:
 #line 227 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1932 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1932 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 9:
 #line 228 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1938 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1938 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 10:
 #line 229 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1944 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1944 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 11:
 #line 230 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1950 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1950 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 12:
 #line 231 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1956 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1956 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 13:
 #line 232 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1962 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1962 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 14:
 #line 233 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1968 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1968 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 15:
 #line 234 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1974 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1974 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 16:
 #line 235 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1980 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1980 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 17:
 #line 236 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1986 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1986 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 18:
 #line 237 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1992 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1992 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 19:
 #line 238 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1998 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1998 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 20:
 #line 242 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2004 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2004 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 21:
 #line 244 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2010 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2010 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 22:
 #line 246 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2016 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2016 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 23:
 #line 248 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2022 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2022 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 24:
 #line 252 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2028 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2028 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 25:
 #line 254 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2034 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2034 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 26:
 #line 258 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2040 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2040 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 27:
 #line 260 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2046 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2046 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 28:
 #line 262 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2052 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2052 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 29:
 #line 264 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2058 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2058 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 30:
 #line 268 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2064 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2064 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 31:
 #line 270 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2070 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2070 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 32:
 #line 272 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2076 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2076 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 33:
 #line 274 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2082 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2082 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 34:
 #line 276 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2088 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2088 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 35:
 #line 278 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2094 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2094 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 36:
 #line 282 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2100 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2100 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 37:
 #line 284 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2106 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2106 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 38:
 #line 286 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2112 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2112 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 39:
 #line 288 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2118 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2118 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 40:
 #line 291 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue);}
-#line 2124 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2124 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 41:
 #line 293 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue);}
-#line 2130 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2130 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 42:
 #line 297 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_ref3d_new((yyvsp[-8].doublevalue), (yyvsp[-6].doublevalue), (yyvsp[-5].doublevalue), (yyvsp[-4].doublevalue), (yyvsp[-2].doublevalue), (yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
-#line 2136 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2136 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 43:
 #line 303 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2142 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2142 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 44:
 #line 305 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2148 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2148 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 45:
 #line 307 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2154 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2154 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 46:
 #line 309 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2160 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2160 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 47:
 #line 313 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2166 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2166 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 48:
 #line 315 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2172 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2172 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 49:
 #line 317 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2178 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2178 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 50:
 #line 319 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2184 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2184 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 51:
 #line 323 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2190 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2190 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 52:
 #line 325 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2196 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2196 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 53:
 #line 329 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2202 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2202 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 54:
 #line 331 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2208 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2208 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 55:
 #line 335 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_finalize((yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2214 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2214 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 56:
 #line 337 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_finalize((yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2220 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2220 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 57:
 #line 339 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2226 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2226 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 58:
 #line 341 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, NULL); WKT_ERROR(); }
-#line 2232 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2232 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 59:
 #line 345 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue); }
-#line 2238 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2238 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 60:
 #line 347 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, NULL); WKT_ERROR(); }
-#line 2244 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2244 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 61:
 #line 350 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue); }
-#line 2250 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2250 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 62:
 #line 354 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize((yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2256 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2256 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 63:
 #line 356 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize((yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2262 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2262 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 64:
 #line 358 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2268 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2268 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 65:
 #line 360 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize(NULL, NULL); WKT_ERROR(); }
-#line 2274 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2274 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 66:
 #line 364 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2280 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2280 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 67:
 #line 366 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2286 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2286 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 68:
 #line 369 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2292 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2292 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 69:
 #line 370 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2298 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2298 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 70:
 #line 371 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2304 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2304 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 71:
 #line 372 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2310 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2310 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 72:
 #line 376 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].ptarrayvalue),'Z'); WKT_ERROR(); }
-#line 2316 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2316 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 73:
 #line 378 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_new((yyvsp[0].ptarrayvalue),'Z'); WKT_ERROR(); }
-#line 2322 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2322 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 74:
 #line 382 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].ptarrayvalue),'2'); WKT_ERROR(); }
-#line 2328 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2328 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 75:
 #line 384 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_new((yyvsp[0].ptarrayvalue),'2'); WKT_ERROR(); }
-#line 2334 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2334 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 76:
 #line 387 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.ptarrayvalue) = (yyvsp[-1].ptarrayvalue); }
-#line 2340 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2340 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 77:
 #line 390 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.ptarrayvalue) = (yyvsp[-1].ptarrayvalue); }
-#line 2346 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2346 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 78:
 #line 394 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2352 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2352 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 79:
 #line 396 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2358 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2358 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 80:
 #line 398 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2364 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2364 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 81:
 #line 400 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2370 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2370 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 82:
 #line 404 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2376 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2376 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 83:
 #line 406 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2382 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2382 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 84:
 #line 408 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2388 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2388 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 85:
 #line 410 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2394 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2394 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 86:
 #line 412 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2400 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2400 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 87:
 #line 414 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2406 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2406 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 88:
 #line 418 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2412 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2412 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 89:
 #line 420 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2418 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2418 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 90:
 #line 422 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2424 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2424 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 91:
 #line 424 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2430 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2430 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 92:
 #line 428 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2436 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2436 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 93:
 #line 430 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2442 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2442 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 94:
 #line 432 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2448 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2448 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 95:
 #line 434 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2454 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2454 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 96:
 #line 436 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2460 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2460 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 97:
 #line 438 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2466 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2466 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 98:
 #line 440 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2472 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2472 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 99:
 #line 442 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2478 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2478 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 100:
 #line 446 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2484 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2484 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 101:
 #line 448 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2490 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2490 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 102:
 #line 450 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2496 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2496 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 103:
 #line 452 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2502 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2502 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 104:
 #line 456 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2508 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2508 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 105:
 #line 458 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2514 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2514 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 106:
 #line 462 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_circularstring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2520 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2520 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 107:
 #line 464 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_circularstring_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2526 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2526 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 108:
 #line 466 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_circularstring_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2532 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2532 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 109:
 #line 468 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_circularstring_new(NULL, NULL); WKT_ERROR(); }
-#line 2538 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2538 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 110:
 #line 472 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2544 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2544 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 111:
 #line 474 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2550 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2550 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 112:
 #line 476 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2556 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2556 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 113:
 #line 478 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, NULL); WKT_ERROR(); }
-#line 2562 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2562 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 114:
 #line 482 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2568 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2568 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 115:
 #line 484 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, NULL); WKT_ERROR(); }
-#line 2574 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2574 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 116:
 #line 488 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2580 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2580 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 117:
 #line 490 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2586 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2586 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 118:
 #line 494 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2592 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2592 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 119:
 #line 496 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), (yyvsp[-5].stringvalue)); WKT_ERROR(); }
-#line 2598 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2598 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 120:
 #line 498 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_triangle_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2604 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2604 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 121:
 #line 500 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_triangle_new(NULL, NULL); WKT_ERROR(); }
-#line 2610 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2610 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 122:
 #line 504 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2616 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2616 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 123:
 #line 508 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2622 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2622 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 124:
 #line 510 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2628 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2628 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 125:
 #line 512 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2634 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2634 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 126:
 #line 514 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2640 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2640 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 127:
 #line 518 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2646 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2646 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 128:
 #line 520 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2652 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2652 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 129:
 #line 524 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new(wkt_parser_ptarray_new((yyvsp[0].coordinatevalue)),NULL); WKT_ERROR(); }
-#line 2658 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2658 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 130:
 #line 526 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new(wkt_parser_ptarray_new((yyvsp[-1].coordinatevalue)),NULL); WKT_ERROR(); }
-#line 2664 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2664 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 131:
 #line 528 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new(NULL, NULL); WKT_ERROR(); }
-#line 2670 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2670 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 132:
 #line 532 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2676 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2676 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 133:
 #line 534 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2682 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2682 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 134:
 #line 536 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2688 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2688 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 135:
 #line 538 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new(NULL,NULL); WKT_ERROR(); }
-#line 2694 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2694 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 136:
 #line 542 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.ptarrayvalue) = wkt_parser_ptarray_add_coord((yyvsp[-2].ptarrayvalue), (yyvsp[0].coordinatevalue)); WKT_ERROR(); }
-#line 2700 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2700 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 137:
 #line 544 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.ptarrayvalue) = wkt_parser_ptarray_new((yyvsp[0].coordinatevalue)); WKT_ERROR(); }
-#line 2706 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2706 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 138:
 #line 548 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.coordinatevalue) = wkt_parser_coord_2((yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
-#line 2712 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2712 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 139:
 #line 550 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.coordinatevalue) = wkt_parser_coord_3((yyvsp[-2].doublevalue), (yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
-#line 2718 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2718 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 140:
 #line 552 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.coordinatevalue) = wkt_parser_coord_4((yyvsp[-3].doublevalue), (yyvsp[-2].doublevalue), (yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
-#line 2724 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2724 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
 
-#line 2728 "/media/ssd/develop/project/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2728 "/home/roman/develop/projects/map3d_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
