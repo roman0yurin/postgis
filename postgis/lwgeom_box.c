@@ -40,6 +40,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <errno.h>
+#include <assert.h>
+#include "pg_geometry.h"
 
 
 /* forward defs */

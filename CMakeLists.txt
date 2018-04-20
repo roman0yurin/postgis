@@ -220,6 +220,8 @@ if(POSTGIS_WITH_SFCGAL)
     include_directories(${SFCGAL_INCLUDE_DIRS})
     set(POSTGIS_SFCGAL_VERSION 13)
     set(HAVE_SFCGAL_RESULT yes)
+    add_definitions(-DHAVE_SFCGAL=1)
+    get_property(CMAKE_SFCGAL_BINARY_DIR GLOBAL PROPERTY CMAKE_SFCGAL_BINARY_DIR)
 endif()
 
 ### Shared libraries
