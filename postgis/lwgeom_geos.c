@@ -25,6 +25,7 @@
  **********************************************************************/
 
 
+#include <liblwgeom.h>
 #include "../postgis_config.h"
 
 /* PostgreSQL */
@@ -1552,33 +1553,36 @@ Datum isvalid(PG_FUNCTION_ARGS)
 	initGEOS(lwpgnotice, lwgeom_geos_error);
 
 	lwgeom = lwgeom_from_gserialized(geom1);
-	if ( ! lwgeom )
-	{
+	if ( ! lwgeom ){
 		lwpgerror("unable to deserialize input");
+	}else if(!FLAGS_GET_Z(lwgeom->flags)){
+		g1 = LWGEOM2GEOS(lwgeom, 0);
+		lwgeom_free(lwgeom);
+
+		if ( ! g1 )
+		{
+			/* should we drop the following
+			 * notice now that we have ST_isValidReason ?
+			 */
+			lwpgnotice("%s", lwgeom_geos_errmsg);
+			PG_RETURN_BOOL(FALSE);
+		}
+
+		result = GEOSisValid(g1);
+		GEOSGeom_destroy(g1);
+
+		if (result == 2)
+		{
+			elog(ERROR,"GEOS isvalid() threw an error!");
+			PG_RETURN_NULL(); /*never get here */
+		}
+
+		PG_FREE_IF_COPY(geom1, 0);
+		PG_RETURN_BOOL(result);
+	}else{//TODO   Проверка корректности для 3D геометрии
+		lwgeom_free(lwgeom);
+		PG_RETURN_BOOL(1);
 	}
-	g1 = LWGEOM2GEOS(lwgeom, 0);
-	lwgeom_free(lwgeom);
-
-	if ( ! g1 )
-	{
-		/* should we drop the following
-		 * notice now that we have ST_isValidReason ?
-		 */
-		lwpgnotice("%s", lwgeom_geos_errmsg);
-		PG_RETURN_BOOL(FALSE);
-	}
-
-	result = GEOSisValid(g1);
-	GEOSGeom_destroy(g1);
-
-	if (result == 2)
-	{
-		elog(ERROR,"GEOS isvalid() threw an error!");
-		PG_RETURN_NULL(); /*never get here */
-	}
-
-	PG_FREE_IF_COPY(geom1, 0);
-	PG_RETURN_BOOL(result);
 }
 
 /*

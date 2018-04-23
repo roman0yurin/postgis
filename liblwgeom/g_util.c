@@ -121,8 +121,10 @@ struct geomtype_struct geomtype_struct_array[] =
 	{ "POINTZM", POINTTYPE, 1, 1 },
 	{ "POINTZ", POINTTYPE, 1, 0 },
 	{ "POINTM", POINTTYPE, 0, 1 },
-	{ "POINT", POINTTYPE, 0, 0 }
+	{ "POINT", POINTTYPE, 0, 0 },
 
+	{ "REF3D", REF3D_TYPE, 1, 0 },
+	{ "REF3DZ", REF3D_TYPE, 1, 0 }
 };
 #define GEOMTYPE_STRUCT_ARRAY_LEN (sizeof geomtype_struct_array/sizeof(struct geomtype_struct))
 
