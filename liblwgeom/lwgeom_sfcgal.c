@@ -26,6 +26,7 @@
 #include <liblwgeom.h>
 #include "lwgeom_sfcgal.h"
 #include "postgis/CBoxUtils.h"
+#include "stdbool.h"
 
 static int SFCGAL_type_to_lwgeom_type(sfcgal_geometry_type_t type);
 static POINTARRAY* ptarray_from_SFCGAL(const sfcgal_geometry_t* geom, int force3D);
@@ -442,6 +443,112 @@ SFCGAL2LWGEOM(const sfcgal_geometry_t* geom, int force3D, int srid)
 	}
 }
 
+/**
+ * Конвертировать прямоугольное покрытие в формат SCGAL геометрии
+ **/
+static sfcgal_geometry_t *ref3dToSFCGAL(LWREF3D *ref){
+	int xDim = ref->bbox->xmin != ref->bbox->xmax;
+	int yDim = ref->bbox->ymin != ref->bbox->ymax;
+	int zDim = ref->bbox->zmin != ref->bbox->zmax;
+	int dimCount = xDim + yDim + zDim;
+	if(dimCount == 3) {
+		return c_box2SolidPolyhedron(ref->bbox, ref->srid);
+	}else if(dimCount == 2){//Плоскость
+		POINT4D points[4];
+		if(!xDim){
+			points[0].x = ref->bbox->xmin;
+			points[0].y = ref->bbox->ymin;
+			points[0].z = ref->bbox->zmin;
+
+			points[1].x = ref->bbox->xmin;
+			points[1].y = ref->bbox->ymax;
+			points[1].z = ref->bbox->zmin;
+
+			points[2].x = ref->bbox->xmin;
+			points[2].y = ref->bbox->ymax;
+			points[2].z = ref->bbox->zmax;
+
+			points[3].x = ref->bbox->xmin;
+			points[3].y = ref->bbox->ymin;
+			points[3].z = ref->bbox->zmax;
+		}else if(!yDim){
+			points[0].x = ref->bbox->xmin;
+			points[0].y = ref->bbox->ymin;
+			points[0].z = ref->bbox->zmin;
+
+			points[1].x = ref->bbox->xmax;
+			points[1].y = ref->bbox->ymin;
+			points[1].z = ref->bbox->zmin;
+
+			points[2].x = ref->bbox->xmax;
+			points[2].y = ref->bbox->ymin;
+			points[2].z = ref->bbox->zmax;
+
+			points[3].x = ref->bbox->xmin;
+			points[3].y = ref->bbox->ymin;
+			points[3].z = ref->bbox->zmax;
+		}else{
+			points[0].x = ref->bbox->xmin;
+			points[0].y = ref->bbox->ymin;
+			points[0].z = ref->bbox->zmin;
+
+			points[1].x = ref->bbox->xmax;
+			points[1].y = ref->bbox->ymin;
+			points[1].z = ref->bbox->zmin;
+
+			points[2].x = ref->bbox->xmax;
+			points[2].y = ref->bbox->ymax;
+			points[2].z = ref->bbox->zmin;
+
+			points[3].x = ref->bbox->xmin;
+			points[3].y = ref->bbox->ymax;
+			points[3].z = ref->bbox->zmin;
+		}
+		POINTARRAY *ptArray = ptarray_construct(true, false, 5);
+		for(int i = 0; i < 4; i++)
+			ptarray_set_point4d(ptArray, i, &points[i]);
+		ptarray_set_point4d(ptArray, 4, &points[0]);//Замыкающая точка
+		sfcgal_geometry_t* exterior_ring = ptarray_to_SFCGAL(ptArray, LINETYPE);
+		lwfree(ptArray);
+		return sfcgal_polygon_create_from_exterior_ring(exterior_ring);
+	}else if(dimCount == 1){//Линейный объект
+		POINT4D points[2];
+		if(xDim){
+			points[0].x = ref->bbox->xmin;
+			points[0].y = ref->bbox->ymin;
+			points[0].z = ref->bbox->zmin;
+
+			points[1].x = ref->bbox->xmax;
+			points[1].y = ref->bbox->ymin;
+			points[1].z = ref->bbox->zmin;
+		}else if(yDim){
+			points[0].x = ref->bbox->xmin;
+			points[0].y = ref->bbox->ymin;
+			points[0].z = ref->bbox->zmin;
+
+			points[1].x = ref->bbox->xmin;
+			points[1].y = ref->bbox->ymax;
+			points[1].z = ref->bbox->zmin;
+		}else{
+			points[0].x = ref->bbox->xmin;
+			points[0].y = ref->bbox->ymin;
+			points[0].z = ref->bbox->zmin;
+
+			points[1].x = ref->bbox->xmin;
+			points[1].y = ref->bbox->ymin;
+			points[1].z = ref->bbox->zmax;
+		}
+		POINTARRAY *ptArray = ptarray_construct(true, false, 2);
+		for(int i = 0; i < 2; i++)
+			ptarray_set_point4d(ptArray, i, &points[i]);
+		sfcgal_geometry_t *retGeom = ptarray_to_SFCGAL(ptArray, LINETYPE);
+		lwfree(ptArray);
+		return retGeom;
+	}else{//Точечный объект
+		return sfcgal_point_create_from_xyz(ref->bbox->xmin, ref->bbox->ymin, ref->bbox->zmin);
+	}
+}
+
 
 sfcgal_geometry_t*
 LWGEOM2SFCGAL(const LWGEOM* geom)
@@ -549,8 +656,7 @@ LWGEOM2SFCGAL(const LWGEOM* geom)
 	}
 
 	case REF3D_TYPE: {
-		const LWREF3D *ref = (const LWREF3D *)geom;
-		return c_box2SolidPolyhedron(ref->bbox, ref->srid);
+		return ref3dToSFCGAL((const LWREF3D *)geom);
 	}
 
 	default:
