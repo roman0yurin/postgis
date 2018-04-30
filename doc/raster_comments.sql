@@ -487,3 +487,5 @@ COMMENT ON FUNCTION ST_DFullyWithin(raster , raster , double precision ) IS 'arg
 
 
     COMMENT ON TYPE unionarg IS 'postgis raster type: A composite type used as input into the ST_Union function defining the bands to be processed and behavior of the UNION operation.';
+\echo Use "CREATE EXTENSION postgis" to load this file. \quit
+\echo Use "CREATE EXTENSION postgis" to load this file. \quit

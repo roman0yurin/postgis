@@ -767,3 +767,5 @@ COMMENT ON FUNCTION PostGIS_AddBBox(geometry ) IS 'args: geomA - Add bounding bo
 COMMENT ON FUNCTION PostGIS_DropBBox(geometry ) IS 'args: geomA - Drop the bounding box cache from the geometry.';
 
 COMMENT ON FUNCTION PostGIS_HasBBox(geometry ) IS 'args: geomA - Returns TRUE if the bbox of this geometry is cached, FALSE otherwise.';
+\echo Use "CREATE EXTENSION postgis" to load this file. \quit
+\echo Use "CREATE EXTENSION postgis" to load this file. \quit
