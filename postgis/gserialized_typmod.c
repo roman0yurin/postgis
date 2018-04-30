@@ -111,6 +111,9 @@ Datum postgis_typmod_out(PG_FUNCTION_ARGS)
 */
 GSERIALIZED* postgis_valid_typmod(GSERIALIZED *gser, int32_t typmod)
 {
+	/* No typmod (-1) => no preferences */
+	if (typmod <= 0) return gser;//нуль так же считаем отсутсвием ограничений
+
 	int32 geom_srid = gserialized_get_srid(gser);
 	int32 geom_type = gserialized_get_type(gser);
 	int32 geom_z = gserialized_has_z(gser);
@@ -122,8 +125,7 @@ GSERIALIZED* postgis_valid_typmod(GSERIALIZED *gser, int32_t typmod)
 
 	POSTGIS_DEBUG(2, "Entered function");
 
-	/* No typmod (-1) => no preferences */
-	if (typmod < 0) return gser;
+
 
 	POSTGIS_DEBUGF(3, "Got geom(type = %d, srid = %d, hasz = %d, hasm = %d)", geom_type, geom_srid, geom_z, geom_m);
 	POSTGIS_DEBUGF(3, "Got typmod(type = %d, srid = %d, hasz = %d, hasm = %d)", typmod_type, typmod_srid, typmod_z, typmod_m);
