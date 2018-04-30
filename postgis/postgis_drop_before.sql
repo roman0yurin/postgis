@@ -79,3 +79,4 @@ DROP FUNCTION IF EXISTS  ST_CurveToLine(geometry, integer);
 DROP FUNCTION IF EXISTS  ST_CurveToLine(geometry);
 
 DROP VIEW IF EXISTS geometry_columns; -- removed cast 2.2.0 so need to recreate
+BEGIN;

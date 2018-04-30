@@ -143,3 +143,5 @@ COMMENT ON FUNCTION topology.AsTopoJSON(topogeometry , regclass ) IS 'args: tg, 
 COMMENT ON FUNCTION topology.Equals(topogeometry , topogeometry ) IS 'args: tg1, tg2 - Returns true if two topogeometries are composed of the same topology primitives.';
 
 COMMENT ON FUNCTION topology.Intersects(topogeometry , topogeometry ) IS 'args: tg1, tg2 - Returns true if any pair of primitives from thetwo topogeometries intersect.';
+-- postgis_topology
+-- postgis_topology

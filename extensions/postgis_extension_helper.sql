@@ -126,3 +126,5 @@ BEGIN
 END
 $$
 LANGUAGE 'plpgsql' VOLATILE STRICT;
+\echo Use "CREATE EXTENSION postgis" to load this file. \quit
+-- postgis_topology
