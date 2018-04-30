@@ -17,3 +17,4 @@
 -- during upgrade
 SELECT postgis_extension_remove_objects('postgis_topology', 'FUNCTION');
 SELECT postgis_extension_remove_objects('postgis_topology', 'AGGREGATE');
+-- postgis_topology

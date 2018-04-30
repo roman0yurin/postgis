@@ -16,3 +16,5 @@
 DROP FUNCTION postgis_extension_remove_objects(text, text);
 DROP FUNCTION postgis_extension_drop_if_exists(text, text);
 DROP FUNCTION postgis_extension_AddToSearchPath(varchar);
+\echo Use "CREATE EXTENSION postgis" to load this file. \quit
+-- postgis_topology

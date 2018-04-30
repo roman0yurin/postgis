@@ -75,3 +75,4 @@ DROP FUNCTION IF EXISTS pgis_asgeobuf_transfn(internal, text, anyelement);
 DROP FUNCTION IF EXISTS pgis_asmvt_transfn(internal, text, int4, text, anyelement);
 
 DROP VIEW IF EXISTS geometry_columns; -- removed cast 2.2.0 so need to recreate
+BEGIN;

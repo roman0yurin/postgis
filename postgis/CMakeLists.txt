@@ -153,6 +153,11 @@ if(POSTGIS_WITH_SFCGAL)
 
     # configure_file(sfcgal.sql.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/sfcgal.sql)
     sqlin2sql(sfcgal.sql.in ${CMAKE_CURRENT_BINARY_DIR}/sfcgal.sql)
+    # Добавлем набор 3D функций в станартное расширение
+    append_file(
+            ${CMAKE_CURRENT_BINARY_DIR}/postgis.sql
+            ${CMAKE_CURRENT_BINARY_DIR}/sfcgal.sql
+    )
 
     #sfcgal_upgrade.sql.in: sfcgal.sql ../utils/postgis_proc_upgrade.pl
 	#$(PERL) ../utils/postgis_proc_upgrade.pl $< UNUSED > $@
