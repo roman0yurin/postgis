@@ -26,6 +26,7 @@
 #include "lwgeom_log.h"
 #include <stdlib.h>
 #include <math.h>
+#include <liblwgeom.h>
 
 /* Fall back to older finite() if necessary */
 #ifndef HAVE_ISFINITE
@@ -703,6 +704,8 @@ int lwgeom_calculate_gbox_cartesian(const LWGEOM *lwgeom, GBOX *gbox)
 	case TINTYPE:
 	case COLLECTIONTYPE:
 		return lwcollection_calculate_gbox_cartesian((LWCOLLECTION *)lwgeom, gbox);
+	case REF3D_TYPE:
+		return gbox_merge(((LWREF3D *)lwgeom)->bbox, gbox);
 	}
 	/* Never get here, please. */
 	lwerror("unsupported type (%d) - %s", lwgeom->type, lwtype_name(lwgeom->type));
