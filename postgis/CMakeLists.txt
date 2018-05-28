@@ -220,7 +220,7 @@ set(HHEADERS
 get_property(LIBRTPOSTGIS_INCLUDE_DIRS GLOBAL PROPERTY LIBRTPOSTGIS_INCLUDE_DIRS)
 get_property(RT_PG_SRC GLOBAL PROPERTY RT_PG_SRC)
 get_property(RT_CORE_HEADERS_DIRS GLOBAL PROPERTY RT_CORE_HEADERS_DIRS)
-#include_directories(${LIBRTPOSTGIS_INCLUDE_DIRS} ${RT_CORE_HEADERS_DIRS})
+file(GLOB_RECURSE C60_SRC ../liblwgeom/c60/*.cpp)
 set(CSOURCES
   postgis_module.c
   lwgeom_accum.c
@@ -271,6 +271,7 @@ set(CSOURCES
   lwgeom_out_mvt.c
   mvt.c
   postgis_libprotobuf.c
+  ${C60_SRC}
 )
 
 
