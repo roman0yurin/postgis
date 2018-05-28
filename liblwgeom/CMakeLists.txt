@@ -25,14 +25,16 @@
 # DEALINGS IN THE SOFTWARE.
 ################################################################################
 
-project(lwgeom C)
+project(lwgeom C CXX)
 
 configure_file(liblwgeom.h.in ${CMAKE_CURRENT_BINARY_DIR}/liblwgeom.h)
 
 set_property(GLOBAL PROPERTY LIBLWGEOM_INCLUDE_DIRS
   ${CMAKE_CURRENT_BINARY_DIR}
-  ${CMAKE_CURRENT_SOURCE_DIR})
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
+  ${CMAKE_CURRENT_SOURCE_DIR}
+)
+include_directories(${CMAKE_CURRENT_BINARY_DIR} c60)
+file(GLOB_RECURSE C60_SRC c60/*.cpp)
 
 check_lwgeom_version(LIBLWGEOM_ABI_MAJOR LIBLWGEOM_ABI_MINOR LIBLWGEOM_ABI_PATCH)
 
@@ -134,7 +136,11 @@ set(CSOURCES
 	lwgeom_median.c
 	lwkmeans.c
 	kmeans.c
-		lwref3d.c)
+	lwref3d.c
+	${C60_SRC}
+		)
+
+
 
 set(LIB_NAME ${PROJECT_NAME})
 #set_property(GLOBAL PROPERTY LIB_NAME_LWGEOM ${LIB_NAME})

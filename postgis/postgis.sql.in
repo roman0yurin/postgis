@@ -6122,6 +6122,28 @@ GRANT SELECT ON TABLE geometry_columns TO public;
 GRANT SELECT ON TABLE spatial_ref_sys TO public;
 
 
+--C60 FUNCTIONS --------------------------------------------------------------------------
+
+
+-- Get Geometry BOX without full reading and allocations.
+-- Availability: 2.3.0
+CREATE OR REPLACE FUNCTION getBBOX3D(geometry)
+	RETURNS box3d
+	AS 'MODULE_PATHNAME', 'c60_getBBOX3D'
+	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
+
+
+-- Fast get Geometry data size in bytes (without full data read).
+-- Availability: 2.3.0
+CREATE OR REPLACE FUNCTION getGeomByteLen(geometry)
+	RETURNS int4
+	AS 'MODULE_PATHNAME', 'c60_getGeomByteLen'
+	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
+
+
+--END C60 FUNCTIONS ----------------------------------------------------------------------
+
+
 -- moved to separate file cause its invovled
 #include "postgis_spgist.sql.in"
 
