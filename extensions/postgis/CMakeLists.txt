@@ -58,6 +58,9 @@ if(POSTGIS_WITH_RASTER)
     )
 endif()
 
+get_property(db_extensions_sql GLOBAL PROPERTY db_extensions_sql)
+set(APPEND_POSTGIS ${APPEND_POSTGIS} ${db_extensions_sql})
+
 foreach(APPEND_FILE ${APPEND_POSTGIS})
     append_file(${CMAKE_CURRENT_BINARY_DIR}/sql/postgis.sql
                 ${APPEND_FILE})
