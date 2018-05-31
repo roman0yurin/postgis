@@ -1228,6 +1228,9 @@ int lwgeom_count_vertices(const LWGEOM *geom)
 	case COLLECTIONTYPE:
 		result = lwcollection_count_vertices((LWCOLLECTION *)geom);
 		break;
+	case REF3D_TYPE:
+		result = 8;
+		break;
 	default:
 		lwerror("%s: unsupported input geometry type: %s",
 		        __func__, lwtype_name(geom->type));

@@ -68,6 +68,7 @@ lwgeom_has_arc(const LWGEOM *geom)
 	case MULTILINETYPE:
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
+	case REF3D_TYPE:
 	case TINTYPE:
 		return LW_FALSE;
 	case CIRCSTRINGTYPE:
