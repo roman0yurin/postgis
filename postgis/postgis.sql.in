@@ -6141,6 +6141,14 @@ CREATE OR REPLACE FUNCTION getGeomByteLen(geometry)
 	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
 
 
+-- Get Geometry BOX without full reading and allocations.
+-- Availability: 2.3.0
+CREATE OR REPLACE FUNCTION getMbrCentroid3D(geometry)
+	RETURNS geometry
+	AS 'MODULE_PATHNAME', 'c60_getMbrCentroid3D'
+	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
+
+
 --END C60 FUNCTIONS ----------------------------------------------------------------------
 
 

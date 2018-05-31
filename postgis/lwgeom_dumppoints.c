@@ -22,6 +22,7 @@
  *
  **********************************************************************/
 
+#include <liblwgeom.h>
 #include "postgres.h"
 #include "fmgr.h"
 #include "utils/elog.h"
@@ -160,6 +161,7 @@ Datum LWGEOM_dumppoints(PG_FUNCTION_ARGS) {
 			LWPOLY	*poly;
 			LWTRIANGLE	*tri;
 			LWPOINT *lwpoint = NULL;
+			LWREF3D *ref;
 			POINT4D	pt;
 
 			/*
@@ -228,6 +230,19 @@ Datum LWGEOM_dumppoints(PG_FUNCTION_ARGS) {
 					circ = lwgeom_as_lwcircstring(lwgeom);
 					if (circ->points && state->pt <= circ->points->npoints) {
 						lwpoint = lwcircstring_get_lwpoint((LWCIRCSTRING*)lwgeom, state->pt);
+					}
+					break;
+				case REF3D_TYPE:
+					if (state->pt < 8) {
+						ref = lwgeom_as_ref3d(lwgeom);
+						lwpoint = lwpoint_make3dz(
+								ref->srid,
+								(state->pt & 0x1) ? ref->bbox->xmax : ref->bbox->xmin,
+								(state->pt & 0x2) ? ref->bbox->ymax : ref->bbox->ymin,
+								(state->pt & 0x4) ? ref->bbox->zmax : ref->bbox->zmin
+						);
+					}else{
+						state->pathlen--;
 					}
 					break;
 				default:
