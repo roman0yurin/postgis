@@ -705,7 +705,8 @@ int lwgeom_calculate_gbox_cartesian(const LWGEOM *lwgeom, GBOX *gbox)
 	case COLLECTIONTYPE:
 		return lwcollection_calculate_gbox_cartesian((LWCOLLECTION *)lwgeom, gbox);
 	case REF3D_TYPE:
-		return gbox_merge(((LWREF3D *)lwgeom)->bbox, gbox);
+		gbox_duplicate(((LWREF3D *)lwgeom)->bbox, gbox);
+		return LW_TRUE;
 	}
 	/* Never get here, please. */
 	lwerror("unsupported type (%d) - %s", lwgeom->type, lwtype_name(lwgeom->type));
