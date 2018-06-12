@@ -24,7 +24,27 @@ extern "C"{
 			BOX3D *box3d = box3d_from_gbox(&bbox);
 			PG_RETURN_POINTER(box3d);
 		}else{
+			PG_RETURN_NULL();
+		}
+	}
 
+	/**
+	 * Быстрое извлечение средневзвешенного размера коробки (корень куб. от объема)
+	 * Читает только заголовок геометрии. Работает с 2D и 3D
+	 **/
+	PG_FUNCTION_INFO_V1(c60_getBBoxSize);
+	Datum c60_getBBoxSize(PG_FUNCTION_ARGS){
+		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
+		GBOX bbox;
+		if ( gserialized_read_gbox_p(geom, &bbox) == LW_SUCCESS ){
+			if(FLAGS_GET_Z(bbox.flags)){
+				double volume = (bbox.xmax - bbox.xmin) * (bbox.ymax - bbox.ymin) * (bbox.zmax - bbox.zmin);
+				PG_RETURN_FLOAT8(pow(volume, 1.0/3));
+			}else{
+				double square = (bbox.xmax - bbox.xmin) * (bbox.ymax - bbox.ymin);
+				PG_RETURN_FLOAT8(sqrt(square));
+			}
+		}else{
 			PG_RETURN_NULL();
 		}
 	}
