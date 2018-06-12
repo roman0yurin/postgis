@@ -6133,6 +6133,14 @@ CREATE OR REPLACE FUNCTION getBBOX3D(geometry)
 	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
 
 
+-- Get Geometry linear size (by bbox volume) without full reading and allocations.
+-- Availability: 2.3.0
+CREATE OR REPLACE FUNCTION getBBoxSize(geometry)
+    RETURNS float8
+    AS 'MODULE_PATHNAME', 'c60_getBBoxSize'
+    LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
+
+
 -- Fast get Geometry data size in bytes (without full data read).
 -- Availability: 2.3.0
 CREATE OR REPLACE FUNCTION getGeomByteLen(geometry)
