@@ -6154,6 +6154,12 @@ CREATE OR REPLACE FUNCTION getMbrCentroid3D(geometry)
 	AS 'MODULE_PATHNAME', 'c60_getMbrCentroid3D'
 	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
 
+-- Availability: 2.3.0
+CREATE OR REPLACE FUNCTION isRef3D(geometry)
+	RETURNS bool
+	AS 'MODULE_PATHNAME', 'c60_isRef3D'
+	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL
+    COST 10;
 
 --END C60 FUNCTIONS ----------------------------------------------------------------------
 

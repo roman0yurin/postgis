@@ -49,6 +49,13 @@ extern "C"{
 		}
 	}
 
+	/**Быстрое определение, что геометрия является REF3D **/
+	PG_FUNCTION_INFO_V1(c60_isRef3D);
+	Datum c60_isRef3D(PG_FUNCTION_ARGS){
+		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
+		PG_RETURN_BOOL(geom && geom->size < 200 && gserialized_get_type(geom) == REF3D_TYPE); //У Ref3D размер данных всегда 160, если больше 200 значит это другая геометрия
+	}
+
 	/**
 	* Получает геометрию.
 	* Возвращает объем данных содержащихся в ней без полного чтения и аллокаций.
