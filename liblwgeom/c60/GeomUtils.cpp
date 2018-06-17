@@ -29,6 +29,27 @@ extern "C"{
 	}
 
 	/**
+	 * Превращает любую геометрию в Ref3D с нулевым ID
+	 **/
+	PG_FUNCTION_INFO_V1(c60_toRef3d);
+	Datum c60_toRef3d(PG_FUNCTION_ARGS){
+		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
+		GBOX bbox;
+		if ( gserialized_read_gbox_p(geom, &bbox) == LW_SUCCESS ){
+			LWREF3D result;
+			result.type = REF3D_TYPE;
+			result.bbox = &bbox;
+			result.refId = 0;
+			result.flags = geom->flags;
+			result.srid = gserialized_get_srid(geom);
+			GSERIALIZED *sresult = geometry_serialize(lwref3d_as_lwgeom(&result));
+			PG_RETURN_POINTER(sresult);
+		}else{
+			PG_RETURN_NULL();
+		}
+	}
+
+	/**
 	 * Быстрое извлечение средневзвешенного размера коробки (корень куб. от объема)
 	 * Читает только заголовок геометрии. Работает с 2D и 3D
 	 **/
