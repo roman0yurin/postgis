@@ -6130,6 +6130,13 @@ CREATE OR REPLACE FUNCTION getBBOX3D(geometry)
 	AS 'MODULE_PATHNAME', 'c60_getBBOX3D'
 	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
 
+-- Get Geometry BOX (Ref3d) without full reading and allocations.
+-- Availability: 2.3.0
+CREATE OR REPLACE FUNCTION toRef3d(geometry)
+    RETURNS geometry
+    AS 'MODULE_PATHNAME', 'c60_toRef3d'
+    LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
+
 
 -- Get Geometry linear size (by bbox volume) without full reading and allocations.
 -- Availability: 2.3.0
