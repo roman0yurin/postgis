@@ -55,11 +55,9 @@ extern "C"{
 	 **/
 	PG_FUNCTION_INFO_V1(c60_getBBoxSize);
 	Datum c60_getBBoxSize(PG_FUNCTION_ARGS){
-		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM_SLICE(PG_GETARG_POINTER(0), 0, 72); //Максимальная коробка 8x8 байт и загголовок 8
+		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
 		GBOX bbox;
-		bool succ = gserialized_read_gbox_p(geom, &bbox) == LW_SUCCESS;
-		PG_FREE_IF_COPY(geom, 0);
-		if ( succ ){
+		if ( gserialized_read_gbox_p(geom, &bbox) == LW_SUCCESS ){
 			if(FLAGS_GET_Z(bbox.flags)){
 				double volume = (bbox.xmax - bbox.xmin) * (bbox.ymax - bbox.ymin) * (bbox.zmax - bbox.zmin);
 				PG_RETURN_FLOAT8(pow(volume, 1.0/3));
@@ -75,10 +73,8 @@ extern "C"{
 	/**Быстрое определение, что геометрия является REF3D **/
 	PG_FUNCTION_INFO_V1(c60_isRef3D);
 	Datum c60_isRef3D(PG_FUNCTION_ARGS){
-		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM_SLICE(PG_GETARG_POINTER(0), 0, 76); //С учетом того, что перед типом может быть коробка из 8 double и заголовок GSERIALIZED 8 байт и сам тип 4 байта
-		bool result = gserialized_get_type(geom) == REF3D_TYPE; //У Ref3D размер данных всегда 160, если больше 200 значит это другая геометрия
-		PG_FREE_IF_COPY(geom, 0);
-		PG_RETURN_BOOL(result);
+		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
+		PG_RETURN_BOOL(geom && geom->size < 200 && gserialized_get_type(geom) == REF3D_TYPE); //У Ref3D размер данных всегда 160, если больше 200 значит это другая геометрия
 	}
 
 	/**
@@ -88,10 +84,8 @@ extern "C"{
 	*/
 	PG_FUNCTION_INFO_V1(c60_getGeomByteLen);
 	Datum c60_getGeomByteLen(PG_FUNCTION_ARGS){
-		GSERIALIZED *geomHead = (GSERIALIZED *)PG_DETOAST_DATUM_SLICE(PG_GETARG_DATUM(0), 0, 4);
-		uint32_t sz = geomHead->size;
-		PG_FREE_IF_COPY(geomHead, 0);
-		PG_RETURN_INT32(sz);
+		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
+		PG_RETURN_INT32(geom->size);
 	}
 
 	/**
