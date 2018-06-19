@@ -14,7 +14,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_C_STANDARD 11)
 
 #модульные зависимости Postgis
-set(POSTGIS_SUBMODULES pq geos-static geos_c geos-static gdal proj4 sfcgal CGAL CGAL_Core CGAL_ImageIO)
+set(POSTGIS_SUBMODULES pq geos-static geos_c gdal proj4 sfcgal CGAL CGAL_Core CGAL_ImageIO)
 
 #Устанавливаем корневые папки для модуля CGAL
 set(CMAKE_POSTGIS_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
@@ -229,7 +229,7 @@ add_subdirectory(postgis)
 add_subdirectory(extensions)
 
 #set(TARGET_LINK_LIB ${TARGET_LINK_LIB} ${PostgreSQL_LIBRARIES})
-add_subdirectory(loader)
+#add_subdirectory(loader)
 
 ################################################################################
 # uninstall
