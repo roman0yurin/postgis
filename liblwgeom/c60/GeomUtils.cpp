@@ -22,8 +22,10 @@ extern "C"{
 		GBOX bbox;
 		if ( gserialized_read_gbox_p(geom, &bbox) == LW_SUCCESS ){
 			BOX3D *box3d = box3d_from_gbox(&bbox);
+			PG_FREE_IF_COPY(geom, 0);
 			PG_RETURN_POINTER(box3d);
 		}else{
+			PG_FREE_IF_COPY(geom, 0);
 			PG_RETURN_NULL();
 		}
 	}
@@ -43,8 +45,10 @@ extern "C"{
 			result.flags = geom->flags;
 			result.srid = gserialized_get_srid(geom);
 			GSERIALIZED *sresult = geometry_serialize(lwref3d_as_lwgeom(&result));
+			PG_FREE_IF_COPY(geom, 0);
 			PG_RETURN_POINTER(sresult);
 		}else{
+			PG_FREE_IF_COPY(geom, 0);
 			PG_RETURN_NULL();
 		}
 	}
@@ -58,6 +62,7 @@ extern "C"{
 		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
 		GBOX bbox;
 		if ( gserialized_read_gbox_p(geom, &bbox) == LW_SUCCESS ){
+			PG_FREE_IF_COPY(geom, 0);
 			if(FLAGS_GET_Z(bbox.flags)){
 				double volume = (bbox.xmax - bbox.xmin) * (bbox.ymax - bbox.ymin) * (bbox.zmax - bbox.zmin);
 				PG_RETURN_FLOAT8(pow(volume, 1.0/3));
@@ -66,6 +71,7 @@ extern "C"{
 				PG_RETURN_FLOAT8(sqrt(square));
 			}
 		}else{
+			PG_FREE_IF_COPY(geom, 0);
 			PG_RETURN_NULL();
 		}
 	}
@@ -74,7 +80,9 @@ extern "C"{
 	PG_FUNCTION_INFO_V1(c60_isRef3D);
 	Datum c60_isRef3D(PG_FUNCTION_ARGS){
 		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
-		PG_RETURN_BOOL(geom && geom->size < 200 && gserialized_get_type(geom) == REF3D_TYPE); //У Ref3D размер данных всегда 160, если больше 200 значит это другая геометрия
+		bool result = geom && geom->size < 200 && gserialized_get_type(geom) == REF3D_TYPE;
+		PG_FREE_IF_COPY(geom, 0);
+		PG_RETURN_BOOL(result); //У Ref3D размер данных всегда 160, если больше 200 значит это другая геометрия
 	}
 
 	/**
@@ -85,7 +93,9 @@ extern "C"{
 	PG_FUNCTION_INFO_V1(c60_getGeomByteLen);
 	Datum c60_getGeomByteLen(PG_FUNCTION_ARGS){
 		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
-		PG_RETURN_INT32(geom->size);
+		int32_t result = geom->size;
+		PG_FREE_IF_COPY(geom, 0);
+		PG_RETURN_INT32(result);
 	}
 
 	/**
@@ -106,9 +116,10 @@ extern "C"{
 			);
 			GSERIALIZED *result = geometry_serialize(lwpoint_as_lwgeom(center));
 			lwpoint_free(center);
+			PG_FREE_IF_COPY(geom, 0);
 			PG_RETURN_POINTER(result);
 		}else{
-
+			PG_FREE_IF_COPY(geom, 0);
 			PG_RETURN_NULL();
 		}
 	}
