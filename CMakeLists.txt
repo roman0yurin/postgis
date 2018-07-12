@@ -13,6 +13,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_C_STANDARD 11)
 
+get_property(POSTGRES_SRC_DIR GLOBAL PROPERTY POSTGRES_SRC_DIR)
+get_property(POSTGRES_BIN_DIR GLOBAL PROPERTY POSTGRES_BIN_DIR)
+
 #модульные зависимости Postgis
 set(POSTGIS_SUBMODULES pq geos-static geos_c gdal proj4 sfcgal CGAL CGAL_Core CGAL_ImageIO)
 
@@ -92,9 +95,8 @@ set(WITH_POSTGRESQL ON)
 set(POSTGIS_POSTGRESQL_VERSION 103)
 set(PGSQL_VERSION_MAJOR 10)
 set(PGSQL_VERSION_MINOR 3)
-get_property(POSTGRES_INCLUDE_DIRS GLOBAL PROPERTY POSTGRES_INCLUDE_DIRS)
 get_property(PGSQL_INCLUDEDIR GLOBAL PROPERTY POSTGRES_INCLUDE_ROOT)
-include_directories(${POSTGRES_INCLUDE_DIRS})
+include_directories(${POSTGRES_SRC_DIR}/src/include ${POSTGRES_SRC_DIR}/src/interfaces/libpq)
 set(PGSQL_INCLUDEDIR_SERVER ${PGSQL_INCLUDEDIR}/server)
 
 set(HAVE_LIBPQ 1)
@@ -239,8 +241,3 @@ add_custom_target(uninstall_postgis COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_
 if(NOT SUPPRESS_VERBOSE_OUTPUT)
     include(summary)
 endif()
-
-add_custom_target(installPostgisDb
-        COMMAND ${check_make_command} install -j 8
-        DEPENDS postgis
-)
