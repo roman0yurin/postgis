@@ -203,7 +203,7 @@ endif()
 
 
 if(NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL )
-    install(FILES ${HHEADERS_PUB} DESTINATION "${INSTALL_INC_DIR}" COMPONENT headers)
+    install(FILES ${HHEADERS_PUB} DESTINATION "include" COMPONENT headers)
 endif()
 ##################### Генерация файлов парсера ##############
 find_package(BISON REQUIRED)
