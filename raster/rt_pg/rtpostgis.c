@@ -150,10 +150,10 @@
 PG_MODULE_MAGIC;
 
 /* Module load callback */
-void _PG_init(void);
+PGDLLEXPORT void _PG_init(void);
 
 /* Module unload callback */
-void _PG_fini(void);
+PGDLLEXPORT void _PG_fini(void);
 
 #define RT_MSG_MAXLEN 256
 

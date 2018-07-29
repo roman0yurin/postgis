@@ -17,7 +17,7 @@ get_property(POSTGRES_SRC_DIR GLOBAL PROPERTY POSTGRES_SRC_DIR)
 get_property(POSTGRES_BIN_DIR GLOBAL PROPERTY POSTGRES_BIN_DIR)
 
 #модульные зависимости Postgis
-set(POSTGIS_SUBMODULES pq geos-static geos_c gdal proj4 sfcgal CGAL CGAL_Core CGAL_ImageIO)
+set(POSTGIS_SUBMODULES postgres pq geos-static geos_c gdal proj4 sfcgal CGAL CGAL_Core CGAL_ImageIO)
 
 #Устанавливаем корневые папки для модуля CGAL
 set(CMAKE_POSTGIS_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
@@ -43,7 +43,7 @@ option(POSTGIS_WITH_SFCGAL
     "Set ON|OFF (default=OFF) to control building SFCGAL extension" ON)
 
 option(POSTGIS_WITH_ADDRESS_STD
-    "Set ON|OFF (default=ON) to control building address standardizer extension" ON)
+    "Set ON|OFF (default=ON) to control building address standardizer extension" OFF)
 
 option(POSTGIS_WITH_RASTER_WARN_ON_TRUNCATION
     "Set ON|OFF (default=OFF) to control warning outputted every time a double is truncated" OFF)
@@ -175,6 +175,7 @@ include_directories(${CMAKE_POSTGIS_SOURCE_DIR})
 
 if(WIN32)
     add_definitions(-DDLL_EXPORT)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lpsapi")
 else()
   # Warnings specification
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wmissing-prototypes")

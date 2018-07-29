@@ -29,6 +29,10 @@
 #ifndef LWGEOM_LOG_H
 #define LWGEOM_LOG_H 1
 
+#ifdef __MINGW32__
+#       define DBL_EPSILON __DBL_EPSILON__
+#endif
+
 #include <stdarg.h>
 
 /*
