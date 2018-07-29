@@ -27,7 +27,12 @@
 project(postgis C CXX)
 
 set(LIB_NAME ${PROJECT_NAME})
-set(MODULE_PATHNAME "\$libdir/${LIB_NAME}-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}")
+if(WIN32)
+    set(MODULE_PATHNAME "\$libdir/lib${LIB_NAME}${POSTGIS_MAJOR_VERSION}${POSTGIS_MINOR_VERSION}")
+else()
+    set(MODULE_PATHNAME "\$libdir/${LIB_NAME}-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}")
+endif()
+
 
 configure_file(sqldefines.h.in ${CMAKE_CURRENT_SOURCE_DIR}/sqldefines.h) # +
 
@@ -36,7 +41,7 @@ macro(sqlin2sql sqlin sql)
     COMMAND "${CMAKE_C_COMPILER}" -w -x c -E ${sqlin} -I ../libpgcommon
     COMMAND grep -v "^#"
     COMMAND "${PERL_EXECUTABLE}" -lpe
-      "s'MODULE_PATHNAME'\$libdir/postgis-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}'g"
+      "s'MODULE_PATHNAME'${MODULE_PATHNAME}'g"
     OUTPUT_FILE ${sql}
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
   )
@@ -312,10 +317,13 @@ if(PROTOBUF_FOUND)
     )
 endif()
 
+message("============= POSTGIS ${LIB_NAME} SOURCES ${CSOURCES}")
 add_library(${LIB_NAME} SHARED
   ${CSOURCES}
   ${HHEADERS}
 )
+
+target_link_libraries(${LIB_NAME}  postgres CGAL)
 if(PROTOBUF_FOUND)
     target_link_libraries(${LIB_NAME}  ${Protobuf_LIBRARIES})
 endif()

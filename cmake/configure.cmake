@@ -132,16 +132,19 @@ endif()
 
 find_package(BISON)
 find_package(FLEX)
+message("========== FF:${FLEX_FOUND}")
 if(FLEX_FOUND)
-    execute_process(COMMAND ${FLEX_EXECUTABLE} -o ${CMAKE_POSTGIS_BINARY_DIR}/lexyy.c
-                            ${CMAKE_POSTGIS_SOURCE_DIR}/cmake/lex_test.l)
+    #На винде проявляется баг - пробел между -o и названием файла недопустим.
+    execute_process(COMMAND "${FLEX_EXECUTABLE}" "-o${CMAKE_POSTGIS_BINARY_DIR}/lexyy.c"
+                            "${CMAKE_POSTGIS_SOURCE_DIR}/cmake/lex_test.l")
+
 
     try_compile(YYTEXT_POINTER
       ${CMAKE_POSTGIS_BINARY_DIR}
       ${CMAKE_POSTGIS_BINARY_DIR}/lexyy.c
       LINK_LIBRARIES ${FLEX_LIBRARIES}
       COMPILE_DEFINITIONS  "-DYYTEXT_POINTER=1"
-      CMAKE_FLAGS "-DINCLUDE_DIRECTORIES:STRING=${FLEX_INCLUDE_DIRS}")
+      CMAKE_FLAGS "-DINCLUDE_DIRECTORIES:STRING=\"${FLEX_INCLUDE_DIRS}\"")
 
 endif()
 

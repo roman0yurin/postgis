@@ -24,13 +24,19 @@
 # DEALINGS IN THE SOFTWARE.
 ################################################################################
 project(postgis_topology C)
+set(LIB_NAME ${PROJECT_NAME})
+if(WIN32)
+    set(MODULE_PATHNAME "\$libdir/lib${LIB_NAME}${POSTGIS_MAJOR_VERSION}${POSTGIS_MINOR_VERSION}")
+else()
+    set(MODULE_PATHNAME "\$libdir/${LIB_NAME}-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}")
+endif()
 
 macro(sqlin2sql sqlin sql)
   execute_process(
     COMMAND "${CMAKE_C_COMPILER}" -w -x c -E ${sqlin}
     COMMAND grep -v "^#"
     COMMAND "${PERL_EXECUTABLE}" -lpe
-      "s'MODULE_PATHNAME'\$libdir/postgis_topology-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}'g"
+      "s'MODULE_PATHNAME'${MODULE_PATHNAME}'g"
     OUTPUT_FILE ${sql}
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
   )
@@ -41,8 +47,6 @@ set_property(GLOBAL PROPERTY LIBTOPOLOGY_INCLUDE_DIRS
   ${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-set(LIB_NAME ${PROJECT_NAME})
-set(MODULE_PATHNAME "\$libdir/${LIB_NAME}-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}")
 
 
 file(READ "${CMAKE_CURRENT_SOURCE_DIR}/sql/manage/TopologySummary.sql.in" TOPOLOGYSUMMARY_CONTENT)

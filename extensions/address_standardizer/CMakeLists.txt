@@ -28,7 +28,11 @@ project(address_standardizer C CXX)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH})
 
 set(LIB_NAME ${PROJECT_NAME})
-set(MODULE_PATHNAME "\$libdir/${LIB_NAME}-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}")
+if(WIN32)
+	set(MODULE_PATHNAME "\$libdir/lib${LIB_NAME}${POSTGIS_MAJOR_VERSION}${POSTGIS_MINOR_VERSION}")
+else()
+	set(MODULE_PATHNAME "\$libdir/${LIB_NAME}-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}")
+endif()
 
 configure_file(address_standardizer.control.in ${CMAKE_CURRENT_BINARY_DIR}/address_standardizer.control)
 configure_file(address_standardizer_types.sql.in ${CMAKE_CURRENT_BINARY_DIR}/address_standardizer_types.sql)

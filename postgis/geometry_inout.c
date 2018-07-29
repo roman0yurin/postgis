@@ -30,7 +30,6 @@
 #include "liblwgeom.h"         /* For standard geometry types. */
 #include "lwgeom_pg.h"       /* For debugging macros. */
 
-
 Datum geometry_to_point(PG_FUNCTION_ARGS);
 Datum point_to_geometry(PG_FUNCTION_ARGS);
 Datum geometry_to_path(PG_FUNCTION_ARGS);

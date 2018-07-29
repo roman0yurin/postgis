@@ -54,7 +54,7 @@ static void interruptCallback() {
 /*
  * Module load callback
  */
-void _PG_init(void);
+PGDLLEXPORT void _PG_init(void);
 void
 _PG_init(void)
 {
@@ -111,7 +111,7 @@ _PG_init(void)
 /*
  * Module unload callback
  */
-void _PG_fini(void);
+PGDLLEXPORT void _PG_fini(void);
 void
 _PG_fini(void)
 {
