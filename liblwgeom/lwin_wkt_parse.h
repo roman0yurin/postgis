@@ -1,20 +1,19 @@
-/* A Bison parser, made by GNU Bison 2.4.2.  */
+/* A Bison parser, made by GNU Bison 3.0.4.  */
 
-/* Skeleton interface for Bison's Yacc-like parsers in C
-   
-      Copyright (C) 1984, 1989-1990, 2000-2006, 2009-2010 Free Software
-   Foundation, Inc.
-   
+/* Bison interface for Yacc-like parsers in C
+
+   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
+
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
    (at your option) any later version.
-   
+
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-   
+
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
@@ -27,54 +26,60 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-   
+
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-
-/* Tokens.  */
-#ifndef YYTOKENTYPE
-# define YYTOKENTYPE
-   /* Put the tokens into the symbol table, so that GDB and other debuggers
-      know about them.  */
-   enum yytokentype {
-     POINT_TOK = 258,
-     LINESTRING_TOK = 259,
-     POLYGON_TOK = 260,
-     MPOINT_TOK = 261,
-     MLINESTRING_TOK = 262,
-     MPOLYGON_TOK = 263,
-     MSURFACE_TOK = 264,
-     MCURVE_TOK = 265,
-     CURVEPOLYGON_TOK = 266,
-     COMPOUNDCURVE_TOK = 267,
-     CIRCULARSTRING_TOK = 268,
-     COLLECTION_TOK = 269,
-     RBRACKET_TOK = 270,
-     LBRACKET_TOK = 271,
-     COMMA_TOK = 272,
-     EMPTY_TOK = 273,
-     SEMICOLON_TOK = 274,
-     TRIANGLE_TOK = 275,
-     TIN_TOK = 276,
-     POLYHEDRALSURFACE_TOK = 277,
-     REF3D_TOK = 278,
-     REF_ID_TOK = 279,
-     REF_BOX_TOK = 280,
-     DOUBLE_TOK = 281,
-     DIMENSIONALITY_TOK = 282,
-     SRID_TOK = 283
-   };
+#ifndef YY_WKT_YY_MEDIA_SSD2_PROJECTS_TRUNK_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+# define YY_WKT_YY_MEDIA_SSD2_PROJECTS_TRUNK_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+/* Debug traces.  */
+#ifndef YYDEBUG
+# define YYDEBUG 0
+#endif
+#if YYDEBUG
+extern int wkt_yydebug;
 #endif
 
+/* Token type.  */
+#ifndef YYTOKENTYPE
+# define YYTOKENTYPE
+  enum yytokentype
+  {
+    POINT_TOK = 258,
+    LINESTRING_TOK = 259,
+    POLYGON_TOK = 260,
+    MPOINT_TOK = 261,
+    MLINESTRING_TOK = 262,
+    MPOLYGON_TOK = 263,
+    MSURFACE_TOK = 264,
+    MCURVE_TOK = 265,
+    CURVEPOLYGON_TOK = 266,
+    COMPOUNDCURVE_TOK = 267,
+    CIRCULARSTRING_TOK = 268,
+    COLLECTION_TOK = 269,
+    RBRACKET_TOK = 270,
+    LBRACKET_TOK = 271,
+    COMMA_TOK = 272,
+    EMPTY_TOK = 273,
+    SEMICOLON_TOK = 274,
+    TRIANGLE_TOK = 275,
+    TIN_TOK = 276,
+    POLYHEDRALSURFACE_TOK = 277,
+    REF3D_TOK = 278,
+    REF_ID_TOK = 279,
+    REF_BOX_TOK = 280,
+    DOUBLE_TOK = 281,
+    DIMENSIONALITY_TOK = 282,
+    SRID_TOK = 283
+  };
+#endif
 
-
+/* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE
-{
 
-/* Line 1685 of yacc.c  */
-#line 108 "lwin_wkt_parse.y"
+union YYSTYPE
+{
+#line 108 "lwin_wkt_parse.y" /* yacc.c:1909  */
 
 	int integervalue;
 	double doublevalue;
@@ -83,30 +88,31 @@ typedef union YYSTYPE
 	POINT coordinatevalue;
 	POINTARRAY *ptarrayvalue;
 
+#line 92 "/media/ssd2/projects/trunk_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.h" /* yacc.c:1909  */
+};
 
-
-/* Line 1685 of yacc.c  */
-#line 90 "C:/db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.h"
-} YYSTYPE;
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
-# define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 #endif
 
-extern YYSTYPE wkt_yylval;
-
+/* Location type.  */
 #if ! defined YYLTYPE && ! defined YYLTYPE_IS_DECLARED
-typedef struct YYLTYPE
+typedef struct YYLTYPE YYLTYPE;
+struct YYLTYPE
 {
   int first_line;
   int first_column;
   int last_line;
   int last_column;
-} YYLTYPE;
-# define yyltype YYLTYPE /* obsolescent; will be withdrawn */
+};
 # define YYLTYPE_IS_DECLARED 1
 # define YYLTYPE_IS_TRIVIAL 1
 #endif
 
-extern YYLTYPE wkt_yylloc;
 
+extern YYSTYPE wkt_yylval;
+extern YYLTYPE wkt_yylloc;
+int wkt_yyparse (void);
+
+#endif /* !YY_WKT_YY_MEDIA_SSD2_PROJECTS_TRUNK_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */
