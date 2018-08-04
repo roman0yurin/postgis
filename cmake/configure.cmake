@@ -132,7 +132,6 @@ endif()
 
 find_package(BISON)
 find_package(FLEX)
-message("========== FF:${FLEX_FOUND}")
 if(FLEX_FOUND)
     #На винде проявляется баг - пробел между -o и названием файла недопустим.
     execute_process(COMMAND "${FLEX_EXECUTABLE}" "-o${CMAKE_POSTGIS_BINARY_DIR}/lexyy.c"

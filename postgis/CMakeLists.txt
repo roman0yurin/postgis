@@ -317,7 +317,6 @@ if(PROTOBUF_FOUND)
     )
 endif()
 
-message("============= POSTGIS ${LIB_NAME} SOURCES ${CSOURCES}")
 add_library(${LIB_NAME} SHARED
   ${CSOURCES}
   ${HHEADERS}
