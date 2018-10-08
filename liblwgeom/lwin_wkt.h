@@ -69,6 +69,7 @@ LWGEOM* wkt_parser_triangle_new(POINTARRAY *pa, char *dimensionality);
 LWGEOM* wkt_parser_polygon_new(POINTARRAY *pa, char dimcheck);
 LWGEOM* wkt_parser_polygon_add_ring(LWGEOM *poly, POINTARRAY *pa, char dimcheck);
 LWGEOM* wkt_parser_polygon_finalize(LWGEOM *poly, char *dimensionality);
+LWGEOM* wkt_parser_tin_finalize(LWGEOM *poly, char *dimensionality);
 LWGEOM* wkt_parser_curvepolygon_new(LWGEOM *ring);
 LWGEOM* wkt_parser_curvepolygon_add_ring(LWGEOM *poly, LWGEOM *ring);
 LWGEOM* wkt_parser_curvepolygon_finalize(LWGEOM *poly, char *dimensionality);

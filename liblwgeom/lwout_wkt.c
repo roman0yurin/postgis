@@ -29,6 +29,7 @@
 #include "stringbuffer.h"
 
 static void lwgeom_to_wkt_sb(const LWGEOM *geom, stringbuffer_t *sb, int precision, uint8_t variant);
+static void lwmmesh_to_wkt_sb(const LWMMESH *mmesh, stringbuffer_t *sb, int precision, uint8_t variant);
 
 
 /*
@@ -672,6 +673,9 @@ static void lwgeom_to_wkt_sb(const LWGEOM *geom, stringbuffer_t *sb, int precisi
 	case REF3D_TYPE:
 		lwref3d_to_wkt_sb((LWREF3D*)geom, sb, precision, variant);
 		break;
+	case MULTIMESH_TYPE:
+		lwmmesh_to_wkt_sb((LWMMESH*)geom, sb, precision, variant);
+		break;
 	default:
 		lwerror("lwgeom_to_wkt_sb: Type %d - %s unsupported.",
 		        geom->type, lwtype_name(geom->type));
@@ -712,5 +716,35 @@ char* lwgeom_to_wkt(const LWGEOM *geom, uint8_t variant, int precision, size_t *
 		*size_out = stringbuffer_getlength(sb) + 1;
 	stringbuffer_destroy(sb);
 	return str;
+}
+
+/*
+* MULTIMESH
+*/
+static void lwmmesh_to_wkt_sb(const LWMMESH *mmesh, stringbuffer_t *sb, int precision, uint8_t variant)
+{
+	int i = 0;
+
+	if ( ! (variant & WKT_NO_TYPE) )
+	{
+		stringbuffer_append(sb, "MULTIMESH"); /* "MULTIPOLYGON" */
+		dimension_qualifiers_to_wkt_sb((LWGEOM*)mmesh, sb, variant);
+	}
+	if ( mmesh->ngeoms < 1 )
+	{
+		empty_to_wkt_sb(sb);
+		return;
+	}
+
+	stringbuffer_append(sb, "(");
+	variant = variant | WKT_IS_CHILD; /* Inform the sub-geometries they are childre */
+	for ( i = 0; i < mmesh->ngeoms; i++ )
+	{
+		if ( i > 0 )
+			stringbuffer_append(sb, ",");
+		/* We don't want type strings on our subgeoms */
+		lwtin_to_wkt_sb(mmesh->geoms[i], sb, precision, variant | WKT_NO_TYPE );
+	}
+	stringbuffer_append(sb, ")");
 }
 

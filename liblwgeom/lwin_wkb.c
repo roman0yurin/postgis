@@ -221,6 +221,9 @@ static void lwtype_from_wkb_state(wkb_parse_state *s, uint32_t wkb_type)
 		case WKB_TIN_TYPE:
 			s->lwtype = TINTYPE;
 			break;
+		case WKB_MULTIMESH_TYPE:
+			s->lwtype = MULTIMESH_TYPE;
+			break;
 		case WKB_TRIANGLE_TYPE:
 			s->lwtype = TRIANGLETYPE;
 			break;
@@ -756,6 +759,7 @@ LWGEOM* lwgeom_from_wkb_state(wkb_parse_state *s)
 		case MULTISURFACETYPE:
 		case POLYHEDRALSURFACETYPE:
 		case TINTYPE:
+		case MULTIMESH_TYPE:
 		case COLLECTIONTYPE:
 			return (LWGEOM*)lwcollection_from_wkb_state(s);
 		/* Unknown type! */
