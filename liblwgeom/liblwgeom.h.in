@@ -99,8 +99,10 @@ const char* lwgeom_version(void);
 #define TINTYPE                 15
 /**Ссылка на составную 3D геометрию**/
 #define REF3D_TYPE              16
+/**Множество треугольных поверхностей**/
+#define MULTIMESH_TYPE          17
 
-#define NUMTYPES                16
+#define NUMTYPES                17
 
 /**
 * Flags applied in EWKB to indicate Z/M dimensions and
@@ -607,8 +609,21 @@ typedef struct{
 	int32_t refId;
 }LWREF3D;
 
+/* Множество поверхностей, заданных треугольными сетками */
+typedef struct
+{
+		uint8_t type;
+		uint8_t flags;
+		GBOX *bbox;
+		int32_t srid;
+		int ngeoms;   /* how many geometries we are currently storing */
+		int maxgeoms; /* how many geometries we have space for in **geoms */
+		LWTIN **geoms;
+}LWMMESH;
+
 /* Casts LWGEOM->LW* (return NULL if cast is illegal) */
 extern LWMPOLY *lwgeom_as_lwmpoly(const LWGEOM *lwgeom);
+extern LWMMESH *lwgeom_as_lwmmesh(const LWGEOM *lwgeom);
 extern LWMLINE *lwgeom_as_lwmline(const LWGEOM *lwgeom);
 extern LWMPOINT *lwgeom_as_lwmpoint(const LWGEOM *lwgeom);
 extern LWCOLLECTION *lwgeom_as_lwcollection(const LWGEOM *lwgeom);
@@ -630,6 +645,7 @@ extern LWGEOM *lwtin_as_lwgeom(const LWTIN *obj);
 extern LWGEOM *lwtriangle_as_lwgeom(const LWTRIANGLE *obj);
 extern LWGEOM *lwpsurface_as_lwgeom(const LWPSURFACE *obj);
 extern LWGEOM *lwmpoly_as_lwgeom(const LWMPOLY *obj);
+extern LWGEOM *lwmmesh_as_lwgeom(const LWMMESH *obj);
 extern LWGEOM *lwmline_as_lwgeom(const LWMLINE *obj);
 extern LWGEOM *lwmpoint_as_lwgeom(const LWMPOINT *obj);
 extern LWGEOM *lwcollection_as_lwgeom(const LWCOLLECTION *obj);
@@ -646,6 +662,7 @@ extern LWCOLLECTION* lwcollection_add_lwgeom(LWCOLLECTION *col, const LWGEOM *ge
 extern LWMPOINT* lwmpoint_add_lwpoint(LWMPOINT *mobj, const LWPOINT *obj);
 extern LWMLINE* lwmline_add_lwline(LWMLINE *mobj, const LWLINE *obj);
 extern LWMPOLY* lwmpoly_add_lwpoly(LWMPOLY *mobj, const LWPOLY *obj);
+extern LWMMESH* lwmmesh_add_tinn(LWMMESH *mobj, const LWTIN *obj);
 extern LWPSURFACE* lwpsurface_add_lwpoly(LWPSURFACE *mobj, const LWPOLY *obj);
 extern LWTIN* lwtin_add_lwtriangle(LWTIN *mobj, const LWTRIANGLE *obj);
 
@@ -1153,6 +1170,7 @@ extern void lwtriangle_free(LWTRIANGLE *triangle);
 extern void lwmpoint_free(LWMPOINT *mpt);
 extern void lwmline_free(LWMLINE *mline);
 extern void lwmpoly_free(LWMPOLY *mpoly);
+extern void lwmmesh_free(LWMMESH *mpoly);
 extern void lwpsurface_free(LWPSURFACE *psurf);
 extern void lwtin_free(LWTIN *tin);
 extern void lwcollection_free(LWCOLLECTION *col);
@@ -1175,6 +1193,7 @@ extern void lwcircstring_release(LWCIRCSTRING *lwcirc);
 extern void lwmpoint_release(LWMPOINT *lwpoint);
 extern void lwmline_release(LWMLINE *lwline);
 extern void lwmpoly_release(LWMPOLY *lwpoly);
+extern void lwmmesh_release(LWMMESH *lwpoly);
 extern void lwpsurface_release(LWPSURFACE *lwpsurface);
 extern void lwtin_release(LWTIN *lwtin);
 extern void lwcollection_release(LWCOLLECTION *lwcollection);
@@ -1391,6 +1410,7 @@ extern LWTRIANGLE* lwtriangle_construct_empty(int srid, char hasz, char hasm);
 extern LWMPOINT* lwmpoint_construct_empty(int srid, char hasz, char hasm);
 extern LWMLINE* lwmline_construct_empty(int srid, char hasz, char hasm);
 extern LWMPOLY* lwmpoly_construct_empty(int srid, char hasz, char hasm);
+extern LWMMESH* lwmmesh_construct_empty(int srid, char hasz, char hasm);
 extern LWCOLLECTION* lwcollection_construct_empty(uint8_t type, int srid, char hasz, char hasm);
 extern LWREF3D* lwref3d_construct_empty(int srid);
 
@@ -1520,6 +1540,7 @@ extern LWCOLLECTION *lwcollection_segmentize2d(const LWCOLLECTION *coll, double 
  */
 extern LWMPOINT *lwpoly_to_points(const LWPOLY *poly, uint32_t npoints);
 extern LWMPOINT *lwmpoly_to_points(const LWMPOLY *mpoly, uint32_t npoints);
+extern LWMPOINT *lwmmesh_to_points(const LWMMESH *mpoly, uint32_t npoints);
 extern LWMPOINT *lwgeom_to_points(const LWGEOM *lwgeom, uint32_t npoints);
 
 /*

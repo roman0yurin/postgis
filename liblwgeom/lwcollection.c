@@ -562,6 +562,9 @@ int lwcollection_allows_subtype(int collectiontype, int subtype)
 	if ( collectiontype == TINTYPE &&
 	        subtype == TRIANGLETYPE )
 		return LW_TRUE;
+	if (collectiontype == MULTIMESH_TYPE &&
+					subtype == TINTYPE)
+		return LW_TRUE;
 
 	/* Must be a bad combination! */
 	return LW_FALSE;

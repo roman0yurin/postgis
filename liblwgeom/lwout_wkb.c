@@ -128,6 +128,9 @@ static uint32_t lwgeom_wkb_type(const LWGEOM *geom, uint8_t variant)
 	case TINTYPE:
 		wkb_type = WKB_TIN_TYPE;
 		break;
+	case MULTIMESH_TYPE:
+		wkb_type = WKB_MULTIMESH_TYPE;
+		break;
 	case TRIANGLETYPE:
 		wkb_type = WKB_TRIANGLE_TYPE;
 		break;
@@ -727,6 +730,7 @@ static size_t lwgeom_to_wkb_size(const LWGEOM *geom, uint8_t variant)
 		case COLLECTIONTYPE:
 		case POLYHEDRALSURFACETYPE:
 		case TINTYPE:
+		case MULTIMESH_TYPE:
 			size += lwcollection_to_wkb_size((LWCOLLECTION*)geom, variant);
 			break;
 
@@ -779,6 +783,7 @@ static uint8_t* lwgeom_to_wkb_buf(const LWGEOM *geom, uint8_t *buf, uint8_t vari
 		case COLLECTIONTYPE:
 		case POLYHEDRALSURFACETYPE:
 		case TINTYPE:
+		case MULTIMESH_TYPE:
 			return lwcollection_to_wkb_buf((LWCOLLECTION*)geom, buf, variant);
 
 		/* Unknown type! */

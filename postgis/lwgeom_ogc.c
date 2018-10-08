@@ -158,6 +158,8 @@ Datum LWGEOM_getTYPE(PG_FUNCTION_ARGS)
 		strcpy(result,"POLYHEDRALSURFACE");
 	else if (type == TINTYPE)
 		strcpy(result,"TIN");
+	else if (type == MULTIMESH_TYPE)
+		strcpy(result,"MULTIMESH");
 	else
 		strcpy(result,"UNKNOWN");
 
