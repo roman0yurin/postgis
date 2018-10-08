@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_WKT_YY_MEDIA_SSD2_PROJECTS_TRUNK_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
-# define YY_WKT_YY_MEDIA_SSD2_PROJECTS_TRUNK_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+#ifndef YY_WKT_YY_HOME_ROMAN_DEVELOP_PROJECTS_TRUNK_SGAZ_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+# define YY_WKT_YY_HOME_ROMAN_DEVELOP_PROJECTS_TRUNK_SGAZ_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -68,9 +68,10 @@ extern int wkt_yydebug;
     REF3D_TOK = 278,
     REF_ID_TOK = 279,
     REF_BOX_TOK = 280,
-    DOUBLE_TOK = 281,
-    DIMENSIONALITY_TOK = 282,
-    SRID_TOK = 283
+    MULTIMESH_TOK = 281,
+    DOUBLE_TOK = 282,
+    DIMENSIONALITY_TOK = 283,
+    SRID_TOK = 284
   };
 #endif
 
@@ -88,7 +89,7 @@ union YYSTYPE
 	POINT coordinatevalue;
 	POINTARRAY *ptarrayvalue;
 
-#line 92 "/media/ssd2/projects/trunk_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.h" /* yacc.c:1909  */
+#line 93 "/home/roman/develop/projects/trunk_sgaz_db/ext_lib/postgis/liblwgeom/lwin_wkt_parse.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -115,4 +116,4 @@ extern YYSTYPE wkt_yylval;
 extern YYLTYPE wkt_yylloc;
 int wkt_yyparse (void);
 
-#endif /* !YY_WKT_YY_MEDIA_SSD2_PROJECTS_TRUNK_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */
+#endif /* !YY_WKT_YY_HOME_ROMAN_DEVELOP_PROJECTS_TRUNK_SGAZ_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */

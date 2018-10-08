@@ -108,6 +108,7 @@ lwgeom_transform(LWGEOM *geom, projPJ inpj, projPJ outpj)
 		case MULTICURVETYPE:
 		case MULTISURFACETYPE:
 		case POLYHEDRALSURFACETYPE:
+		case MULTIMESH_TYPE:
 		case TINTYPE:
 		{
 			LWCOLLECTION *g = (LWCOLLECTION*)geom;

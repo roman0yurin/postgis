@@ -173,6 +173,7 @@ lwgeom_summary(const LWGEOM *lwgeom, int offset)
 		return lwpoly_summary((LWPOLY *)lwgeom, offset);
 
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case MULTISURFACETYPE:
 	case MULTICURVETYPE:
 	case CURVEPOLYTYPE:

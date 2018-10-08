@@ -113,6 +113,7 @@
 #define WKB_TIN_TYPE 16
 #define WKB_TRIANGLE_TYPE 17
 #define WKB_REF3D_TYPE 18
+#define WKB_MULTIMESH_TYPE 19
 
 /**
 * Macro for reading the size from the GSERIALIZED size attribute.

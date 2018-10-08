@@ -2948,6 +2948,7 @@ int lwgeom_calculate_gbox_geodetic(const LWGEOM *geom, GBOX *gbox)
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		result = lwcollection_calculate_gbox_geodetic((LWCOLLECTION *)geom, gbox);
 		break;
@@ -3044,6 +3045,7 @@ int lwgeom_check_geodetic(const LWGEOM *geom)
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		return lwcollection_check_geodetic((LWCOLLECTION *)geom);
 	default:

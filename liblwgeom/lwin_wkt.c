@@ -565,6 +565,39 @@ LWGEOM* wkt_parser_polygon_finalize(LWGEOM *poly, char *dimensionality)
 	return poly;
 }
 
+
+LWGEOM* wkt_parser_tin_finalize(LWGEOM *tin, char *dimensionality)
+{
+	uint8_t flags = wkt_dimensionality(dimensionality);
+	int flagdims = FLAGS_NDIMS(flags);
+	LWDEBUG(4,"entered");
+
+	/* Null input implies empty return */
+	if( ! tin )
+		return lwtin_as_lwgeom(lwcollection_construct_empty(TINTYPE, SRID_UNKNOWN, FLAGS_GET_Z(flags), FLAGS_GET_M(flags)));
+
+	/* If the number of dimensions are not consistent, we have a problem. */
+	if( flagdims > 2 )
+	{
+		if ( flagdims != FLAGS_NDIMS(tin->flags) )
+		{
+			lwgeom_free(tin);
+			SET_PARSER_ERROR(PARSER_ERROR_MIXDIMS);
+			return NULL;
+		}
+
+		/* Harmonize the flags in the sub-components with the wkt flags */
+		if( LW_FAILURE == wkt_parser_set_dims(tin, flags) )
+		{
+			lwgeom_free(tin);
+			SET_PARSER_ERROR(PARSER_ERROR_OTHER);
+			return NULL;
+		}
+	}
+
+	return tin;
+}
+
 LWGEOM* wkt_parser_curvepolygon_new(LWGEOM *ring)
 {
 	LWGEOM *poly;

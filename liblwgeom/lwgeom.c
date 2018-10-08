@@ -116,6 +116,7 @@ lwgeom_reverse(LWGEOM *lwgeom)
 	case MULTISURFACETYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 	case COMPOUNDTYPE:
 	case CURVEPOLYTYPE:
@@ -225,6 +226,13 @@ lwgeom_as_lwmpoly(const LWGEOM *lwgeom)
 	else return NULL;
 }
 
+LWMMESH * lwgeom_as_lwmmesh(const LWGEOM *lwgeom) {
+	if ( lwgeom == NULL ) return NULL;
+	if ( lwgeom->type == MULTIMESH_TYPE )
+		return (LWMMESH *)lwgeom;
+	else return NULL;
+}
+
 LWPSURFACE *
 lwgeom_as_lwpsurface(const LWGEOM *lwgeom)
 {
@@ -252,6 +260,11 @@ LWGEOM *lwpsurface_as_lwgeom(const LWPSURFACE *obj)
 }
 
 LWGEOM *lwmpoly_as_lwgeom(const LWMPOLY *obj)
+{
+	if ( obj == NULL ) return NULL;
+	return (LWGEOM *)obj;
+}
+LWGEOM *lwmmesh_as_lwgeom(const LWMMESH *obj)
 {
 	if ( obj == NULL ) return NULL;
 	return (LWGEOM *)obj;
@@ -324,7 +337,8 @@ uint8_t MULTITYPE[NUMTYPES] =
 	POLYHEDRALSURFACETYPE, /* 11 */
 	0, 0,
 	TINTYPE,               /* 14 */
-	0
+	0,
+	MULTIMESH_TYPE
 };
 
 /**
@@ -468,6 +482,7 @@ lwgeom_clone(const LWGEOM *lwgeom)
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		return (LWGEOM *)lwcollection_clone((LWCOLLECTION *)lwgeom);
 	default:
@@ -503,6 +518,7 @@ lwgeom_clone_deep(const LWGEOM *lwgeom)
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		return (LWGEOM *)lwcollection_clone_deep((LWCOLLECTION *)lwgeom);
 	default:
@@ -601,6 +617,7 @@ lwgeom_same(const LWGEOM *lwgeom1, const LWGEOM *lwgeom2)
 	case CURVEPOLYTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		return lwcollection_same((LWCOLLECTION *)lwgeom1,
 		                         (LWCOLLECTION *)lwgeom2);
@@ -782,6 +799,7 @@ lwgeom_force_dims(const LWGEOM *geom, int hasz, int hasm)
 		case MULTIPOLYGONTYPE:
 		case POLYHEDRALSURFACETYPE:
 		case TINTYPE:
+		case MULTIMESH_TYPE:
 		case COLLECTIONTYPE:
 			return lwcollection_as_lwgeom(lwcollection_force_dims((LWCOLLECTION*)geom, hasz, hasm));
 		default:
@@ -790,9 +808,7 @@ lwgeom_force_dims(const LWGEOM *geom, int hasz, int hasm)
 	}
 }
 
-LWGEOM*
-lwgeom_force_sfs(LWGEOM *geom, int version)
-{
+LWGEOM* lwgeom_force_sfs(LWGEOM *geom, int version){
 	LWCOLLECTION *col;
 	int i;
 	LWGEOM *g;
@@ -862,6 +878,17 @@ lwgeom_force_sfs(LWGEOM *geom, int version)
 				col->geoms[i] = lwgeom_force_sfs((LWGEOM*)col->geoms[i], version);
 
 			return lwcollection_as_lwgeom((LWCOLLECTION*)geom);
+
+		case MULTIMESH_TYPE:
+			col = (LWCOLLECTION*) geom;
+			for ( i = 0; i < col->ngeoms; i++ )
+			{
+				g = lwgeom_force_sfs((LWLINE*)col->geoms[i], version);
+				lwgeom_free(col->geoms[i]);
+				col->geoms[i] = g;
+			}
+			col->type = COLLECTIONTYPE;
+			return (LWGEOM*)geom;
 
 		default:
 			return (LWGEOM *)geom;
@@ -981,6 +1008,7 @@ lwgeom_longitude_shift(LWGEOM *lwgeom)
 	case MULTILINETYPE:
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
+	case MULTIMESH_TYPE:
 	case TINTYPE:
 	case COLLECTIONTYPE:
 		coll = (LWCOLLECTION *)lwgeom;
@@ -1061,6 +1089,7 @@ lwtype_is_collection(uint8_t type)
 	case MULTISURFACETYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 		return LW_TRUE;
 		break;
 
@@ -1091,6 +1120,8 @@ lwtype_get_collectiontype(uint8_t type)
 			return MULTISURFACETYPE;
 		case TRIANGLETYPE:
 			return TINTYPE;
+		case TINTYPE:
+			return MULTIMESH_TYPE;
 		default:
 			return COLLECTIONTYPE;
 	}
@@ -1130,6 +1161,9 @@ void lwgeom_free(LWGEOM *lwgeom)
 		break;
 	case MULTIPOLYGONTYPE:
 		lwmpoly_free((LWMPOLY *)lwgeom);
+		break;
+	case MULTIMESH_TYPE:
+		lwmmesh_free((LWMMESH *)lwgeom);
 		break;
 	case POLYHEDRALSURFACETYPE:
 		lwpsurface_free((LWPSURFACE *)lwgeom);
@@ -1225,6 +1259,7 @@ int lwgeom_count_vertices(const LWGEOM *geom)
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		result = lwcollection_count_vertices((LWCOLLECTION *)geom);
 		break;
@@ -1274,6 +1309,7 @@ int lwgeom_dimension(const LWGEOM *geom)
 	case MULTISURFACETYPE:
 	case MULTIPOLYGONTYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 		return 2;
 	case POLYHEDRALSURFACETYPE:
 	{
@@ -1334,6 +1370,7 @@ int lwgeom_count_rings(const LWGEOM *geom)
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 	{
 		LWCOLLECTION *col = (LWCOLLECTION*)geom;
@@ -1378,6 +1415,7 @@ int lwgeom_is_empty(const LWGEOM *geom)
 	case MULTIPOINTTYPE:
 	case MULTILINETYPE:
 	case MULTIPOLYGONTYPE:
+	case MULTIMESH_TYPE:
 	case COMPOUNDTYPE:
 	case CURVEPOLYTYPE:
 	case MULTICURVETYPE:
@@ -1500,6 +1538,7 @@ extern LWGEOM* lwgeom_remove_repeated_points(const LWGEOM *in, double tolerance)
 	case COMPOUNDTYPE:
 	case MULTICURVETYPE:
 	case CURVEPOLYTYPE:
+	case MULTIMESH_TYPE:
 	case MULTISURFACETYPE:
 		/* Dunno how to handle these, will return untouched */
 		return lwgeom_clone_deep(in);
@@ -1567,6 +1606,7 @@ void lwgeom_swap_ordinates(LWGEOM *in, LWORD o1, LWORD o2)
 	case MULTISURFACETYPE:
 	case MULTICURVETYPE:
 	case POLYHEDRALSURFACETYPE:
+	case MULTIMESH_TYPE:
 	case TINTYPE:
 		col = (LWCOLLECTION *) in;
 		for (i=0; i<col->ngeoms; i++)

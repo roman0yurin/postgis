@@ -241,6 +241,7 @@ lwgeom_homogenize(const LWGEOM *geom)
 		case MULTICURVETYPE:
 		case MULTISURFACETYPE:
 		case POLYHEDRALSURFACETYPE:
+		case MULTIMESH_TYPE:
 		case TINTYPE:
 		{
 			LWCOLLECTION *col = (LWCOLLECTION*)geom;
