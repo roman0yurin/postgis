@@ -269,6 +269,7 @@ set(CSOURCES
   geography_measurement_trees.c
   geometry_inout.c
   BoxUtils.cpp
+  lwmmesh.c
 
   geobuf.c
   geography_centroid.c
