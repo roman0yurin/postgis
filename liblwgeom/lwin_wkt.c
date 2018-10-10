@@ -26,6 +26,7 @@
 #include <stdlib.h>
 #include <ctype.h> /* for isspace */
 #include <liblwgeom.h>
+#include <liblwgeom/liblwgeom.h>
 
 #include "lwin_wkt.h"
 #include "lwin_wkt_parse.h"
@@ -836,6 +837,28 @@ LWGEOM* wkt_parser_collection_add_geom(LWGEOM *col, LWGEOM *geom)
 	return lwcollection_as_lwgeom(lwcollection_add_lwgeom(lwgeom_as_lwcollection(col), geom));
 }
 
+/**
+* Пост обработка геометрии после выхода из парсера
+**/
+void wktGeomPostParse(LWGEOM *geom){
+	if(geom){
+		switch (geom->type){
+			case MULTIMESH_TYPE: {
+				LWMMESH *mesh = (LWMMESH *) geom;
+				mesh->flags = FLAGS_SET_Z(mesh->flags, 1);
+				for(int i=0; i < mesh->ngeoms; i++){
+					LWTIN *tin = mesh->geoms[i];
+					tin->type = TINTYPE;
+					tin->flags = FLAGS_SET_Z(tin->flags, 1);
+				}
+				break;
+			}
+			default:
+			break;
+		}
+	}
+}
+
 LWGEOM* wkt_parser_collection_finalize(int lwtype, LWGEOM *geom, char *dimensionality)
 {
 	uint8_t flags = wkt_dimensionality(dimensionality);
@@ -886,6 +909,8 @@ LWGEOM* wkt_parser_collection_finalize(int lwtype, LWGEOM *geom, char *dimension
 
 	/* Set the collection type */
 	geom->type = lwtype;
+
+	wktGeomPostParse(geom);
 
 	return geom;
 }

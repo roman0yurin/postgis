@@ -17,7 +17,7 @@ void lwmmesh_release(LWMMESH *lwmmesh){
 }
 
 LWMMESH *lwmmesh_construct_empty(int srid, char hasz, char hasm){
-	LWMMESH *ret = (LWMMESH*)lwcollection_construct_empty(MUTLIMESH_TYPE, srid, hasz, hasm);
+	LWMMESH *ret = (LWMMESH*)lwcollection_construct_empty(MULTIMESH_TYPE, srid, hasz, hasm);
 	return ret;
 }
 
@@ -36,7 +36,7 @@ void lwmmesh_free(LWMMESH *mmesh)
 
 	for ( i = 0; i < mmesh->ngeoms; i++ )
 		if ( mmesh->geoms && mmesh->geoms[i] )
-			lwpoly_free(mmesh->geoms[i]);
+			lwtin_free(mmesh->geoms[i]);
 
 	if ( mmesh->geoms )
 		lwfree(mmesh->geoms);
