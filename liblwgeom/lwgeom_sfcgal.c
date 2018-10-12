@@ -604,6 +604,7 @@ LWGEOM2SFCGAL(const LWGEOM* geom)
 	case MULTIPOINTTYPE:
 	case MULTILINETYPE:
 	case MULTIPOLYGONTYPE:
+	case MULTIMESH_TYPE:	
 	case COLLECTIONTYPE:
 	{
 		if (geom->type == MULTIPOINTTYPE)        ret_geom = sfcgal_multi_point_create();
