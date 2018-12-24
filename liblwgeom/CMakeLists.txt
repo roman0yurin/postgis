@@ -34,7 +34,6 @@ set_property(GLOBAL PROPERTY LIBLWGEOM_INCLUDE_DIRS
   ${CMAKE_CURRENT_SOURCE_DIR}
 )
 include_directories(${CMAKE_CURRENT_BINARY_DIR} c60)
-file(GLOB_RECURSE C60_SRC c60/*.cpp)
 
 check_lwgeom_version(LIBLWGEOM_ABI_MAJOR LIBLWGEOM_ABI_MINOR LIBLWGEOM_ABI_PATCH)
 
@@ -66,79 +65,10 @@ set(HHEADERS ${HHEADERS_PUB}
     kmeans.h
   )
 
-set(CSOURCES
-	stringbuffer.c
-	bytebuffer.c
-	measures.c
-	measures3d.c
-	box2d.c
-	ptarray.c
-	lwgeom_api.c
-	lwgeom.c
-	lwpoint.c
-	lwline.c
-	lwpoly.c
-	lwtriangle.c
-	lwmpoint.c
-	lwmline.c
-	lwmpoly.c
-	lwcollection.c
-	lwcircstring.c
-	lwcompound.c
-	lwcurvepoly.c
-	lwmcurve.c
-	lwmsurface.c
-	lwpsurface.c
-	lwtin.c
-	lwout_wkb.c
-	lwin_geojson.c
-	lwin_wkb.c
-	lwin_twkb.c
-	lwout_wkt.c
-	lwout_twkb.c
-	lwin_wkt_parse.c
-	lwin_wkt_lex.c
-	lwin_wkt.c
-	lwin_encoded_polyline.c
-	lwutil.c
-	lwhomogenize.c
-	lwalgorithm.c
-	lwstroke.c
-	lwlinearreferencing.c
-	lwprint.c
-	g_box.c
-	g_serialized.c
-	g_util.c
-	lwspheroid.c
-	lwgeodetic.c
-	lwgeodetic_tree.c
-	lwtree.c
-	lwout_gml.c
-	lwout_kml.c
-	lwout_geojson.c
-	lwout_svg.c
-	lwout_x3d.c
-	lwout_encoded_polyline.c
-	lwgeom_debug.c
-	lwgeom_geos.c
-	lwgeom_geos_clean.c
-	lwgeom_geos_cluster.c
-	lwgeom_geos_node.c
-	lwgeom_geos_split.c
-	lwgeom_topo.c
-	lwgeom_transform.c
-	lwgeom_wrapx.c
-	lwunionfind.c
-	effectivearea.c
-	varint.c
-	lwiterator.c
-	lwboundingcircle.c
-	lwgeom_median.c
-	lwkmeans.c
-	kmeans.c
-	lwref3d.c
-	${C60_SRC}
-		)
+file(GLOB_RECURSE CSOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.c)
+file(GLOB_RECURSE CUNIT_SRC ${CMAKE_CURRENT_SOURCE_DIR}/cunit/*.c)
+list(REMOVE_ITEM CSOURCES ${CMAKE_CURRENT_SOURCE_DIR}/lwgeom_sfcgal.c ${CUNIT_SRC})
+
 
 
 

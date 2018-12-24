@@ -1720,6 +1720,7 @@ lwgeom_remove_repeated_points_in_place(LWGEOM *geom, double tolerance)
 		case MULTICURVETYPE:
 		case CURVEPOLYTYPE:
 		case MULTISURFACETYPE:
+		case MULTIMESH_TYPE:
 		case COMPOUNDTYPE:
 		{
 			uint32_t i, j = 0;
