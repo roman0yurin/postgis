@@ -179,7 +179,7 @@ Datum postgis_svn_version(PG_FUNCTION_ARGS)
 {
 	char ver[32];
 	snprintf(ver, 32, "%s", "C60");
-	PG_RETURN_TEXT_P(cstring2text(ver));
+	PG_RETURN_TEXT_P(cstring_to_text(ver));
 }
 
 PG_FUNCTION_INFO_V1(postgis_lib_build_date);

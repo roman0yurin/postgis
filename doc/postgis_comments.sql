@@ -610,10 +610,6 @@ COMMENT ON FUNCTION ST_ConcaveHull(geometry , float , boolean ) IS 'args: geomA,
 
 COMMENT ON FUNCTION ST_ConvexHull(geometry ) IS 'args: geomA - The convex hull of a geometry represents the minimum convex geometry that encloses all geometries within the set.';
 
-COMMENT ON FUNCTION ST_CurveToLine(geometry) IS 'args: curveGeom - Converts a CIRCULARSTRING/CURVEPOLYGON to a LINESTRING/POLYGON';
-
-COMMENT ON FUNCTION ST_CurveToLine(geometry, integer) IS 'args: curveGeom, segments_per_qtr_circle - Converts a CIRCULARSTRING/CURVEPOLYGON to a LINESTRING/POLYGON';
-
 COMMENT ON FUNCTION ST_DelaunayTriangles(geometry , float , int4 ) IS 'args: g1, tolerance, flags - Return a Delaunay triangulation around the given input points.';
 
 COMMENT ON FUNCTION ST_Difference(geometry , geometry ) IS 'args: geomA, geomB - Returns a geometry that represents that part of geometry A that does not intersect with geometry B.';

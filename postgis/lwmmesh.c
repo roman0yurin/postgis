@@ -12,10 +12,6 @@
 #include "lwgeom_log.h"
 
 
-void lwmmesh_release(LWMMESH *lwmmesh){
-	lwgeom_release(lwmmesh_as_lwgeom(lwmmesh));
-}
-
 LWMMESH *lwmmesh_construct_empty(int srid, char hasz, char hasm){
 	LWMMESH *ret = (LWMMESH*)lwcollection_construct_empty(MULTIMESH_TYPE, srid, hasz, hasm);
 	return ret;

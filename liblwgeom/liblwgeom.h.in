@@ -645,7 +645,6 @@ extern LWGEOM *lwtin_as_lwgeom(const LWTIN *obj);
 extern LWGEOM *lwtriangle_as_lwgeom(const LWTRIANGLE *obj);
 extern LWGEOM *lwpsurface_as_lwgeom(const LWPSURFACE *obj);
 extern LWGEOM *lwmpoly_as_lwgeom(const LWMPOLY *obj);
-extern LWGEOM *lwmmesh_as_lwgeom(const LWMMESH *obj);
 extern LWGEOM *lwmline_as_lwgeom(const LWMLINE *obj);
 extern LWGEOM *lwmpoint_as_lwgeom(const LWMPOINT *obj);
 extern LWGEOM *lwcollection_as_lwgeom(const LWCOLLECTION *obj);
