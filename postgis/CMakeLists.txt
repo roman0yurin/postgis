@@ -244,42 +244,41 @@ if(PROTOBUF_FOUND)
       geobuf.pb-c.c
     )
 endif()
-
-add_library(${LIB_NAME} SHARED
+add_library(my_postgis SHARED
   ${CSOURCES}
   ${HHEADERS}
 )
 
-target_link_libraries(${LIB_NAME}  postgres CGAL)
+target_link_libraries(my_postgis  postgres CGAL)
 if(PROTOBUF_FOUND)
-    target_link_libraries(${LIB_NAME}  ${Protobuf_LIBRARIES})
+    target_link_libraries(my_postgis  ${Protobuf_LIBRARIES})
 endif()
 
-target_link_extlibraries(${LIB_NAME})
+target_link_extlibraries(my_postgis)
 
-set(TARGET_LINK_LIB ${TARGET_LINK_LIB} ${LIB_NAME} PARENT_SCOPE)
+set(TARGET_LINK_LIB ${TARGET_LINK_LIB} my_postgis PARENT_SCOPE)
 
 
-if(UNIX)
-    set_target_properties(${LIB_NAME} PROPERTIES
-        LINK_FLAGS "-Wl,--exclude-libs,ALL"
-        OUTPUT_NAME "${LIB_NAME}-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}"
-        PREFIX ""
-        )
-elseif(BUILD_SHARED_LIBS AND WIN32)
-    set_target_properties(${LIB_NAME} PROPERTIES SUFFIX "${POSTGIS_MAJOR_VERSION}${POSTGIS_MINOR_VERSION}.dll")
-endif()
+#if(UNIX)
+#    set_target_properties(${LIB_NAME} PROPERTIES
+#        LINK_FLAGS "-Wl,--exclude-libs,ALL"
+#        OUTPUT_NAME "${LIB_NAME}-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}"
+#        PREFIX ""
+#        )
+#elseif(BUILD_SHARED_LIBS AND WIN32)
+#    set_target_properties(${LIB_NAME} PROPERTIES SUFFIX "${POSTGIS_MAJOR_VERSION}${POSTGIS_MINOR_VERSION}.dll")
+#endif()
 
 #/usr/lib/postgresql/9.3/lib/postgis-2.1.so
-if(NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
-    install(TARGETS ${LIB_NAME}
-        EXPORT ${LIB_NAME}
-        RUNTIME DESTINATION ${PGSQL_PKGBINDIR} COMPONENT libraries
-        ARCHIVE DESTINATION ${PGSQL_PKGLIBDIR} COMPONENT libraries
-        LIBRARY DESTINATION ${PGSQL_PKGLIBDIR} COMPONENT libraries
-    )
-
-    install(FILES ${POSTGIS_CONTRIB_FILES} DESTINATION "${PGSQL_SHAREDIR}/contrib/postgis-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}/")
-endif()
+#if(NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
+#    install(TARGETS ${LIB_NAME}
+#        EXPORT ${LIB_NAME}
+#        RUNTIME DESTINATION ${PGSQL_PKGBINDIR} COMPONENT libraries
+#        ARCHIVE DESTINATION ${PGSQL_PKGLIBDIR} COMPONENT libraries
+#        LIBRARY DESTINATION ${PGSQL_PKGLIBDIR} COMPONENT libraries
+#    )
+#
+#    install(FILES ${POSTGIS_CONTRIB_FILES} DESTINATION "${PGSQL_SHAREDIR}/contrib/postgis-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}/")
+#endif()
 
 
