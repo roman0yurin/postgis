@@ -138,6 +138,7 @@ lwgeom_reverse_in_place(LWGEOM *geom)
 		case MULTISURFACETYPE:
 		case POLYHEDRALSURFACETYPE:
 		case TINTYPE:
+		case MULTIMESH_TYPE:
 		case COLLECTIONTYPE:
 		case COMPOUNDTYPE:
 		case CURVEPOLYTYPE:
@@ -506,6 +507,7 @@ lwgeom_clone(const LWGEOM *lwgeom)
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		return (LWGEOM *)lwcollection_clone((LWCOLLECTION *)lwgeom);
 	default:
@@ -541,6 +543,7 @@ lwgeom_clone_deep(const LWGEOM *lwgeom)
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		return (LWGEOM *)lwcollection_clone_deep((LWCOLLECTION *)lwgeom);
 	default:
@@ -639,6 +642,7 @@ lwgeom_same(const LWGEOM *lwgeom1, const LWGEOM *lwgeom2)
 	case CURVEPOLYTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		return lwcollection_same((LWCOLLECTION *)lwgeom1,
 		                         (LWCOLLECTION *)lwgeom2);
@@ -827,6 +831,7 @@ lwgeom_force_dims(const LWGEOM *geom, int hasz, int hasm)
 		case MULTIPOLYGONTYPE:
 		case POLYHEDRALSURFACETYPE:
 		case TINTYPE:
+		case MULTIMESH_TYPE:
 		case COLLECTIONTYPE:
 			return lwcollection_as_lwgeom(lwcollection_force_dims((LWCOLLECTION*)geom, hasz, hasm));
 		default:
@@ -1027,6 +1032,7 @@ lwgeom_longitude_shift(LWGEOM *lwgeom)
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		coll = (LWCOLLECTION *)lwgeom;
 		for (i=0; i<coll->ngeoms; i++)
@@ -1105,6 +1111,7 @@ lwtype_is_collection(uint8_t type)
 	case MULTICURVETYPE:
 	case MULTISURFACETYPE:
 	case POLYHEDRALSURFACETYPE:
+	case MULTIMESH_TYPE:
 	case TINTYPE:
 		return LW_TRUE;
 		break;
@@ -1136,6 +1143,8 @@ lwtype_get_collectiontype(uint8_t type)
 			return MULTISURFACETYPE;
 		case TRIANGLETYPE:
 			return TINTYPE;
+		case TINTYPE:
+			return MULTIMESH_TYPE;
 		default:
 			return COLLECTIONTYPE;
 	}
@@ -1189,6 +1198,7 @@ void lwgeom_free(LWGEOM *lwgeom)
 	case COMPOUNDTYPE:
 	case MULTICURVETYPE:
 	case MULTISURFACETYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		lwcollection_free((LWCOLLECTION *)lwgeom);
 		break;
@@ -1271,6 +1281,7 @@ uint32_t lwgeom_count_vertices(const LWGEOM *geom)
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		result = lwcollection_count_vertices((LWCOLLECTION *)geom);
 		break;
@@ -1319,6 +1330,7 @@ int lwgeom_dimension(const LWGEOM *geom)
 	case CURVEPOLYTYPE:
 	case MULTISURFACETYPE:
 	case MULTIPOLYGONTYPE:
+	case MULTIMESH_TYPE:
 	case TINTYPE:
 		return 2;
 	case POLYHEDRALSURFACETYPE:
@@ -1381,6 +1393,7 @@ uint32_t lwgeom_count_rings(const LWGEOM *geom)
 	case MULTIPOLYGONTYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 	{
 		LWCOLLECTION *col = (LWCOLLECTION*)geom;
@@ -1431,6 +1444,7 @@ int lwgeom_is_empty(const LWGEOM *geom)
 	case MULTISURFACETYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		return lwcollection_is_empty((LWCOLLECTION *)geom);
 		break;
@@ -1498,6 +1512,7 @@ extern int lwgeom_dimensionality(const LWGEOM *geom)
 		return dim;
 		break;
 
+	case MULTIMESH_TYPE:
 	case COLLECTIONTYPE:
 		return lwcollection_dimensionality((const LWCOLLECTION *)geom);
 		break;
@@ -1565,6 +1580,7 @@ void lwgeom_swap_ordinates(LWGEOM *in, LWORD o1, LWORD o2)
 	case MULTICURVETYPE:
 	case POLYHEDRALSURFACETYPE:
 	case TINTYPE:
+	case MULTIMESH_TYPE:
 		col = (LWCOLLECTION *) in;
 		for (i=0; i<col->ngeoms; i++)
 		{
@@ -2112,6 +2128,7 @@ lwgeom_construct_empty(uint8_t type, int srid, char hasz, char hasm)
 		case MULTIPOINTTYPE:
 		case MULTILINETYPE:
 		case MULTIPOLYGONTYPE:
+		case MULTIMESH_TYPE:
 		case COLLECTIONTYPE:
 			return lwcollection_as_lwgeom(lwcollection_construct_empty(type, srid, hasz, hasm));
 		default:
@@ -2142,6 +2159,7 @@ lwgeom_startpoint(const LWGEOM *lwgeom, POINT4D *pt)
 		case MULTIPOINTTYPE:
 		case MULTILINETYPE:
 		case MULTIPOLYGONTYPE:
+		case MULTIMESH_TYPE:
 		case COLLECTIONTYPE:
 			return lwcollection_startpoint((LWCOLLECTION*)lwgeom, pt);
 		default:

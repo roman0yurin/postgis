@@ -219,7 +219,7 @@ lwdebug(int level, const char *fmt, ...)
 const char*
 lwtype_name(uint8_t type)
 {
-	if ( type > 16 )
+	if ( type > 17 )
 	{
 		/* assert(0); */
 		return "Invalid type";
