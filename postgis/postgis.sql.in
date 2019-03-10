@@ -6172,6 +6172,12 @@ CREATE OR REPLACE FUNCTION isRef3D(geometry)
 	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL
     COST 10;
 
+CREATE OR REPLACE FUNCTION isGraphicGeometry(geometry)
+	 RETURNS bool
+	 AS 'MODULE_PATHNAME', 'c60_isGraphicGeom'
+	 LANGUAGE 'c' IMMUTABLE STRICT PARALLEL SAFE
+			COST 10;
+
 --END C60 FUNCTIONS ----------------------------------------------------------------------
 
 

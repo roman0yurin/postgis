@@ -124,4 +124,18 @@ extern "C"{
 		}
 	}
 
+	/**
+	 * Данная геометрия подразумевает вывод в графику (иначе она нужна только для семантических целей)
+	 **/
+	PG_FUNCTION_INFO_V1(c60_isGraphicGeom);
+	Datum c60_isGraphicGeom(PG_FUNCTION_ARGS){
+		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
+		if(gserialized_get_type(geom) == REF3D_TYPE) {
+			LWREF3D *geometry = reinterpret_cast<LWREF3D *>(lwgeom_from_gserialized(geom));
+		  PG_RETURN_BOOL(geometry->refId != 0);
+		}else{
+			PG_RETURN_BOOL(true);
+		}
+	}
+
 }
