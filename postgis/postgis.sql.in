@@ -6147,7 +6147,7 @@ CREATE OR REPLACE FUNCTION toRef3d(geometry)
 CREATE OR REPLACE FUNCTION getBBoxSize(geometry)
     RETURNS float8
     AS 'MODULE_PATHNAME', 'c60_getBBoxSize'
-    LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
+    LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL COST 5; --Низкая цена если геометрия под коробку подготовлена и туда не могут попасть большие объекты
 
 
 -- Fast get Geometry data size in bytes (without full data read).
@@ -6155,7 +6155,7 @@ CREATE OR REPLACE FUNCTION getBBoxSize(geometry)
 CREATE OR REPLACE FUNCTION getGeomByteLen(geometry)
 	RETURNS int4
 	AS 'MODULE_PATHNAME', 'c60_getGeomByteLen'
-	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
+	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL COST 10;
 
 
 -- Get Geometry BOX without full reading and allocations.
@@ -6163,20 +6163,29 @@ CREATE OR REPLACE FUNCTION getGeomByteLen(geometry)
 CREATE OR REPLACE FUNCTION getMbrCentroid3D(geometry)
 	RETURNS geometry
 	AS 'MODULE_PATHNAME', 'c60_getMbrCentroid3D'
-	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL;
+	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL
+	COST 100;
 
 -- Availability: 2.3.0
 CREATE OR REPLACE FUNCTION isRef3D(geometry)
 	RETURNS bool
 	AS 'MODULE_PATHNAME', 'c60_isRef3D'
 	LANGUAGE 'c' IMMUTABLE STRICT _PARALLEL
-    COST 10;
+    COST 100;
 
+--Приблизительный линейный размер геометрии
 CREATE OR REPLACE FUNCTION isGraphicGeometry(geometry)
 	 RETURNS bool
 	 AS 'MODULE_PATHNAME', 'c60_isGraphicGeom'
 	 LANGUAGE 'c' IMMUTABLE STRICT PARALLEL SAFE
 			COST 10;
+
+
+CREATE OR REPLACE FUNCTION geometrySize(geometry)
+     RETURNS float4
+     AS 'MODULE_PATHNAME', 'c60_geometrySize'
+     LANGUAGE 'c' IMMUTABLE STRICT PARALLEL SAFE
+            COST 100;
 
 --END C60 FUNCTIONS ----------------------------------------------------------------------
 
