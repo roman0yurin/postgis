@@ -8,7 +8,7 @@
 #include <liblwgeom.h>
 
 extern "C"{
-
+	#include <access/tuptoaster.h>
 	#include "liblwgeom/liblwgeom_internal.h"
 
 	/**
@@ -92,10 +92,7 @@ extern "C"{
 	*/
 	PG_FUNCTION_INFO_V1(c60_getGeomByteLen);
 	Datum c60_getGeomByteLen(PG_FUNCTION_ARGS){
-		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
-		int32_t result = geom->size;
-		PG_FREE_IF_COPY(geom, 0);
-		PG_RETURN_INT32(result);
+		PG_RETURN_INT32(toast_raw_datum_size(PG_GETARG_DATUM(0)));
 	}
 
 	/**
@@ -129,13 +126,70 @@ extern "C"{
 	 **/
 	PG_FUNCTION_INFO_V1(c60_isGraphicGeom);
 	Datum c60_isGraphicGeom(PG_FUNCTION_ARGS){
-		GSERIALIZED *geom = (GSERIALIZED*)PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
-		if(gserialized_get_type(geom) == REF3D_TYPE) {
-			LWREF3D *geometry = reinterpret_cast<LWREF3D *>(lwgeom_from_gserialized(geom));
-		  PG_RETURN_BOOL(geometry->refId != 0);
+		if(toast_raw_datum_size(PG_GETARG_DATUM(0)) > 200) {
+			GSERIALIZED *geom = (GSERIALIZED *) PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
+			if (gserialized_get_type(geom) == REF3D_TYPE) {
+				LWREF3D *geometry = reinterpret_cast<LWREF3D *>(lwgeom_from_gserialized(geom));
+				lwgeom_free(reinterpret_cast<LWGEOM *>(geometry));
+				PG_FREE_IF_COPY(geom, 0);
+				PG_RETURN_BOOL(geometry->refId != 0);
+			} else {
+				PG_FREE_IF_COPY(geom, 0);
+				PG_RETURN_BOOL(true);
+			}
 		}else{
 			PG_RETURN_BOOL(true);
 		}
 	}
 
+	/**
+	* Оценочный размер данной геометрии.
+	* Для объектов имеющих поверхность (3д и полигоны) задается как корень от площади.
+	* Для линейных объектов как длина. Для точечных null.
+	*/
+	PG_FUNCTION_INFO_V1(c60_geometrySize);
+	Datum c60_geometrySize(PG_FUNCTION_ARGS){
+		GSERIALIZED *geom = (GSERIALIZED *) PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
+		LWGEOM *lwgeom = lwgeom_from_gserialized(geom);
+		float result = -1;
+
+		switch (lwgeom->type)
+		{
+			case POINTTYPE:
+			case MULTIPOINTTYPE:
+				break;
+			case LINETYPE:
+			case CIRCSTRINGTYPE:
+			case MULTILINETYPE:
+			case CURVEPOLYTYPE:
+			case COMPOUNDTYPE:
+			case MULTICURVETYPE:
+				result = static_cast<float>(lwgeom_length(lwgeom));
+				break;
+			case POLYGONTYPE:
+			case MULTIPOLYGONTYPE:
+			case TRIANGLETYPE:
+			case POLYHEDRALSURFACETYPE:
+			case TINTYPE:
+			case MULTIMESH_TYPE:
+			case MULTISURFACETYPE:
+			case REF3D_TYPE:
+				result = static_cast<float>(sqrt(lwgeom_area(lwgeom)));
+				break;
+			case COLLECTIONTYPE:
+				result = static_cast<float>(sqrt(lwgeom_area(lwgeom)));
+				if(result == 0)
+					result = static_cast<float>(lwgeom_length(lwgeom));
+				break;
+			default:
+				lwerror("lwgeom_free called with unknown type (%d) %s", lwgeom->type, lwtype_name(lwgeom->type));
+		}
+
+		lwgeom_free(lwgeom);
+		PG_FREE_IF_COPY(geom, 0);
+		if(result >= 0)
+			PG_RETURN_FLOAT4(result);
+		else
+			PG_RETURN_NULL();
+	}
 }
