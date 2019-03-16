@@ -22,3 +22,12 @@ extern "C"{
 	#include <stdio.h>
 	#include <errno.h>
 }
+
+namespace c60::GeomUtils{
+
+		/**Площадь 2д или 3д геометрии**/
+		double area(const LWGEOM *lwgeom);
+
+		/**Полощадь для 3д геометрии**/
+		double area3d(const LWGEOM *lwgeom);
+}

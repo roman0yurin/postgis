@@ -7,10 +7,34 @@
 #include <assert.h>
 #include <liblwgeom.h>
 
-extern "C"{
-	#include <access/tuptoaster.h>
-	#include "liblwgeom/liblwgeom_internal.h"
 
+extern "C" {
+#include <access/tuptoaster.h>
+#include "liblwgeom/liblwgeom_internal.h"
+#include "lwgeom_pg.h"
+#include "lwgeom_sfcgal.h"
+#include <postgis/lwgeom_sfcgal.h>
+}
+
+
+double c60::GeomUtils::area(const LWGEOM *lwgeom){
+	if(FLAGS_GET_Z(lwgeom->flags)){
+		return area3d(lwgeom);
+	}else{
+		return lwgeom_area(lwgeom);
+	}
+}
+
+double c60::GeomUtils::area3d(const LWGEOM *lwgeom){
+	sfcgal_geometry_t * geom = LWGEOM2SFCGAL(lwgeom);
+	double result = sfcgal_geometry_area_3d(geom);
+	sfcgal_geometry_delete(geom);
+	return result;
+}
+
+
+
+extern "C"{
 	/**
 	* Получает геометрию.
 	* Извлекаем прямоугольное покрытие 3D без чтения всего значения и аллокаций.
@@ -142,6 +166,8 @@ extern "C"{
 		}
 	}
 
+
+
 	/**
 	* Оценочный размер данной геометрии.
 	* Для объектов имеющих поверхность (3д и полигоны) задается как корень от площади.
@@ -174,10 +200,10 @@ extern "C"{
 			case MULTIMESH_TYPE:
 			case MULTISURFACETYPE:
 			case REF3D_TYPE:
-				result = static_cast<float>(sqrt(lwgeom_area(lwgeom)));
+				result = static_cast<float>(sqrt(c60::GeomUtils::area(lwgeom)));
 				break;
 			case COLLECTIONTYPE:
-				result = static_cast<float>(sqrt(lwgeom_area(lwgeom)));
+				result = static_cast<float>(sqrt(c60::GeomUtils::area(lwgeom)));
 				if(result == 0)
 					result = static_cast<float>(lwgeom_length(lwgeom));
 				break;
