@@ -150,13 +150,15 @@ extern "C"{
 	 **/
 	PG_FUNCTION_INFO_V1(c60_isGraphicGeom);
 	Datum c60_isGraphicGeom(PG_FUNCTION_ARGS){
-		if(toast_raw_datum_size(PG_GETARG_DATUM(0)) > 200) {
+		auto geomSize = toast_raw_datum_size(PG_GETARG_DATUM(0));
+		if(geomSize < 200) {
 			GSERIALIZED *geom = (GSERIALIZED *) PG_DETOAST_DATUM(PG_GETARG_POINTER(0));
 			if (gserialized_get_type(geom) == REF3D_TYPE) {
 				LWREF3D *geometry = reinterpret_cast<LWREF3D *>(lwgeom_from_gserialized(geom));
+				bool result = geometry->refId != 0;
 				lwgeom_free(reinterpret_cast<LWGEOM *>(geometry));
 				PG_FREE_IF_COPY(geom, 0);
-				PG_RETURN_BOOL(geometry->refId != 0);
+				PG_RETURN_BOOL(result);
 			} else {
 				PG_FREE_IF_COPY(geom, 0);
 				PG_RETURN_BOOL(true);
