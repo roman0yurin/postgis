@@ -46,6 +46,11 @@ extern "C"{
 		GBOX bbox;
 		if ( gserialized_read_gbox_p(geom, &bbox) == LW_SUCCESS ){
 			BOX3D *box3d = box3d_from_gbox(&bbox);
+			if(!FLAGS_GET_Z(bbox.flags)){
+				//Вносим явный признак того, что это не 3д коробка
+				box3d->zmin = 1;
+				box3d->zmax = -1;
+			}
 			PG_FREE_IF_COPY(geom, 0);
 			PG_RETURN_POINTER(box3d);
 		}else{
