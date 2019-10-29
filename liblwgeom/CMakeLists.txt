@@ -140,6 +140,6 @@ endif()
 find_package(BISON REQUIRED)
 find_package(FLEX REQUIRED)
 
-FLEX_TARGET(LwGeomLexParser lwin_wkt_lex.l  ${CMAKE_CURRENT_SOURCE_DIR}/lwin_wkt_lex.c)
-BISON_TARGET(LwGeomBisonParser lwin_wkt_parse.y ${CMAKE_CURRENT_SOURCE_DIR}/lwin_wkt_parse.c)
+FLEX_TARGET(LwGeomLexParser lwin_wkt_lex.l ${CMAKE_CURRENT_SOURCE_DIR}/lwin_wkt_lex.c COMPILE_FLAGS "-i")
+BISON_TARGET(LwGeomBisonParser lwin_wkt_parse.y ${CMAKE_CURRENT_SOURCE_DIR}/lwin_wkt_parse.c COMPILE_FLAGS "-d -p wkt_yy")
 ADD_FLEX_BISON_DEPENDENCY(LwGeomLexParser LwGeomBisonParser)

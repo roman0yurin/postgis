@@ -246,7 +246,6 @@ geometry_no_srid :
 	polyhedralsurface { $$ = $1; } |
 	triangle { $$ = $1; } |
 	geometrycollection { $$ = $1; } |
-	geometrycollectionref3d { $$ = $1; } |
 	ref3d { $$ = $1; } |
 	multimesh { $$ = $1; }
 

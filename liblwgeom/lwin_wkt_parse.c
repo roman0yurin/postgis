@@ -1,9 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.4.  */
+/* A Bison parser, made by GNU Bison 3.0.4.  */
 
 /* Bison implementation for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2019 Free Software Foundation,
-   Inc.
+   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -41,14 +40,11 @@
    define necessary library symbols; they are noted "INFRINGES ON
    USER NAME SPACE" below.  */
 
-/* Undocumented macros, especially those whose name start with YY_,
-   are private implementation details.  Do not rely on them.  */
-
 /* Identify Bison output.  */
 #define YYBISON 1
 
 /* Bison version.  */
-#define YYBISON_VERSION "3.4"
+#define YYBISON_VERSION "3.0.4"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -74,8 +70,8 @@
 #define yychar          wkt_yychar
 #define yylloc          wkt_yylloc
 
-/* First part of user prologue.  */
-#line 1 "lwin_wkt_parse.y"
+/* Copy the first part of user declarations.  */
+#line 1 "lwin_wkt_parse.y" /* yacc.c:339  */
 
 
 /* WKT Parser */
@@ -183,17 +179,13 @@ int lwgeom_parse_wkt(LWGEOM_PARSER_RESULT *parser_result, char *wktstr, int pars
 
 
 
-#line 187 "lwin_wkt_parse.c"
+#line 183 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
-#  if defined __cplusplus
-#   if 201103L <= __cplusplus
-#    define YY_NULLPTR nullptr
-#   else
-#    define YY_NULLPTR 0
-#   endif
+#  if defined __cplusplus && 201103L <= __cplusplus
+#   define YY_NULLPTR nullptr
 #  else
-#   define YY_NULLPTR ((void*)0)
+#   define YY_NULLPTR 0
 #  endif
 # endif
 
@@ -205,10 +197,10 @@ int lwgeom_parse_wkt(LWGEOM_PARSER_RESULT *parser_result, char *wktstr, int pars
 # define YYERROR_VERBOSE 1
 #endif
 
-/* Use api.header.include to #include this header
-   instead of duplicating it here.  */
-#ifndef YY_WKT_YY_LWIN_WKT_PARSE_H_INCLUDED
-# define YY_WKT_YY_LWIN_WKT_PARSE_H_INCLUDED
+/* In a future release of Bison, this section will be replaced
+   by #include "lwin_wkt_parse.h".  */
+#ifndef YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+# define YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -242,41 +234,22 @@ extern int wkt_yydebug;
     TRIANGLE_TOK = 275,
     TIN_TOK = 276,
     POLYHEDRALSURFACE_TOK = 277,
-    DOUBLE_TOK = 278,
-    DIMENSIONALITY_TOK = 279,
-    SRID_TOK = 280
+    REF3D_TOK = 278,
+    REF_ID_TOK = 279,
+    REF_BOX_TOK = 280,
+    MULTIMESH_TOK = 281,
+    DOUBLE_TOK = 282,
+    DIMENSIONALITY_TOK = 283,
+    SRID_TOK = 284
   };
 #endif
-/* Tokens.  */
-#define POINT_TOK 258
-#define LINESTRING_TOK 259
-#define POLYGON_TOK 260
-#define MPOINT_TOK 261
-#define MLINESTRING_TOK 262
-#define MPOLYGON_TOK 263
-#define MSURFACE_TOK 264
-#define MCURVE_TOK 265
-#define CURVEPOLYGON_TOK 266
-#define COMPOUNDCURVE_TOK 267
-#define CIRCULARSTRING_TOK 268
-#define COLLECTION_TOK 269
-#define RBRACKET_TOK 270
-#define LBRACKET_TOK 271
-#define COMMA_TOK 272
-#define EMPTY_TOK 273
-#define SEMICOLON_TOK 274
-#define TRIANGLE_TOK 275
-#define TIN_TOK 276
-#define POLYHEDRALSURFACE_TOK 277
-#define DOUBLE_TOK 278
-#define DIMENSIONALITY_TOK 279
-#define SRID_TOK 280
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
+
 union YYSTYPE
 {
-#line 112 "lwin_wkt_parse.y"
+#line 112 "lwin_wkt_parse.y" /* yacc.c:355  */
 
 	int integervalue;
 	double doublevalue;
@@ -285,9 +258,9 @@ union YYSTYPE
 	POINT coordinatevalue;
 	POINTARRAY *ptarrayvalue;
 
-#line 289 "lwin_wkt_parse.c"
-
+#line 262 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:355  */
 };
+
 typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -312,9 +285,11 @@ extern YYSTYPE wkt_yylval;
 extern YYLTYPE wkt_yylloc;
 int wkt_yyparse (void);
 
-#endif /* !YY_WKT_YY_LWIN_WKT_PARSE_H_INCLUDED  */
+#endif /* !YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */
 
+/* Copy the second part of user declarations.  */
 
+#line 293 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -335,13 +310,13 @@ typedef signed char yytype_int8;
 #ifdef YYTYPE_UINT16
 typedef YYTYPE_UINT16 yytype_uint16;
 #else
-typedef unsigned short yytype_uint16;
+typedef unsigned short int yytype_uint16;
 #endif
 
 #ifdef YYTYPE_INT16
 typedef YYTYPE_INT16 yytype_int16;
 #else
-typedef short yytype_int16;
+typedef short int yytype_int16;
 #endif
 
 #ifndef YYSIZE_T
@@ -353,7 +328,7 @@ typedef short yytype_int16;
 #  include <stddef.h> /* INFRINGES ON USER NAME SPACE */
 #  define YYSIZE_T size_t
 # else
-#  define YYSIZE_T unsigned
+#  define YYSIZE_T unsigned int
 # endif
 #endif
 
@@ -389,6 +364,15 @@ typedef short yytype_int16;
 # define YY_ATTRIBUTE_UNUSED YY_ATTRIBUTE ((__unused__))
 #endif
 
+#if !defined _Noreturn \
+     && (!defined __STDC_VERSION__ || __STDC_VERSION__ < 201112)
+# if defined _MSC_VER && 1200 <= _MSC_VER
+#  define _Noreturn __declspec (noreturn)
+# else
+#  define _Noreturn YY_ATTRIBUTE ((__noreturn__))
+# endif
+#endif
+
 /* Suppress unused-variable warnings by "using" E.  */
 #if ! defined lint || defined __GNUC__
 # define YYUSE(E) ((void) (E))
@@ -396,7 +380,7 @@ typedef short yytype_int16;
 # define YYUSE(E) /* empty */
 #endif
 
-#if defined __GNUC__ && ! defined __ICC && 407 <= __GNUC__ * 100 + __GNUC_MINOR__
+#if defined __GNUC__ && 407 <= __GNUC__ * 100 + __GNUC_MINOR__
 /* Suppress an incorrect diagnostic about yylval being uninitialized.  */
 # define YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN \
     _Pragma ("GCC diagnostic push") \
@@ -415,8 +399,6 @@ typedef short yytype_int16;
 # define YY_INITIAL_VALUE(Value) /* Nothing. */
 #endif
 
-
-#define YY_ASSERT(E) ((void) (0 && (E)))
 
 #if ! defined yyoverflow || YYERROR_VERBOSE
 
@@ -549,29 +531,29 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  80
+#define YYFINAL  89
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   294
+#define YYLAST   330
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  26
+#define YYNTOKENS  30
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  40
+#define YYNNTS  45
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  136
+#define YYNRULES  149
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  264
+#define YYNSTATES  301
 
+/* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
+   by yylex, with out-of-bounds checking.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   280
+#define YYMAXUTOK   284
 
-/* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
-   as returned by yylex, with out-of-bounds checking.  */
 #define YYTRANSLATE(YYX)                                                \
-  ((unsigned) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
+  ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
 
 /* YYTRANSLATE[TOKEN-NUM] -- Symbol number corresponding to TOKEN-NUM
-   as returned by yylex.  */
+   as returned by yylex, without out-of-bounds checking.  */
 static const yytype_uint8 yytranslate[] =
 {
        0,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -602,27 +584,28 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
       15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
-      25
+      25,    26,    27,    28,    29
 };
 
 #if YYDEBUG
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,   216,   216,   218,   222,   223,   224,   225,   226,   227,
-     228,   229,   230,   231,   232,   233,   234,   235,   236,   239,
-     241,   243,   245,   249,   251,   255,   257,   259,   261,   265,
-     267,   269,   271,   273,   275,   279,   281,   283,   285,   289,
-     291,   293,   295,   299,   301,   303,   305,   309,   311,   315,
-     317,   321,   323,   325,   327,   331,   333,   337,   340,   342,
-     344,   346,   350,   352,   356,   357,   358,   359,   362,   364,
-     368,   370,   374,   377,   380,   382,   384,   386,   390,   392,
-     394,   396,   398,   400,   404,   406,   408,   410,   414,   416,
-     418,   420,   422,   424,   426,   428,   432,   434,   436,   438,
-     442,   444,   448,   450,   452,   454,   458,   460,   462,   464,
-     468,   470,   474,   476,   480,   482,   484,   486,   490,   494,
-     496,   498,   500,   504,   506,   510,   512,   514,   518,   520,
-     522,   524,   528,   530,   534,   536,   538
+       0,   228,   228,   230,   234,   235,   236,   237,   238,   239,
+     240,   241,   242,   243,   244,   245,   246,   247,   248,   249,
+     250,   253,   255,   257,   259,   263,   265,   269,   271,   273,
+     275,   279,   281,   283,   285,   287,   289,   293,   295,   297,
+     299,   302,   304,   308,   310,   312,   314,   317,   323,   325,
+     327,   329,   333,   335,   337,   339,   343,   345,   349,   351,
+     355,   357,   361,   363,   365,   367,   371,   373,   377,   379,
+     383,   386,   388,   390,   392,   396,   398,   402,   403,   404,
+     405,   408,   410,   414,   416,   420,   423,   426,   428,   430,
+     432,   436,   438,   440,   442,   444,   446,   450,   452,   454,
+     456,   460,   462,   464,   466,   468,   470,   472,   474,   478,
+     480,   482,   484,   488,   490,   494,   496,   498,   500,   504,
+     506,   508,   510,   514,   516,   520,   522,   526,   528,   530,
+     532,   536,   540,   542,   544,   546,   550,   552,   556,   558,
+     560,   564,   566,   568,   570,   574,   576,   580,   582,   584
 };
 #endif
 
@@ -636,17 +619,18 @@ static const char *const yytname[] =
   "MSURFACE_TOK", "MCURVE_TOK", "CURVEPOLYGON_TOK", "COMPOUNDCURVE_TOK",
   "CIRCULARSTRING_TOK", "COLLECTION_TOK", "RBRACKET_TOK", "LBRACKET_TOK",
   "COMMA_TOK", "EMPTY_TOK", "SEMICOLON_TOK", "TRIANGLE_TOK", "TIN_TOK",
-  "POLYHEDRALSURFACE_TOK", "DOUBLE_TOK", "DIMENSIONALITY_TOK", "SRID_TOK",
+  "POLYHEDRALSURFACE_TOK", "REF3D_TOK", "REF_ID_TOK", "REF_BOX_TOK",
+  "MULTIMESH_TOK", "DOUBLE_TOK", "DIMENSIONALITY_TOK", "SRID_TOK",
   "$accept", "geometry", "geometry_no_srid", "geometrycollection",
-  "geometry_list", "multisurface", "surface_list", "tin",
-  "polyhedralsurface", "multipolygon", "polygon_list", "patch_list",
-  "polygon", "polygon_untagged", "patch", "curvepolygon", "curvering_list",
-  "curvering", "patchring_list", "ring_list", "patchring", "ring",
-  "compoundcurve", "compound_list", "multicurve", "curve_list",
-  "multilinestring", "linestring_list", "circularstring", "linestring",
-  "linestring_untagged", "triangle_list", "triangle", "triangle_untagged",
-  "multipoint", "point_list", "point_untagged", "point", "ptarray",
-  "coordinate", YY_NULLPTR
+  "geometry_list", "multisurface", "surface_list", "tin", "ref3d",
+  "multimesh", "ref3d_content", "polyhedralsurface", "multipolygon",
+  "polygon_list", "tin_list", "patch_list", "polygon", "polygon_untagged",
+  "tin_untagged", "patch", "curvepolygon", "curvering_list", "curvering",
+  "patchring_list", "ring_list", "patchring", "ring", "compoundcurve",
+  "compound_list", "multicurve", "curve_list", "multilinestring",
+  "linestring_list", "circularstring", "linestring", "linestring_untagged",
+  "triangle_list", "triangle", "triangle_untagged", "multipoint",
+  "point_list", "point_untagged", "point", "ptarray", "coordinate", YY_NULLPTR
 };
 #endif
 
@@ -657,14 +641,14 @@ static const yytype_uint16 yytoknum[] =
 {
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
      265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
-     275,   276,   277,   278,   279,   280
+     275,   276,   277,   278,   279,   280,   281,   282,   283,   284
 };
 # endif
 
-#define YYPACT_NINF -90
+#define YYPACT_NINF -122
 
 #define yypact_value_is_default(Yystate) \
-  (!!((Yystate) == (-90)))
+  (!!((Yystate) == (-122)))
 
 #define YYTABLE_NINF -1
 
@@ -675,33 +659,37 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int16 yypact[] =
 {
-     109,    -2,    16,    23,    26,    36,    39,    40,    52,    53,
-      74,    79,    83,    84,   108,   137,     7,    46,   -90,   -90,
-     -90,   -90,   -90,   -90,   -90,   -90,   -90,   -90,   -90,   -90,
-     -90,   -90,   -90,   -90,    43,   -90,    27,    43,   -90,    88,
-      33,   -90,   144,   140,   -90,   167,   175,   -90,   176,   179,
-     -90,   183,    20,   -90,   184,    11,   -90,   187,    11,   -90,
-     188,    17,   -90,   191,    43,   -90,   192,   168,   -90,   195,
-      51,   -90,   196,    56,   -90,   199,    70,   -90,   200,   168,
-     -90,    68,   110,   -90,    43,   -90,   169,    43,   -90,    43,
-     204,   -90,    33,   -90,    43,   -90,   205,   -90,   -90,   140,
-     -90,    43,   -90,   208,   -90,   175,   -90,    33,   -90,   209,
-     -90,   179,   -90,   212,   -90,   -90,   -90,    20,   -90,   -90,
-     213,   -90,   -90,   -90,    11,   -90,   216,   -90,   -90,   -90,
-     -90,   -90,    11,   -90,   217,   -90,   -90,   -90,    17,   -90,
-     220,    43,   -90,   -90,   221,   168,   -90,    43,    80,   -90,
-      93,   224,   -90,    56,   -90,    94,   225,   -90,    70,   -90,
-     -90,   105,   -90,    43,   228,   -90,   229,   232,   -90,    33,
-     233,    44,   -90,   140,   236,   237,   -90,   175,   240,   241,
-     -90,   179,   244,   -90,    20,   245,   -90,    11,   248,   -90,
-      11,   249,   -90,    17,   252,   -90,   253,   -90,   168,   256,
-     257,    43,    43,   -90,    56,   260,    43,   261,   -90,   -90,
-      70,   264,   112,   -90,   -90,   -90,   -90,   -90,   -90,   -90,
-     -90,   -90,   -90,   -90,   -90,   -90,   -90,   -90,   -90,   -90,
-     -90,   -90,   -90,   -90,   -90,   -90,   -90,   -90,   -90,   -90,
-     -90,   -90,   -90,   -90,   -90,   -90,    47,   265,   268,   -90,
-     -90,   269,   -90,    94,   -90,   -90,   -90,   -90,   131,   132,
-     -90,   -90,   -90,   -90
+     114,    21,    27,    32,    36,    41,    47,    78,    84,    85,
+     113,   146,   153,   154,   181,   194,    -3,   195,    42,    16,
+    -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,
+    -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,    -4,  -122,
+      28,    -4,  -122,    56,    31,  -122,    64,     4,  -122,    89,
+      93,  -122,   126,   157,  -122,   199,    24,  -122,   202,    14,
+    -122,   203,    14,  -122,   208,    20,  -122,   209,    -4,  -122,
+     212,   182,  -122,   213,    46,  -122,   216,    51,  -122,   217,
+      52,  -122,   220,    53,    55,   221,  -122,   224,   182,  -122,
+      49,   115,  -122,    -4,  -122,   183,    -4,  -122,    -4,   226,
+    -122,    31,  -122,    -4,  -122,   229,  -122,  -122,     4,  -122,
+      -4,  -122,   230,  -122,    93,  -122,    31,  -122,   233,  -122,
+     157,  -122,   234,  -122,  -122,  -122,    24,  -122,  -122,   237,
+    -122,  -122,  -122,    14,  -122,   238,  -122,  -122,  -122,  -122,
+    -122,    14,  -122,   241,  -122,  -122,  -122,    20,  -122,   242,
+      -4,  -122,  -122,   245,   182,  -122,    -4,    65,  -122,    77,
+     246,  -122,    51,  -122,    82,   249,  -122,    52,  -122,    81,
+      99,    53,    51,  -122,   250,  -122,   221,  -122,  -122,    88,
+    -122,    -4,   253,  -122,   254,   257,  -122,    31,   258,   118,
+    -122,     4,   261,   262,  -122,    93,   265,   266,  -122,   157,
+     269,  -122,    24,   270,  -122,    14,   273,  -122,    14,   274,
+    -122,    20,   277,  -122,   278,  -122,   182,   281,   282,    -4,
+      -4,  -122,    51,   285,    -4,   286,  -122,  -122,    52,   289,
+      79,  -122,   123,   290,  -122,   221,   293,   112,  -122,  -122,
+    -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,
+    -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,
+    -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,  -122,
+    -122,   130,   294,   297,  -122,  -122,   298,  -122,    82,  -122,
+    -122,   121,  -122,  -122,  -122,  -122,  -122,  -122,   137,   144,
+    -122,  -122,   139,  -122,  -122,   140,   159,   150,   156,   174,
+    -122
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -710,50 +698,56 @@ static const yytype_int16 yypact[] =
 static const yytype_uint8 yydefact[] =
 {
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     0,     0,     0,     2,    18,
-      13,    15,    16,    12,     8,     9,     7,    14,    11,     6,
-       5,    17,    10,     4,     0,   131,     0,     0,   109,     0,
-       0,    54,     0,     0,   122,     0,     0,    99,     0,     0,
-      46,     0,     0,    28,     0,     0,    87,     0,     0,    61,
-       0,     0,    77,     0,     0,   105,     0,     0,    22,     0,
-       0,   117,     0,     0,    38,     0,     0,    42,     0,     0,
-       1,     0,     0,   133,     0,   130,     0,     0,   108,     0,
-       0,    71,     0,    53,     0,   127,     0,   124,   125,     0,
-     121,     0,   111,     0,   101,     0,    98,     0,    56,     0,
-      48,     0,    45,     0,    32,    34,    33,     0,    27,    93,
-       0,    92,    94,    95,     0,    86,     0,    63,    66,    67,
-      65,    64,     0,    60,     0,    81,    82,    83,     0,    76,
-       0,     0,   104,    24,     0,     0,    21,     0,     0,   116,
-       0,     0,   113,     0,    37,     0,     0,    50,     0,    41,
-       3,   134,   128,     0,     0,   106,     0,     0,    51,     0,
-       0,     0,   119,     0,     0,     0,    96,     0,     0,     0,
-      43,     0,     0,    25,     0,     0,    84,     0,     0,    58,
-       0,     0,    74,     0,     0,   102,     0,    19,     0,     0,
-       0,     0,     0,    35,     0,     0,     0,     0,    69,    39,
-       0,     0,   135,   132,   129,   107,    73,    70,    52,   126,
-     123,   120,   110,   100,    97,    55,    47,    44,    29,    31,
-      30,    26,    89,    88,    90,    91,    85,    62,    59,    78,
-      79,    80,    75,   103,    23,    20,     0,     0,     0,   112,
-      36,     0,    57,     0,    49,    40,   136,   114,     0,     0,
-      72,    68,   115,   118
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       2,    18,    13,    15,    19,    20,    16,    12,     8,     9,
+       7,    14,    11,     6,     5,    17,    10,     4,     0,   144,
+       0,     0,   122,     0,     0,    65,     0,     0,   135,     0,
+       0,   112,     0,     0,    55,     0,     0,    30,     0,     0,
+     100,     0,     0,    74,     0,     0,    90,     0,     0,   118,
+       0,     0,    24,     0,     0,   130,     0,     0,    40,     0,
+       0,    51,     0,     0,     0,     0,    46,     0,     0,     1,
+       0,     0,   146,     0,   143,     0,     0,   121,     0,     0,
+      84,     0,    64,     0,   140,     0,   137,   138,     0,   134,
+       0,   124,     0,   114,     0,   111,     0,    67,     0,    57,
+       0,    54,     0,    34,    36,    35,     0,    29,   106,     0,
+     105,   107,   108,     0,    99,     0,    76,    79,    80,    78,
+      77,     0,    73,     0,    94,    95,    96,     0,    89,     0,
+       0,   117,    26,     0,     0,    23,     0,     0,   129,     0,
+       0,   126,     0,    39,     0,     0,    61,     0,    50,     0,
+       0,     0,     0,    69,     0,    59,     0,    45,     3,   147,
+     141,     0,     0,   119,     0,     0,    62,     0,     0,     0,
+     132,     0,     0,     0,   109,     0,     0,     0,    52,     0,
+       0,    27,     0,     0,    97,     0,     0,    71,     0,     0,
+      87,     0,     0,   115,     0,    21,     0,     0,     0,     0,
+       0,    37,     0,     0,     0,     0,    82,    48,     0,     0,
+       0,    41,     0,     0,    43,     0,     0,   148,   145,   142,
+     120,    86,    83,    63,   139,   136,   133,   123,   113,   110,
+      66,    56,    53,    31,    33,    32,    28,   102,   101,   103,
+     104,    98,    75,    72,    91,    92,    93,    88,   116,    25,
+      22,     0,     0,     0,   125,    38,     0,    70,     0,    60,
+      49,     0,    42,    68,    58,    44,   149,   127,     0,     0,
+      85,    81,     0,   128,   131,     0,     0,     0,     0,     0,
+      47
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int16 yypgoto[] =
 {
-     -90,   -90,     0,   -90,     5,   -90,    37,   -90,   -90,   -90,
-      48,     6,   -39,   -33,   -42,   -32,    55,   -21,   -90,   -89,
-     -57,   118,   -50,   150,   -90,   165,   -90,   185,   -51,   -49,
-     -44,   138,   -90,    89,   -90,   193,   121,   -90,   -36,    -6
+    -122,  -122,     0,  -122,    60,  -122,    80,  -122,  -122,  -122,
+     145,  -122,  -122,    87,   141,   151,   -42,   -53,    86,    91,
+     -37,   179,   116,  -122,   -95,    44,   136,   -54,   178,  -122,
+     193,  -122,   214,   -55,   -50,   -48,  -121,  -122,   105,  -122,
+     222,   138,  -122,   -40,   -13
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int16 yydefgoto[] =
 {
-      -1,    17,   143,    19,   144,    20,   113,    21,    22,    23,
-     109,   156,    24,   110,   157,    25,   126,   127,   207,    90,
-     208,    91,    26,   134,    27,   120,    28,   103,    29,    30,
-     131,   151,    31,   152,    32,    96,    97,    33,    82,    83
+      -1,    19,   152,    21,   153,    22,   122,    23,    24,    25,
+     170,    26,    27,   118,   174,   165,    28,   119,   175,   166,
+      29,   135,   136,   225,    99,   226,   100,    30,   143,    31,
+     129,    32,   112,    33,    34,   140,   160,    35,   161,    36,
+     105,   106,    37,    91,    92
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -761,70 +755,78 @@ static const yytype_int16 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_uint16 yytable[] =
 {
-      18,    86,   104,   170,   121,   119,   122,   129,   128,   130,
-     135,   123,   136,   114,    34,     2,    35,   137,   179,   115,
-     116,     2,    36,    10,    11,     3,    79,   101,   140,   102,
-      11,     9,    37,   101,    38,   102,   107,    98,   108,    40,
-      39,    41,    43,    84,    44,    85,    80,    42,   164,    89,
-      45,   166,    46,   167,    47,    49,    52,    50,    53,   219,
-      48,   104,   257,    51,    54,   175,    81,   147,    55,    58,
-      56,    59,   150,   121,   119,   122,    57,    60,   114,   160,
-     123,   129,   128,   130,   115,   116,   155,   135,   171,   136,
-      61,   161,    62,    98,   137,    64,   201,    65,    63,    67,
-      70,    68,    71,    66,    87,   196,    88,    69,    72,   202,
-     206,   200,     1,     2,     3,     4,     5,     6,     7,     8,
-       9,    10,    11,    12,    73,   162,    74,   163,   212,    13,
-      14,    15,    75,   223,    16,   256,   233,   232,   234,   129,
-     128,   130,   239,   235,   240,   228,   262,   263,   226,   241,
-     199,   229,   230,    76,   185,    77,    94,   213,    95,   182,
-      92,    78,    93,    81,   211,   247,   248,    98,   254,   237,
-     251,     1,     2,     3,     4,     5,     6,     7,     8,     9,
-      10,    11,    12,    99,   165,   100,   163,   191,    13,    14,
-      15,   101,   105,   102,   106,   107,   261,   108,   244,   111,
-     117,   112,   118,   124,   132,   125,   133,   138,   141,   139,
-     142,   145,   148,   146,   149,   153,   158,   154,   159,   168,
-     172,   169,   173,   176,   180,   177,   181,   183,   186,   184,
-     187,   189,   192,   190,   193,   195,   197,   163,   198,   203,
-     209,   204,   210,   214,   215,   163,   163,   216,   218,   163,
-     169,   221,   222,   173,   163,   224,   225,   177,   169,   227,
-     231,   181,   184,   236,   238,   187,   190,   242,   243,   193,
-     163,   245,   246,   198,   163,   250,   252,   204,   253,   255,
-     258,   210,   163,   259,   260,   163,   163,   217,   194,   188,
-     178,   205,   174,   249,   220
+      20,    95,   113,   124,   130,   128,   188,   138,   137,   131,
+     144,   132,   139,    83,   123,   145,    89,   146,     2,   125,
+     103,   197,   104,    90,     2,    84,    10,    11,   149,     3,
+     110,    90,   111,    11,   107,     9,   110,    38,   111,    39,
+     116,   223,   117,    41,    93,    42,    94,    98,    44,    40,
+      45,   233,    47,   182,    48,    43,   184,    50,   185,    51,
+      46,    88,   156,    53,    49,    54,   113,   159,   164,    52,
+     193,   171,    96,   124,    97,    55,   179,   169,   130,   128,
+     101,   219,   102,   131,   123,   132,   138,   137,   178,   125,
+     189,   139,   144,   220,    56,   107,    57,   145,   224,   146,
+      59,    62,    60,    63,   281,   108,    58,   109,   230,   110,
+     214,   111,    61,    64,   231,   237,   218,     1,     2,     3,
+       4,     5,     6,     7,     8,     9,    10,    11,    12,    65,
+     180,    66,   181,   244,    13,    14,    15,    16,   282,   286,
+      17,    67,   114,    18,   115,   287,   251,   248,   292,   254,
+     258,   257,   293,   138,   137,   259,   264,   260,   139,   294,
+     253,   265,    68,   266,    69,   255,   295,   296,   238,    71,
+      74,    72,    75,   116,    70,   117,   297,   298,   107,   272,
+     273,    73,    76,   299,   276,     1,     2,     3,     4,     5,
+       6,     7,     8,     9,    10,    11,    12,    77,   183,    78,
+     181,   300,    13,    14,    15,    16,   203,   200,    17,    79,
+      80,    85,    81,    86,   217,   120,   269,   121,   126,   133,
+     127,   134,    82,    87,   141,   147,   142,   148,   150,   154,
+     151,   155,   157,   162,   158,   163,   167,   172,   168,   173,
+     176,   186,   177,   187,   190,   194,   191,   195,   198,   201,
+     199,   202,   204,   207,   205,   208,   210,   213,   211,   181,
+     215,   221,   216,   222,   227,   234,   228,   235,   239,   240,
+     181,   181,   241,   243,   181,   187,   246,   247,   191,   181,
+     249,   250,   195,   187,   252,   256,   199,   202,   261,   263,
+     205,   208,   267,   268,   211,   181,   270,   271,   216,   181,
+     275,   277,   222,   278,   280,   283,   228,   222,   285,   288,
+     235,   181,   289,   290,   181,   181,   232,   236,   229,   279,
+     209,   284,   291,   242,   262,   212,   206,   274,   196,   245,
+     192
 };
 
-static const yytype_uint8 yycheck[] =
+static const yytype_uint16 yycheck[] =
 {
-       0,    37,    46,    92,    55,    55,    55,    58,    58,    58,
-      61,    55,    61,    52,    16,     4,    18,    61,   107,    52,
-      52,     4,    24,    12,    13,     5,    19,    16,    64,    18,
-      13,    11,    16,    16,    18,    18,    16,    43,    18,    16,
-      24,    18,    16,    16,    18,    18,     0,    24,    84,    16,
-      24,    87,    16,    89,    18,    16,    16,    18,    18,    15,
-      24,   105,    15,    24,    24,   101,    23,    16,    16,    16,
-      18,    18,    16,   124,   124,   124,    24,    24,   117,    79,
-     124,   132,   132,   132,   117,   117,    16,   138,    94,   138,
-      16,    23,    18,    99,   138,    16,    16,    18,    24,    16,
-      16,    18,    18,    24,    16,   141,    18,    24,    24,    16,
-      16,   147,     3,     4,     5,     6,     7,     8,     9,    10,
-      11,    12,    13,    14,    16,    15,    18,    17,    23,    20,
-      21,    22,    24,   177,    25,    23,   187,   187,   187,   190,
-     190,   190,   193,   187,   193,   184,    15,    15,   181,   193,
-     145,   184,   184,    16,   117,    18,    16,   163,    18,   111,
-      16,    24,    18,    23,   158,   201,   202,   173,   210,   190,
-     206,     3,     4,     5,     6,     7,     8,     9,    10,    11,
-      12,    13,    14,    16,    15,    18,    17,   132,    20,    21,
-      22,    16,    16,    18,    18,    16,   253,    18,   198,    16,
-      16,    18,    18,    16,    16,    18,    18,    16,    16,    18,
-      18,    16,    16,    18,    18,    16,    16,    18,    18,    15,
-      15,    17,    17,    15,    15,    17,    17,    15,    15,    17,
-      17,    15,    15,    17,    17,    15,    15,    17,    17,    15,
-      15,    17,    17,    15,    15,    17,    17,    15,    15,    17,
-      17,    15,    15,    17,    17,    15,    15,    17,    17,    15,
-      15,    17,    17,    15,    15,    17,    17,    15,    15,    17,
-      17,    15,    15,    17,    17,    15,    15,    17,    17,    15,
-      15,    17,    17,    15,    15,    17,    17,   169,   138,   124,
-     105,   153,    99,   204,   173
+       0,    41,    50,    56,    59,    59,   101,    62,    62,    59,
+      65,    59,    62,    16,    56,    65,     0,    65,     4,    56,
+      16,   116,    18,    27,     4,    28,    12,    13,    68,     5,
+      16,    27,    18,    13,    47,    11,    16,    16,    18,    18,
+      16,   162,    18,    16,    16,    18,    18,    16,    16,    28,
+      18,   172,    16,    93,    18,    28,    96,    16,    98,    18,
+      28,    19,    16,    16,    28,    18,   114,    16,    16,    28,
+     110,    16,    16,   126,    18,    28,    27,    24,   133,   133,
+      16,    16,    18,   133,   126,   133,   141,   141,    88,   126,
+     103,   141,   147,    16,    16,   108,    18,   147,    16,   147,
+      16,    16,    18,    18,    25,    16,    28,    18,    27,    16,
+     150,    18,    28,    28,    15,    27,   156,     3,     4,     5,
+       6,     7,     8,     9,    10,    11,    12,    13,    14,    16,
+      15,    18,    17,    15,    20,    21,    22,    23,    15,    27,
+      26,    28,    16,    29,    18,    15,   199,   195,    27,   202,
+     205,   205,    15,   208,   208,   205,   211,   205,   208,    15,
+     202,   211,    16,   211,    18,   202,    27,    27,   181,    16,
+      16,    18,    18,    16,    28,    18,    17,    27,   191,   219,
+     220,    28,    28,    27,   224,     3,     4,     5,     6,     7,
+       8,     9,    10,    11,    12,    13,    14,    16,    15,    18,
+      17,    27,    20,    21,    22,    23,   126,   120,    26,    28,
+      16,    16,    18,    18,   154,    16,   216,    18,    16,    16,
+      18,    18,    28,    28,    16,    16,    18,    18,    16,    16,
+      18,    18,    16,    16,    18,    18,    16,    16,    18,    18,
+      16,    15,    18,    17,    15,    15,    17,    17,    15,    15,
+      17,    17,    15,    15,    17,    17,    15,    15,    17,    17,
+      15,    15,    17,    17,    15,    15,    17,    17,    15,    15,
+      17,    17,    15,    15,    17,    17,    15,    15,    17,    17,
+      15,    15,    17,    17,    15,    15,    17,    17,    15,    15,
+      17,    17,    15,    15,    17,    17,    15,    15,    17,    17,
+      15,    15,    17,    17,    15,    15,    17,    17,    15,    15,
+      17,    17,    15,    15,    17,    17,   171,   176,   167,   228,
+     141,   235,   278,   187,   208,   147,   133,   222,   114,   191,
+     108
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -832,70 +834,76 @@ static const yytype_uint8 yycheck[] =
 static const yytype_uint8 yystos[] =
 {
        0,     3,     4,     5,     6,     7,     8,     9,    10,    11,
-      12,    13,    14,    20,    21,    22,    25,    27,    28,    29,
-      31,    33,    34,    35,    38,    41,    48,    50,    52,    54,
-      55,    58,    60,    63,    16,    18,    24,    16,    18,    24,
-      16,    18,    24,    16,    18,    24,    16,    18,    24,    16,
-      18,    24,    16,    18,    24,    16,    18,    24,    16,    18,
-      24,    16,    18,    24,    16,    18,    24,    16,    18,    24,
-      16,    18,    24,    16,    18,    24,    16,    18,    24,    19,
-       0,    23,    64,    65,    16,    18,    64,    16,    18,    16,
-      45,    47,    16,    18,    16,    18,    61,    62,    65,    16,
-      18,    16,    18,    53,    56,    16,    18,    16,    18,    36,
-      39,    16,    18,    32,    38,    39,    41,    16,    18,    48,
-      51,    54,    55,    56,    16,    18,    42,    43,    48,    54,
-      55,    56,    16,    18,    49,    54,    55,    56,    16,    18,
-      64,    16,    18,    28,    30,    16,    18,    16,    16,    18,
-      16,    57,    59,    16,    18,    16,    37,    40,    16,    18,
-      28,    23,    15,    17,    64,    15,    64,    64,    15,    17,
-      45,    65,    15,    17,    61,    64,    15,    17,    53,    45,
-      15,    17,    36,    15,    17,    32,    15,    17,    51,    15,
-      17,    42,    15,    17,    49,    15,    64,    15,    17,    30,
-      64,    16,    16,    15,    17,    57,    16,    44,    46,    15,
-      17,    37,    23,    65,    15,    15,    15,    47,    15,    15,
-      62,    15,    15,    56,    15,    15,    39,    15,    38,    39,
-      41,    15,    48,    54,    55,    56,    15,    43,    15,    54,
-      55,    56,    15,    15,    28,    15,    15,    64,    64,    59,
-      15,    64,    15,    17,    40,    15,    23,    15,    15,    15,
-      15,    46,    15,    15
+      12,    13,    14,    20,    21,    22,    23,    26,    29,    31,
+      32,    33,    35,    37,    38,    39,    41,    42,    46,    50,
+      57,    59,    61,    63,    64,    67,    69,    72,    16,    18,
+      28,    16,    18,    28,    16,    18,    28,    16,    18,    28,
+      16,    18,    28,    16,    18,    28,    16,    18,    28,    16,
+      18,    28,    16,    18,    28,    16,    18,    28,    16,    18,
+      28,    16,    18,    28,    16,    18,    28,    16,    18,    28,
+      16,    18,    28,    16,    28,    16,    18,    28,    19,     0,
+      27,    73,    74,    16,    18,    73,    16,    18,    16,    54,
+      56,    16,    18,    16,    18,    70,    71,    74,    16,    18,
+      16,    18,    62,    65,    16,    18,    16,    18,    43,    47,
+      16,    18,    36,    46,    47,    50,    16,    18,    57,    60,
+      63,    64,    65,    16,    18,    51,    52,    57,    63,    64,
+      65,    16,    18,    58,    63,    64,    65,    16,    18,    73,
+      16,    18,    32,    34,    16,    18,    16,    16,    18,    16,
+      66,    68,    16,    18,    16,    45,    49,    16,    18,    24,
+      40,    16,    16,    18,    44,    48,    16,    18,    32,    27,
+      15,    17,    73,    15,    73,    73,    15,    17,    54,    74,
+      15,    17,    70,    73,    15,    17,    62,    54,    15,    17,
+      43,    15,    17,    36,    15,    17,    60,    15,    17,    51,
+      15,    17,    58,    15,    73,    15,    17,    34,    73,    16,
+      16,    15,    17,    66,    16,    53,    55,    15,    17,    45,
+      27,    15,    40,    66,    15,    17,    44,    27,    74,    15,
+      15,    15,    56,    15,    15,    71,    15,    15,    65,    15,
+      15,    47,    15,    46,    47,    50,    15,    57,    63,    64,
+      65,    15,    52,    15,    63,    64,    65,    15,    15,    32,
+      15,    15,    73,    73,    68,    15,    73,    15,    17,    49,
+      15,    25,    15,    15,    48,    15,    27,    15,    15,    15,
+      15,    55,    27,    15,    15,    27,    27,    17,    27,    27,
+      27
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    26,    27,    27,    28,    28,    28,    28,    28,    28,
-      28,    28,    28,    28,    28,    28,    28,    28,    28,    29,
-      29,    29,    29,    30,    30,    31,    31,    31,    31,    32,
-      32,    32,    32,    32,    32,    33,    33,    33,    33,    34,
-      34,    34,    34,    35,    35,    35,    35,    36,    36,    37,
-      37,    38,    38,    38,    38,    39,    39,    40,    41,    41,
-      41,    41,    42,    42,    43,    43,    43,    43,    44,    44,
-      45,    45,    46,    47,    48,    48,    48,    48,    49,    49,
-      49,    49,    49,    49,    50,    50,    50,    50,    51,    51,
-      51,    51,    51,    51,    51,    51,    52,    52,    52,    52,
-      53,    53,    54,    54,    54,    54,    55,    55,    55,    55,
-      56,    56,    57,    57,    58,    58,    58,    58,    59,    60,
-      60,    60,    60,    61,    61,    62,    62,    62,    63,    63,
-      63,    63,    64,    64,    65,    65,    65
+       0,    30,    31,    31,    32,    32,    32,    32,    32,    32,
+      32,    32,    32,    32,    32,    32,    32,    32,    32,    32,
+      32,    33,    33,    33,    33,    34,    34,    35,    35,    35,
+      35,    36,    36,    36,    36,    36,    36,    37,    37,    37,
+      37,    38,    38,    39,    39,    39,    39,    40,    41,    41,
+      41,    41,    42,    42,    42,    42,    43,    43,    44,    44,
+      45,    45,    46,    46,    46,    46,    47,    47,    48,    48,
+      49,    50,    50,    50,    50,    51,    51,    52,    52,    52,
+      52,    53,    53,    54,    54,    55,    56,    57,    57,    57,
+      57,    58,    58,    58,    58,    58,    58,    59,    59,    59,
+      59,    60,    60,    60,    60,    60,    60,    60,    60,    61,
+      61,    61,    61,    62,    62,    63,    63,    63,    63,    64,
+      64,    64,    64,    65,    65,    66,    66,    67,    67,    67,
+      67,    68,    69,    69,    69,    69,    70,    70,    71,    71,
+      71,    72,    72,    72,    72,    73,    73,    74,    74,    74
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
        0,     2,     1,     3,     1,     1,     1,     1,     1,     1,
-       1,     1,     1,     1,     1,     1,     1,     1,     1,     4,
-       5,     3,     2,     3,     1,     4,     5,     3,     2,     3,
-       3,     3,     1,     1,     1,     4,     5,     3,     2,     4,
-       5,     3,     2,     4,     5,     3,     2,     3,     1,     3,
-       1,     4,     5,     3,     2,     3,     1,     3,     4,     5,
-       3,     2,     3,     1,     1,     1,     1,     1,     3,     1,
-       3,     1,     3,     3,     4,     5,     3,     2,     3,     3,
-       3,     1,     1,     1,     4,     5,     3,     2,     3,     3,
-       3,     3,     1,     1,     1,     1,     4,     5,     3,     2,
-       3,     1,     4,     5,     3,     2,     4,     5,     3,     2,
-       3,     1,     3,     1,     6,     7,     3,     2,     5,     4,
-       5,     3,     2,     3,     1,     1,     3,     1,     4,     5,
-       3,     2,     3,     1,     2,     3,     4
+       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
+       1,     4,     5,     3,     2,     3,     1,     4,     5,     3,
+       2,     3,     3,     3,     1,     1,     1,     4,     5,     3,
+       2,     4,     5,     4,     5,     3,     2,    10,     4,     5,
+       3,     2,     4,     5,     3,     2,     3,     1,     3,     1,
+       3,     1,     4,     5,     3,     2,     3,     1,     3,     1,
+       3,     4,     5,     3,     2,     3,     1,     1,     1,     1,
+       1,     3,     1,     3,     1,     3,     3,     4,     5,     3,
+       2,     3,     3,     3,     1,     1,     1,     4,     5,     3,
+       2,     3,     3,     3,     3,     1,     1,     1,     1,     4,
+       5,     3,     2,     3,     1,     4,     5,     3,     2,     4,
+       5,     3,     2,     3,     1,     3,     1,     6,     7,     3,
+       2,     5,     4,     5,     3,     2,     3,     1,     1,     3,
+       1,     4,     5,     3,     2,     3,     1,     2,     3,     4
 };
 
 
@@ -911,22 +919,22 @@ static const yytype_uint8 yyr2[] =
 
 #define YYRECOVERING()  (!!yyerrstatus)
 
-#define YYBACKUP(Token, Value)                                    \
-  do                                                              \
-    if (yychar == YYEMPTY)                                        \
-      {                                                           \
-        yychar = (Token);                                         \
-        yylval = (Value);                                         \
-        YYPOPSTACK (yylen);                                       \
-        yystate = *yyssp;                                         \
-        goto yybackup;                                            \
-      }                                                           \
-    else                                                          \
-      {                                                           \
-        yyerror (YY_("syntax error: cannot back up")); \
-        YYERROR;                                                  \
-      }                                                           \
-  while (0)
+#define YYBACKUP(Token, Value)                                  \
+do                                                              \
+  if (yychar == YYEMPTY)                                        \
+    {                                                           \
+      yychar = (Token);                                         \
+      yylval = (Value);                                         \
+      YYPOPSTACK (yylen);                                       \
+      yystate = *yyssp;                                         \
+      goto yybackup;                                            \
+    }                                                           \
+  else                                                          \
+    {                                                           \
+      yyerror (YY_("syntax error: cannot back up")); \
+      YYERROR;                                                  \
+    }                                                           \
+while (0)
 
 /* Error token number */
 #define YYTERROR        1
@@ -985,10 +993,10 @@ do {                                            \
 /* Print *YYLOCP on YYO.  Private, do not rely on its existence. */
 
 YY_ATTRIBUTE_UNUSED
-static int
+static unsigned
 yy_location_print_ (FILE *yyo, YYLTYPE const * const yylocp)
 {
-  int res = 0;
+  unsigned res = 0;
   int end_col = 0 != yylocp->last_column ? yylocp->last_column - 1 : 0;
   if (0 <= yylocp->first_line)
     {
@@ -1031,40 +1039,40 @@ do {                                                                      \
 } while (0)
 
 
-/*-----------------------------------.
-| Print this symbol's value on YYO.  |
-`-----------------------------------*/
+/*----------------------------------------.
+| Print this symbol's value on YYOUTPUT.  |
+`----------------------------------------*/
 
 static void
-yy_symbol_value_print (FILE *yyo, int yytype, YYSTYPE const * const yyvaluep, YYLTYPE const * const yylocationp)
+yy_symbol_value_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep, YYLTYPE const * const yylocationp)
 {
-  FILE *yyoutput = yyo;
-  YYUSE (yyoutput);
+  FILE *yyo = yyoutput;
+  YYUSE (yyo);
   YYUSE (yylocationp);
   if (!yyvaluep)
     return;
 # ifdef YYPRINT
   if (yytype < YYNTOKENS)
-    YYPRINT (yyo, yytoknum[yytype], *yyvaluep);
+    YYPRINT (yyoutput, yytoknum[yytype], *yyvaluep);
 # endif
   YYUSE (yytype);
 }
 
 
-/*---------------------------.
-| Print this symbol on YYO.  |
-`---------------------------*/
+/*--------------------------------.
+| Print this symbol on YYOUTPUT.  |
+`--------------------------------*/
 
 static void
-yy_symbol_print (FILE *yyo, int yytype, YYSTYPE const * const yyvaluep, YYLTYPE const * const yylocationp)
+yy_symbol_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep, YYLTYPE const * const yylocationp)
 {
-  YYFPRINTF (yyo, "%s %s (",
+  YYFPRINTF (yyoutput, "%s %s (",
              yytype < YYNTOKENS ? "token" : "nterm", yytname[yytype]);
 
-  YY_LOCATION_PRINT (yyo, *yylocationp);
-  YYFPRINTF (yyo, ": ");
-  yy_symbol_value_print (yyo, yytype, yyvaluep, yylocationp);
-  YYFPRINTF (yyo, ")");
+  YY_LOCATION_PRINT (yyoutput, *yylocationp);
+  YYFPRINTF (yyoutput, ": ");
+  yy_symbol_value_print (yyoutput, yytype, yyvaluep, yylocationp);
+  YYFPRINTF (yyoutput, ")");
 }
 
 /*------------------------------------------------------------------.
@@ -1098,7 +1106,7 @@ do {                                                            \
 static void
 yy_reduce_print (yytype_int16 *yyssp, YYSTYPE *yyvsp, YYLTYPE *yylsp, int yyrule)
 {
-  unsigned long yylno = yyrline[yyrule];
+  unsigned long int yylno = yyrline[yyrule];
   int yynrhs = yyr2[yyrule];
   int yyi;
   YYFPRINTF (stderr, "Reducing stack by rule %d (line %lu):\n",
@@ -1109,7 +1117,7 @@ yy_reduce_print (yytype_int16 *yyssp, YYSTYPE *yyvsp, YYLTYPE *yylsp, int yyrule
       YYFPRINTF (stderr, "   $%d = ", yyi + 1);
       yy_symbol_print (stderr,
                        yystos[yyssp[yyi + 1 - yynrhs]],
-                       &yyvsp[(yyi + 1) - (yynrhs)]
+                       &(yyvsp[(yyi + 1) - (yynrhs)])
                        , &(yylsp[(yyi + 1) - (yynrhs)])                       );
       YYFPRINTF (stderr, "\n");
     }
@@ -1213,10 +1221,7 @@ yytnamerr (char *yyres, const char *yystr)
           case '\\':
             if (*++yyp != '\\')
               goto do_not_strip_quotes;
-            else
-              goto append;
-
-          append:
+            /* Fall through.  */
           default:
             if (yyres)
               yyres[yyn] = *yyp;
@@ -1234,7 +1239,7 @@ yytnamerr (char *yyres, const char *yystr)
   if (! yyres)
     return yystrlen (yystr);
 
-  return (YYSIZE_T) (yystpcpy (yyres, yystr) - yyres);
+  return yystpcpy (yyres, yystr) - yyres;
 }
 # endif
 
@@ -1312,10 +1317,10 @@ yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
                 yyarg[yycount++] = yytname[yyx];
                 {
                   YYSIZE_T yysize1 = yysize + yytnamerr (YY_NULLPTR, yytname[yyx]);
-                  if (yysize <= yysize1 && yysize1 <= YYSTACK_ALLOC_MAXIMUM)
-                    yysize = yysize1;
-                  else
+                  if (! (yysize <= yysize1
+                         && yysize1 <= YYSTACK_ALLOC_MAXIMUM))
                     return 2;
+                  yysize = yysize1;
                 }
               }
         }
@@ -1327,7 +1332,6 @@ yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
       case N:                               \
         yyformat = S;                       \
       break
-    default: /* Avoid compiler warnings. */
       YYCASE_(0, YY_("syntax error"));
       YYCASE_(1, YY_("syntax error, unexpected %s"));
       YYCASE_(2, YY_("syntax error, unexpected %s, expecting %s"));
@@ -1339,10 +1343,9 @@ yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
 
   {
     YYSIZE_T yysize1 = yysize + yystrlen (yyformat);
-    if (yysize <= yysize1 && yysize1 <= YYSTACK_ALLOC_MAXIMUM)
-      yysize = yysize1;
-    else
+    if (! (yysize <= yysize1 && yysize1 <= YYSTACK_ALLOC_MAXIMUM))
       return 2;
+    yysize = yysize1;
   }
 
   if (*yymsg_alloc < yysize)
@@ -1392,221 +1395,252 @@ yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep, YYLTYPE *yylocatio
   YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
   switch (yytype)
     {
-    case 28: /* geometry_no_srid  */
-#line 194 "lwin_wkt_parse.y"
+          case 32: /* geometry_no_srid  */
+#line 201 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1399 "lwin_wkt_parse.c"
+#line 1402 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 29: /* geometrycollection  */
-#line 195 "lwin_wkt_parse.y"
+    case 33: /* geometrycollection  */
+#line 202 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1405 "lwin_wkt_parse.c"
+#line 1408 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 31: /* multisurface  */
-#line 202 "lwin_wkt_parse.y"
+    case 35: /* multisurface  */
+#line 209 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1411 "lwin_wkt_parse.c"
+#line 1414 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 32: /* surface_list  */
-#line 181 "lwin_wkt_parse.y"
+    case 36: /* surface_list  */
+#line 188 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1417 "lwin_wkt_parse.c"
+#line 1420 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 33: /* tin  */
-#line 209 "lwin_wkt_parse.y"
+    case 37: /* tin  */
+#line 217 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1423 "lwin_wkt_parse.c"
+#line 1426 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 34: /* polyhedralsurface  */
-#line 208 "lwin_wkt_parse.y"
+    case 38: /* ref3d  */
+#line 221 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1429 "lwin_wkt_parse.c"
+#line 1432 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 35: /* multipolygon  */
-#line 201 "lwin_wkt_parse.y"
+    case 39: /* multimesh  */
+#line 222 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1435 "lwin_wkt_parse.c"
+#line 1438 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 36: /* polygon_list  */
-#line 182 "lwin_wkt_parse.y"
+    case 40: /* ref3d_content  */
+#line 220 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1441 "lwin_wkt_parse.c"
+#line 1444 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 37: /* patch_list  */
-#line 183 "lwin_wkt_parse.y"
+    case 41: /* polyhedralsurface  */
+#line 216 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1447 "lwin_wkt_parse.c"
+#line 1450 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 38: /* polygon  */
-#line 205 "lwin_wkt_parse.y"
+    case 42: /* multipolygon  */
+#line 208 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1453 "lwin_wkt_parse.c"
+#line 1456 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 39: /* polygon_untagged  */
-#line 207 "lwin_wkt_parse.y"
+    case 43: /* polygon_list  */
+#line 189 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1459 "lwin_wkt_parse.c"
+#line 1462 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 40: /* patch  */
-#line 206 "lwin_wkt_parse.y"
+    case 44: /* tin_list  */
+#line 223 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1465 "lwin_wkt_parse.c"
+#line 1468 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 41: /* curvepolygon  */
-#line 192 "lwin_wkt_parse.y"
+    case 45: /* patch_list  */
+#line 190 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1471 "lwin_wkt_parse.c"
+#line 1474 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 42: /* curvering_list  */
-#line 179 "lwin_wkt_parse.y"
+    case 46: /* polygon  */
+#line 212 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1477 "lwin_wkt_parse.c"
+#line 1480 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 43: /* curvering  */
-#line 193 "lwin_wkt_parse.y"
+    case 47: /* polygon_untagged  */
+#line 214 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1483 "lwin_wkt_parse.c"
+#line 1486 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 44: /* patchring_list  */
-#line 189 "lwin_wkt_parse.y"
+    case 48: /* tin_untagged  */
+#line 215 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1489 "lwin_wkt_parse.c"
+#line 1492 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 45: /* ring_list  */
-#line 188 "lwin_wkt_parse.y"
+    case 49: /* patch  */
+#line 213 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1495 "lwin_wkt_parse.c"
+#line 1498 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 46: /* patchring  */
-#line 178 "lwin_wkt_parse.y"
+    case 50: /* curvepolygon  */
+#line 199 "lwin_wkt_parse.y" /* yacc.c:1257  */
+      { lwgeom_free(((*yyvaluep).geometryvalue)); }
+#line 1504 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+        break;
+
+    case 51: /* curvering_list  */
+#line 186 "lwin_wkt_parse.y" /* yacc.c:1257  */
+      { lwgeom_free(((*yyvaluep).geometryvalue)); }
+#line 1510 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+        break;
+
+    case 52: /* curvering  */
+#line 200 "lwin_wkt_parse.y" /* yacc.c:1257  */
+      { lwgeom_free(((*yyvaluep).geometryvalue)); }
+#line 1516 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+        break;
+
+    case 53: /* patchring_list  */
+#line 196 "lwin_wkt_parse.y" /* yacc.c:1257  */
+      { lwgeom_free(((*yyvaluep).geometryvalue)); }
+#line 1522 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+        break;
+
+    case 54: /* ring_list  */
+#line 195 "lwin_wkt_parse.y" /* yacc.c:1257  */
+      { lwgeom_free(((*yyvaluep).geometryvalue)); }
+#line 1528 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+        break;
+
+    case 55: /* patchring  */
+#line 185 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { ptarray_free(((*yyvaluep).ptarrayvalue)); }
-#line 1501 "lwin_wkt_parse.c"
+#line 1534 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 47: /* ring  */
-#line 177 "lwin_wkt_parse.y"
+    case 56: /* ring  */
+#line 184 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { ptarray_free(((*yyvaluep).ptarrayvalue)); }
-#line 1507 "lwin_wkt_parse.c"
+#line 1540 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 48: /* compoundcurve  */
-#line 191 "lwin_wkt_parse.y"
+    case 57: /* compoundcurve  */
+#line 198 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1513 "lwin_wkt_parse.c"
+#line 1546 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 49: /* compound_list  */
-#line 187 "lwin_wkt_parse.y"
+    case 58: /* compound_list  */
+#line 194 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1519 "lwin_wkt_parse.c"
+#line 1552 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 50: /* multicurve  */
-#line 198 "lwin_wkt_parse.y"
+    case 59: /* multicurve  */
+#line 205 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1525 "lwin_wkt_parse.c"
+#line 1558 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 51: /* curve_list  */
-#line 186 "lwin_wkt_parse.y"
+    case 60: /* curve_list  */
+#line 193 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1531 "lwin_wkt_parse.c"
+#line 1564 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 52: /* multilinestring  */
-#line 199 "lwin_wkt_parse.y"
+    case 61: /* multilinestring  */
+#line 206 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1537 "lwin_wkt_parse.c"
+#line 1570 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 53: /* linestring_list  */
-#line 185 "lwin_wkt_parse.y"
+    case 62: /* linestring_list  */
+#line 192 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1543 "lwin_wkt_parse.c"
+#line 1576 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 54: /* circularstring  */
-#line 190 "lwin_wkt_parse.y"
+    case 63: /* circularstring  */
+#line 197 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1549 "lwin_wkt_parse.c"
+#line 1582 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 55: /* linestring  */
-#line 196 "lwin_wkt_parse.y"
+    case 64: /* linestring  */
+#line 203 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1555 "lwin_wkt_parse.c"
+#line 1588 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 56: /* linestring_untagged  */
-#line 197 "lwin_wkt_parse.y"
+    case 65: /* linestring_untagged  */
+#line 204 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1561 "lwin_wkt_parse.c"
+#line 1594 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 57: /* triangle_list  */
-#line 180 "lwin_wkt_parse.y"
+    case 66: /* triangle_list  */
+#line 187 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1567 "lwin_wkt_parse.c"
+#line 1600 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 58: /* triangle  */
-#line 210 "lwin_wkt_parse.y"
+    case 67: /* triangle  */
+#line 218 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1573 "lwin_wkt_parse.c"
+#line 1606 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 59: /* triangle_untagged  */
-#line 211 "lwin_wkt_parse.y"
+    case 68: /* triangle_untagged  */
+#line 219 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1579 "lwin_wkt_parse.c"
+#line 1612 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 60: /* multipoint  */
-#line 200 "lwin_wkt_parse.y"
+    case 69: /* multipoint  */
+#line 207 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1585 "lwin_wkt_parse.c"
+#line 1618 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 61: /* point_list  */
-#line 184 "lwin_wkt_parse.y"
+    case 70: /* point_list  */
+#line 191 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1591 "lwin_wkt_parse.c"
+#line 1624 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 62: /* point_untagged  */
-#line 204 "lwin_wkt_parse.y"
+    case 71: /* point_untagged  */
+#line 211 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1597 "lwin_wkt_parse.c"
+#line 1630 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 63: /* point  */
-#line 203 "lwin_wkt_parse.y"
+    case 72: /* point  */
+#line 210 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1603 "lwin_wkt_parse.c"
+#line 1636 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
-    case 64: /* ptarray  */
-#line 176 "lwin_wkt_parse.y"
+    case 73: /* ptarray  */
+#line 183 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { ptarray_free(((*yyvaluep).ptarrayvalue)); }
-#line 1609 "lwin_wkt_parse.c"
+#line 1642 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
+
 
       default:
         break;
@@ -1707,33 +1741,23 @@ yyparse (void)
   yylsp[0] = yylloc;
   goto yysetstate;
 
-
 /*------------------------------------------------------------.
-| yynewstate -- push a new state, which is found in yystate.  |
+| yynewstate -- Push a new state, which is found in yystate.  |
 `------------------------------------------------------------*/
-yynewstate:
+ yynewstate:
   /* In all cases, when you get here, the value and location stacks
      have just been pushed.  So pushing a state here evens the stacks.  */
   yyssp++;
 
-
-/*--------------------------------------------------------------------.
-| yynewstate -- set current state (the top of the stack) to yystate.  |
-`--------------------------------------------------------------------*/
-yysetstate:
-  YYDPRINTF ((stderr, "Entering state %d\n", yystate));
-  YY_ASSERT (0 <= yystate && yystate < YYNSTATES);
-  *yyssp = (yytype_int16) yystate;
+ yysetstate:
+  *yyssp = yystate;
 
   if (yyss + yystacksize - 1 <= yyssp)
-#if !defined yyoverflow && !defined YYSTACK_RELOCATE
-    goto yyexhaustedlab;
-#else
     {
       /* Get the current used size of the three stacks, in elements.  */
-      YYSIZE_T yysize = (YYSIZE_T) (yyssp - yyss + 1);
+      YYSIZE_T yysize = yyssp - yyss + 1;
 
-# if defined yyoverflow
+#ifdef yyoverflow
       {
         /* Give user a chance to reallocate the stack.  Use copies of
            these so that the &'s don't force the real ones into
@@ -1751,11 +1775,15 @@ yysetstate:
                     &yyvs1, yysize * sizeof (*yyvsp),
                     &yyls1, yysize * sizeof (*yylsp),
                     &yystacksize);
+
+        yyls = yyls1;
         yyss = yyss1;
         yyvs = yyvs1;
-        yyls = yyls1;
       }
-# else /* defined YYSTACK_RELOCATE */
+#else /* no yyoverflow */
+# ifndef YYSTACK_RELOCATE
+      goto yyexhaustedlab;
+# else
       /* Extend the stack our own way.  */
       if (YYMAXDEPTH <= yystacksize)
         goto yyexhaustedlab;
@@ -1772,34 +1800,36 @@ yysetstate:
         YYSTACK_RELOCATE (yyss_alloc, yyss);
         YYSTACK_RELOCATE (yyvs_alloc, yyvs);
         YYSTACK_RELOCATE (yyls_alloc, yyls);
-# undef YYSTACK_RELOCATE
+#  undef YYSTACK_RELOCATE
         if (yyss1 != yyssa)
           YYSTACK_FREE (yyss1);
       }
 # endif
+#endif /* no yyoverflow */
 
       yyssp = yyss + yysize - 1;
       yyvsp = yyvs + yysize - 1;
       yylsp = yyls + yysize - 1;
 
       YYDPRINTF ((stderr, "Stack size increased to %lu\n",
-                  (unsigned long) yystacksize));
+                  (unsigned long int) yystacksize));
 
       if (yyss + yystacksize - 1 <= yyssp)
         YYABORT;
     }
-#endif /* !defined yyoverflow && !defined YYSTACK_RELOCATE */
+
+  YYDPRINTF ((stderr, "Entering state %d\n", yystate));
 
   if (yystate == YYFINAL)
     YYACCEPT;
 
   goto yybackup;
 
-
 /*-----------.
 | yybackup.  |
 `-----------*/
 yybackup:
+
   /* Do appropriate processing given the current state.  Read a
      lookahead token if we need one and don't already have one.  */
 
@@ -1872,7 +1902,7 @@ yydefault:
 
 
 /*-----------------------------.
-| yyreduce -- do a reduction.  |
+| yyreduce -- Do a reduction.  |
 `-----------------------------*/
 yyreduce:
   /* yyn is the number of a rule to reduce with.  */
@@ -1888,825 +1918,901 @@ yyreduce:
      GCC warning that YYVAL may be used uninitialized.  */
   yyval = yyvsp[1-yylen];
 
-  /* Default location. */
+  /* Default location.  */
   YYLLOC_DEFAULT (yyloc, (yylsp - yylen), yylen);
-  yyerror_range[1] = yyloc;
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-  case 2:
-#line 217 "lwin_wkt_parse.y"
+        case 2:
+#line 229 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { wkt_parser_geometry_new((yyvsp[0].geometryvalue), SRID_UNKNOWN); WKT_ERROR(); }
-#line 1901 "lwin_wkt_parse.c"
+#line 1930 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 219 "lwin_wkt_parse.y"
+#line 231 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { wkt_parser_geometry_new((yyvsp[0].geometryvalue), (yyvsp[-2].integervalue)); WKT_ERROR(); }
-#line 1907 "lwin_wkt_parse.c"
+#line 1936 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 222 "lwin_wkt_parse.y"
+#line 234 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1913 "lwin_wkt_parse.c"
+#line 1942 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 223 "lwin_wkt_parse.y"
+#line 235 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1919 "lwin_wkt_parse.c"
+#line 1948 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 224 "lwin_wkt_parse.y"
+#line 236 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1925 "lwin_wkt_parse.c"
+#line 1954 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 225 "lwin_wkt_parse.y"
+#line 237 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1931 "lwin_wkt_parse.c"
+#line 1960 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 226 "lwin_wkt_parse.y"
+#line 238 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1937 "lwin_wkt_parse.c"
+#line 1966 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 227 "lwin_wkt_parse.y"
+#line 239 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1943 "lwin_wkt_parse.c"
+#line 1972 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 228 "lwin_wkt_parse.y"
+#line 240 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1949 "lwin_wkt_parse.c"
+#line 1978 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 229 "lwin_wkt_parse.y"
+#line 241 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1955 "lwin_wkt_parse.c"
+#line 1984 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 230 "lwin_wkt_parse.y"
+#line 242 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1961 "lwin_wkt_parse.c"
+#line 1990 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 231 "lwin_wkt_parse.y"
+#line 243 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1967 "lwin_wkt_parse.c"
+#line 1996 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 232 "lwin_wkt_parse.y"
+#line 244 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1973 "lwin_wkt_parse.c"
+#line 2002 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 233 "lwin_wkt_parse.y"
+#line 245 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1979 "lwin_wkt_parse.c"
+#line 2008 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 234 "lwin_wkt_parse.y"
+#line 246 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1985 "lwin_wkt_parse.c"
+#line 2014 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 235 "lwin_wkt_parse.y"
+#line 247 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1991 "lwin_wkt_parse.c"
+#line 2020 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 236 "lwin_wkt_parse.y"
+#line 248 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1997 "lwin_wkt_parse.c"
+#line 2026 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 240 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2003 "lwin_wkt_parse.c"
+#line 249 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
+#line 2032 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 242 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2009 "lwin_wkt_parse.c"
+#line 250 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
+#line 2038 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 244 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2015 "lwin_wkt_parse.c"
+#line 254 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2044 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 246 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2021 "lwin_wkt_parse.c"
+#line 256 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2050 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 250 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2027 "lwin_wkt_parse.c"
+#line 258 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2056 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 252 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2033 "lwin_wkt_parse.c"
+#line 260 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, NULL, NULL); WKT_ERROR(); }
+#line 2062 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 256 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2039 "lwin_wkt_parse.c"
+#line 264 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2068 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 258 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2045 "lwin_wkt_parse.c"
+#line 266 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2074 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 260 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2051 "lwin_wkt_parse.c"
+#line 270 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2080 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 262 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2057 "lwin_wkt_parse.c"
+#line 272 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2086 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 29:
-#line 266 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2063 "lwin_wkt_parse.c"
+#line 274 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2092 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 30:
-#line 268 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2069 "lwin_wkt_parse.c"
+#line 276 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, NULL, NULL); WKT_ERROR(); }
+#line 2098 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 270 "lwin_wkt_parse.y"
+#line 280 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2075 "lwin_wkt_parse.c"
+#line 2104 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 272 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2081 "lwin_wkt_parse.c"
+#line 282 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2110 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 274 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2087 "lwin_wkt_parse.c"
+#line 284 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2116 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 276 "lwin_wkt_parse.y"
+#line 286 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2093 "lwin_wkt_parse.c"
+#line 2122 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 280 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2099 "lwin_wkt_parse.c"
+#line 288 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2128 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 282 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2105 "lwin_wkt_parse.c"
+#line 290 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2134 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 284 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2111 "lwin_wkt_parse.c"
+#line 294 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2140 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 38:
-#line 286 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2117 "lwin_wkt_parse.c"
+#line 296 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2146 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 39:
-#line 290 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2123 "lwin_wkt_parse.c"
+#line 298 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2152 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 40:
-#line 292 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2129 "lwin_wkt_parse.c"
+#line 300 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, NULL, NULL); WKT_ERROR(); }
+#line 2158 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 41:
-#line 294 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2135 "lwin_wkt_parse.c"
+#line 303 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue);}
+#line 2164 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 42:
-#line 296 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2141 "lwin_wkt_parse.c"
+#line 305 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue);}
+#line 2170 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 300 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2147 "lwin_wkt_parse.c"
+#line 309 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIMESH_TYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2176 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 302 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2153 "lwin_wkt_parse.c"
+#line 311 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIMESH_TYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2182 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 304 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2159 "lwin_wkt_parse.c"
+#line 313 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIMESH_TYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2188 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 306 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2165 "lwin_wkt_parse.c"
+#line 315 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIMESH_TYPE, NULL, NULL); WKT_ERROR(); }
+#line 2194 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 310 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2171 "lwin_wkt_parse.c"
+#line 318 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_ref3d_new((yyvsp[-8].doublevalue), (yyvsp[-6].doublevalue), (yyvsp[-5].doublevalue), (yyvsp[-4].doublevalue), (yyvsp[-2].doublevalue), (yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
+#line 2200 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 312 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2177 "lwin_wkt_parse.c"
+#line 324 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2206 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 316 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2183 "lwin_wkt_parse.c"
+#line 326 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2212 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 318 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2189 "lwin_wkt_parse.c"
+#line 328 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2218 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 322 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_polygon_finalize((yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2195 "lwin_wkt_parse.c"
+#line 330 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, NULL, NULL); WKT_ERROR(); }
+#line 2224 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 324 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_polygon_finalize((yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2201 "lwin_wkt_parse.c"
+#line 334 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2230 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 326 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2207 "lwin_wkt_parse.c"
+#line 336 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2236 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 328 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, NULL); WKT_ERROR(); }
-#line 2213 "lwin_wkt_parse.c"
+#line 338 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2242 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 332 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue); }
-#line 2219 "lwin_wkt_parse.c"
+#line 340 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, NULL, NULL); WKT_ERROR(); }
+#line 2248 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 56:
-#line 334 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, NULL); WKT_ERROR(); }
-#line 2225 "lwin_wkt_parse.c"
+#line 344 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2254 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 57:
-#line 337 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue); }
-#line 2231 "lwin_wkt_parse.c"
+#line 346 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2260 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 58:
-#line 341 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize((yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2237 "lwin_wkt_parse.c"
+#line 350 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2266 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 59:
-#line 343 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize((yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2243 "lwin_wkt_parse.c"
+#line 352 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2272 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 345 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2249 "lwin_wkt_parse.c"
+#line 356 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2278 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 61:
-#line 347 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize(NULL, NULL); WKT_ERROR(); }
-#line 2255 "lwin_wkt_parse.c"
+#line 358 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2284 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 62:
-#line 351 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_curvepolygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2261 "lwin_wkt_parse.c"
+#line 362 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_polygon_finalize((yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2290 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 63:
-#line 353 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_curvepolygon_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2267 "lwin_wkt_parse.c"
+#line 364 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_polygon_finalize((yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2296 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 64:
-#line 356 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2273 "lwin_wkt_parse.c"
+#line 366 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2302 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 357 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2279 "lwin_wkt_parse.c"
+#line 368 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, NULL); WKT_ERROR(); }
+#line 2308 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 66:
-#line 358 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2285 "lwin_wkt_parse.c"
+#line 372 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue); }
+#line 2314 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 359 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2291 "lwin_wkt_parse.c"
+#line 374 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, NULL); WKT_ERROR(); }
+#line 2320 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 68:
-#line 363 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_polygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].ptarrayvalue),'Z'); WKT_ERROR(); }
-#line 2297 "lwin_wkt_parse.c"
+#line 378 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue); }
+#line 2326 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 69:
-#line 365 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_polygon_new((yyvsp[0].ptarrayvalue),'Z'); WKT_ERROR(); }
-#line 2303 "lwin_wkt_parse.c"
+#line 380 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_tin_finalize(NULL, NULL); WKT_ERROR(); }
+#line 2332 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 70:
-#line 369 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_polygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].ptarrayvalue),'2'); WKT_ERROR(); }
-#line 2309 "lwin_wkt_parse.c"
+#line 383 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue); }
+#line 2338 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 71:
-#line 371 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_polygon_new((yyvsp[0].ptarrayvalue),'2'); WKT_ERROR(); }
-#line 2315 "lwin_wkt_parse.c"
+#line 387 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize((yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2344 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 72:
-#line 374 "lwin_wkt_parse.y"
-    { (yyval.ptarrayvalue) = (yyvsp[-1].ptarrayvalue); }
-#line 2321 "lwin_wkt_parse.c"
+#line 389 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize((yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2350 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 73:
-#line 377 "lwin_wkt_parse.y"
-    { (yyval.ptarrayvalue) = (yyvsp[-1].ptarrayvalue); }
-#line 2327 "lwin_wkt_parse.c"
+#line 391 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2356 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 74:
-#line 381 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2333 "lwin_wkt_parse.c"
+#line 393 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize(NULL, NULL); WKT_ERROR(); }
+#line 2362 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 75:
-#line 383 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2339 "lwin_wkt_parse.c"
+#line 397 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_curvepolygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2368 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 76:
-#line 385 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2345 "lwin_wkt_parse.c"
+#line 399 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_curvepolygon_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2374 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 77:
-#line 387 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2351 "lwin_wkt_parse.c"
+#line 402 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
+#line 2380 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 78:
-#line 391 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2357 "lwin_wkt_parse.c"
+#line 403 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
+#line 2386 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 79:
-#line 393 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2363 "lwin_wkt_parse.c"
+#line 404 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
+#line 2392 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 80:
-#line 395 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2369 "lwin_wkt_parse.c"
+#line 405 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
+#line 2398 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 81:
-#line 397 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2375 "lwin_wkt_parse.c"
+#line 409 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_polygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].ptarrayvalue),'Z'); WKT_ERROR(); }
+#line 2404 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 82:
-#line 399 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2381 "lwin_wkt_parse.c"
+#line 411 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_polygon_new((yyvsp[0].ptarrayvalue),'Z'); WKT_ERROR(); }
+#line 2410 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 83:
-#line 401 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2387 "lwin_wkt_parse.c"
+#line 415 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_polygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].ptarrayvalue),'2'); WKT_ERROR(); }
+#line 2416 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 84:
-#line 405 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2393 "lwin_wkt_parse.c"
+#line 417 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_polygon_new((yyvsp[0].ptarrayvalue),'2'); WKT_ERROR(); }
+#line 2422 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 85:
-#line 407 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2399 "lwin_wkt_parse.c"
+#line 420 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.ptarrayvalue) = (yyvsp[-1].ptarrayvalue); }
+#line 2428 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 86:
-#line 409 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2405 "lwin_wkt_parse.c"
+#line 423 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.ptarrayvalue) = (yyvsp[-1].ptarrayvalue); }
+#line 2434 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 87:
-#line 411 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2411 "lwin_wkt_parse.c"
+#line 427 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2440 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 88:
-#line 415 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2417 "lwin_wkt_parse.c"
+#line 429 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2446 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 89:
-#line 417 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2423 "lwin_wkt_parse.c"
+#line 431 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2452 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 90:
-#line 419 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2429 "lwin_wkt_parse.c"
+#line 433 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, NULL, NULL); WKT_ERROR(); }
+#line 2458 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 91:
-#line 421 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2435 "lwin_wkt_parse.c"
+#line 437 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2464 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 92:
-#line 423 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2441 "lwin_wkt_parse.c"
+#line 439 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2470 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 93:
-#line 425 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2447 "lwin_wkt_parse.c"
+#line 441 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2476 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 94:
-#line 427 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2453 "lwin_wkt_parse.c"
+#line 443 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2482 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 95:
-#line 429 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2459 "lwin_wkt_parse.c"
+#line 445 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2488 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 96:
-#line 433 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2465 "lwin_wkt_parse.c"
+#line 447 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2494 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 97:
-#line 435 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2471 "lwin_wkt_parse.c"
+#line 451 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2500 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 98:
-#line 437 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2477 "lwin_wkt_parse.c"
+#line 453 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2506 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 99:
-#line 439 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2483 "lwin_wkt_parse.c"
+#line 455 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2512 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 100:
-#line 443 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2489 "lwin_wkt_parse.c"
+#line 457 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, NULL, NULL); WKT_ERROR(); }
+#line 2518 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 101:
-#line 445 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2495 "lwin_wkt_parse.c"
+#line 461 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2524 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 102:
-#line 449 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_circularstring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2501 "lwin_wkt_parse.c"
+#line 463 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2530 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 103:
-#line 451 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_circularstring_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2507 "lwin_wkt_parse.c"
+#line 465 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2536 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 104:
-#line 453 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_circularstring_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2513 "lwin_wkt_parse.c"
+#line 467 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2542 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 105:
-#line 455 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_circularstring_new(NULL, NULL); WKT_ERROR(); }
-#line 2519 "lwin_wkt_parse.c"
+#line 469 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2548 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 106:
-#line 459 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2525 "lwin_wkt_parse.c"
+#line 471 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2554 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 107:
-#line 461 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2531 "lwin_wkt_parse.c"
+#line 473 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2560 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 108:
-#line 463 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2537 "lwin_wkt_parse.c"
+#line 475 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2566 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 109:
-#line 465 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, NULL); WKT_ERROR(); }
-#line 2543 "lwin_wkt_parse.c"
+#line 479 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2572 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 110:
-#line 469 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2549 "lwin_wkt_parse.c"
+#line 481 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2578 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 111:
-#line 471 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, NULL); WKT_ERROR(); }
-#line 2555 "lwin_wkt_parse.c"
+#line 483 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2584 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 112:
-#line 475 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2561 "lwin_wkt_parse.c"
+#line 485 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, NULL, NULL); WKT_ERROR(); }
+#line 2590 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 113:
-#line 477 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2567 "lwin_wkt_parse.c"
+#line 489 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2596 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 114:
-#line 481 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2573 "lwin_wkt_parse.c"
+#line 491 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2602 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 115:
-#line 483 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), (yyvsp[-5].stringvalue)); WKT_ERROR(); }
-#line 2579 "lwin_wkt_parse.c"
+#line 495 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_circularstring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
+#line 2608 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 116:
-#line 485 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_triangle_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2585 "lwin_wkt_parse.c"
+#line 497 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_circularstring_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2614 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 117:
-#line 487 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_triangle_new(NULL, NULL); WKT_ERROR(); }
-#line 2591 "lwin_wkt_parse.c"
+#line 499 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_circularstring_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2620 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 118:
-#line 491 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2597 "lwin_wkt_parse.c"
+#line 501 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_circularstring_new(NULL, NULL); WKT_ERROR(); }
+#line 2626 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 119:
-#line 495 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2603 "lwin_wkt_parse.c"
+#line 505 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
+#line 2632 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 120:
-#line 497 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2609 "lwin_wkt_parse.c"
+#line 507 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2638 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 121:
-#line 499 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2615 "lwin_wkt_parse.c"
+#line 509 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2644 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 122:
-#line 501 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2621 "lwin_wkt_parse.c"
+#line 511 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, NULL); WKT_ERROR(); }
+#line 2650 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 123:
-#line 505 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2627 "lwin_wkt_parse.c"
+#line 515 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
+#line 2656 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 124:
-#line 507 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2633 "lwin_wkt_parse.c"
+#line 517 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, NULL); WKT_ERROR(); }
+#line 2662 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 125:
-#line 511 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_point_new(wkt_parser_ptarray_new((yyvsp[0].coordinatevalue)),NULL); WKT_ERROR(); }
-#line 2639 "lwin_wkt_parse.c"
+#line 521 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2668 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 126:
-#line 513 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_point_new(wkt_parser_ptarray_new((yyvsp[-1].coordinatevalue)),NULL); WKT_ERROR(); }
-#line 2645 "lwin_wkt_parse.c"
+#line 523 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2674 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 127:
-#line 515 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_point_new(NULL, NULL); WKT_ERROR(); }
-#line 2651 "lwin_wkt_parse.c"
+#line 527 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), NULL); WKT_ERROR(); }
+#line 2680 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 128:
-#line 519 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_point_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2657 "lwin_wkt_parse.c"
+#line 529 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), (yyvsp[-5].stringvalue)); WKT_ERROR(); }
+#line 2686 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 129:
-#line 521 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_point_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2663 "lwin_wkt_parse.c"
+#line 531 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_triangle_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2692 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 130:
-#line 523 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_point_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2669 "lwin_wkt_parse.c"
+#line 533 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_triangle_new(NULL, NULL); WKT_ERROR(); }
+#line 2698 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 131:
-#line 525 "lwin_wkt_parse.y"
-    { (yyval.geometryvalue) = wkt_parser_point_new(NULL,NULL); WKT_ERROR(); }
-#line 2675 "lwin_wkt_parse.c"
+#line 537 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), NULL); WKT_ERROR(); }
+#line 2704 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 132:
-#line 529 "lwin_wkt_parse.y"
-    { (yyval.ptarrayvalue) = wkt_parser_ptarray_add_coord((yyvsp[-2].ptarrayvalue), (yyvsp[0].coordinatevalue)); WKT_ERROR(); }
-#line 2681 "lwin_wkt_parse.c"
+#line 541 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
+#line 2710 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 133:
-#line 531 "lwin_wkt_parse.y"
-    { (yyval.ptarrayvalue) = wkt_parser_ptarray_new((yyvsp[0].coordinatevalue)); WKT_ERROR(); }
-#line 2687 "lwin_wkt_parse.c"
+#line 543 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2716 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 134:
-#line 535 "lwin_wkt_parse.y"
-    { (yyval.coordinatevalue) = wkt_parser_coord_2((yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
-#line 2693 "lwin_wkt_parse.c"
+#line 545 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2722 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 135:
-#line 537 "lwin_wkt_parse.y"
-    { (yyval.coordinatevalue) = wkt_parser_coord_3((yyvsp[-2].doublevalue), (yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
-#line 2699 "lwin_wkt_parse.c"
+#line 547 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, NULL, NULL); WKT_ERROR(); }
+#line 2728 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 136:
-#line 539 "lwin_wkt_parse.y"
+#line 551 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2734 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 137:
+#line 553 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
+#line 2740 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 138:
+#line 557 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_point_new(wkt_parser_ptarray_new((yyvsp[0].coordinatevalue)),NULL); WKT_ERROR(); }
+#line 2746 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 139:
+#line 559 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_point_new(wkt_parser_ptarray_new((yyvsp[-1].coordinatevalue)),NULL); WKT_ERROR(); }
+#line 2752 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 140:
+#line 561 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_point_new(NULL, NULL); WKT_ERROR(); }
+#line 2758 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 141:
+#line 565 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_point_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
+#line 2764 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 142:
+#line 567 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_point_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
+#line 2770 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 143:
+#line 569 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_point_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
+#line 2776 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 144:
+#line 571 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.geometryvalue) = wkt_parser_point_new(NULL,NULL); WKT_ERROR(); }
+#line 2782 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 145:
+#line 575 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.ptarrayvalue) = wkt_parser_ptarray_add_coord((yyvsp[-2].ptarrayvalue), (yyvsp[0].coordinatevalue)); WKT_ERROR(); }
+#line 2788 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 146:
+#line 577 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.ptarrayvalue) = wkt_parser_ptarray_new((yyvsp[0].coordinatevalue)); WKT_ERROR(); }
+#line 2794 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 147:
+#line 581 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.coordinatevalue) = wkt_parser_coord_2((yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
+#line 2800 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 148:
+#line 583 "lwin_wkt_parse.y" /* yacc.c:1646  */
+    { (yyval.coordinatevalue) = wkt_parser_coord_3((yyvsp[-2].doublevalue), (yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
+#line 2806 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+    break;
+
+  case 149:
+#line 585 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.coordinatevalue) = wkt_parser_coord_4((yyvsp[-3].doublevalue), (yyvsp[-2].doublevalue), (yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
-#line 2705 "lwin_wkt_parse.c"
+#line 2812 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
 
-#line 2709 "lwin_wkt_parse.c"
-
+#line 2816 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2732,13 +2838,14 @@ yyreduce:
   /* Now 'shift' the result of the reduction.  Determine what state
      that goes to, based on the state we popped back to and the rule
      number reduced by.  */
-  {
-    const int yylhs = yyr1[yyn] - YYNTOKENS;
-    const int yyi = yypgoto[yylhs] + *yyssp;
-    yystate = (0 <= yyi && yyi <= YYLAST && yycheck[yyi] == *yyssp
-               ? yytable[yyi]
-               : yydefgoto[yylhs]);
-  }
+
+  yyn = yyr1[yyn];
+
+  yystate = yypgoto[yyn - YYNTOKENS] + *yyssp;
+  if (0 <= yystate && yystate <= YYLAST && yycheck[yystate] == *yyssp)
+    yystate = yytable[yystate];
+  else
+    yystate = yydefgoto[yyn - YYNTOKENS];
 
   goto yynewstate;
 
@@ -2821,11 +2928,14 @@ yyerrlab:
 | yyerrorlab -- error raised explicitly by YYERROR.  |
 `---------------------------------------------------*/
 yyerrorlab:
-  /* Pacify compilers when the user code never invokes YYERROR and the
-     label yyerrorlab therefore never appears in user code.  */
-  if (0)
-    YYERROR;
 
+  /* Pacify compilers like GCC when the user code never invokes
+     YYERROR and the label yyerrorlab therefore never appears in user
+     code.  */
+  if (/*CONSTCOND*/ 0)
+     goto yyerrorlab;
+
+  yyerror_range[1] = yylsp[1-yylen];
   /* Do not reclaim the symbols of the rule whose action triggered
      this YYERROR.  */
   YYPOPSTACK (yylen);
@@ -2891,14 +3001,12 @@ yyacceptlab:
   yyresult = 0;
   goto yyreturn;
 
-
 /*-----------------------------------.
 | yyabortlab -- YYABORT comes here.  |
 `-----------------------------------*/
 yyabortlab:
   yyresult = 1;
   goto yyreturn;
-
 
 #if !defined yyoverflow || YYERROR_VERBOSE
 /*-------------------------------------------------.
@@ -2910,10 +3018,6 @@ yyexhaustedlab:
   /* Fall through.  */
 #endif
 
-
-/*-----------------------------------------------------.
-| yyreturn -- parsing is finished, return the result.  |
-`-----------------------------------------------------*/
 yyreturn:
   if (yychar != YYEMPTY)
     {
@@ -2943,6 +3047,6 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 541 "lwin_wkt_parse.y"
+#line 587 "lwin_wkt_parse.y" /* yacc.c:1906  */
 
 

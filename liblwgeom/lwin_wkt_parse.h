@@ -1,9 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.4.  */
+/* A Bison parser, made by GNU Bison 3.0.4.  */
 
 /* Bison interface for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2019 Free Software Foundation,
-   Inc.
+   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -31,11 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-/* Undocumented macros, especially those whose name start with YY_,
-   are private implementation details.  Do not rely on them.  */
-
-#ifndef YY_WKT_YY_LWIN_WKT_PARSE_H_INCLUDED
-# define YY_WKT_YY_LWIN_WKT_PARSE_H_INCLUDED
+#ifndef YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+# define YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -72,17 +68,19 @@ extern int wkt_yydebug;
     REF3D_TOK = 278,
     REF_ID_TOK = 279,
     REF_BOX_TOK = 280,
-    DOUBLE_TOK = 281,
-    DIMENSIONALITY_TOK = 282,
-    SRID_TOK = 283
+    MULTIMESH_TOK = 281,
+    DOUBLE_TOK = 282,
+    DIMENSIONALITY_TOK = 283,
+    SRID_TOK = 284
   };
 #endif
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
+
 union YYSTYPE
 {
-#line 112 "lwin_wkt_parse.y"
+#line 112 "lwin_wkt_parse.y" /* yacc.c:1909  */
 
 	int integervalue;
 	double doublevalue;
@@ -91,9 +89,9 @@ union YYSTYPE
 	POINT coordinatevalue;
 	POINTARRAY *ptarrayvalue;
 
-#line 116 "lwin_wkt_parse.h"
-
+#line 93 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.h" /* yacc.c:1909  */
 };
+
 typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -118,4 +116,4 @@ extern YYSTYPE wkt_yylval;
 extern YYLTYPE wkt_yylloc;
 int wkt_yyparse (void);
 
-#endif /* !YY_WKT_YY_MEDIA_SSD_DEVELOP_PROJECT_MAP3D_DB_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */
+#endif /* !YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */

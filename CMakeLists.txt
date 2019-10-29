@@ -97,9 +97,9 @@ endif()
 ################################################################################
 #Продключаем модуль Postgres
 set(WITH_POSTGRESQL ON)
-set(POSTGIS_POSTGRESQL_VERSION 103)
-set(PGSQL_VERSION_MAJOR 10)
-set(PGSQL_VERSION_MINOR 3)
+set(POSTGIS_POSTGRESQL_VERSION 120)
+set(PGSQL_VERSION_MAJOR 12)
+set(PGSQL_VERSION_MINOR 0)
 include_directories(${POSTGRES_SRC_DIR}/src/include ${POSTGRES_SRC_DIR}/src/interfaces/libpq)
 
 set(HAVE_LIBPQ 1)
