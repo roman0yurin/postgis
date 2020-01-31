@@ -216,7 +216,7 @@ pgis_geometry_accum_finalfn(PG_FUNCTION_ARGS)
 
 	p = (pgis_abs*) PG_GETARG_POINTER(0);
 
-	result = pgis_accum_finalfn(p, CurrentMemoryContext, fcinfo);
+	result = pgis_accum_finalfn(p, GetCurrentMemoryContext(), fcinfo);
 
 	PG_RETURN_DATUM(result);
 
@@ -239,7 +239,7 @@ pgis_geometry_union_finalfn(PG_FUNCTION_ARGS)
 
 	p = (pgis_abs*) PG_GETARG_POINTER(0);
 
-	geometry_array = pgis_accum_finalfn(p, CurrentMemoryContext, fcinfo);
+	geometry_array = pgis_accum_finalfn(p, GetCurrentMemoryContext(), fcinfo);
 	result = PGISDirectFunctionCall1( pgis_union_geometry_array, geometry_array );
 	if (!result)
 		PG_RETURN_NULL();
@@ -264,7 +264,7 @@ pgis_geometry_collect_finalfn(PG_FUNCTION_ARGS)
 
 	p = (pgis_abs*) PG_GETARG_POINTER(0);
 
-	geometry_array = pgis_accum_finalfn(p, CurrentMemoryContext, fcinfo);
+	geometry_array = pgis_accum_finalfn(p, GetCurrentMemoryContext(), fcinfo);
 	result = PGISDirectFunctionCall1( LWGEOM_collect_garray, geometry_array );
 	if (!result)
 		PG_RETURN_NULL();
@@ -290,7 +290,7 @@ pgis_geometry_polygonize_finalfn(PG_FUNCTION_ARGS)
 
 	p = (pgis_abs*) PG_GETARG_POINTER(0);
 
-	geometry_array = pgis_accum_finalfn(p, CurrentMemoryContext, fcinfo);
+	geometry_array = pgis_accum_finalfn(p, GetCurrentMemoryContext(), fcinfo);
 	result = PGISDirectFunctionCall1( polygonize_garray, geometry_array );
 	if (!result)
 		PG_RETURN_NULL();
@@ -315,7 +315,7 @@ pgis_geometry_makeline_finalfn(PG_FUNCTION_ARGS)
 
 	p = (pgis_abs*) PG_GETARG_POINTER(0);
 
-	geometry_array = pgis_accum_finalfn(p, CurrentMemoryContext, fcinfo);
+	geometry_array = pgis_accum_finalfn(p, GetCurrentMemoryContext(), fcinfo);
 	result = PGISDirectFunctionCall1( LWGEOM_makeline_garray, geometry_array );
 	if (!result)
 		PG_RETURN_NULL();
@@ -339,7 +339,7 @@ pgis_geometry_clusterintersecting_finalfn(PG_FUNCTION_ARGS)
 		PG_RETURN_NULL();
 
 	p = (pgis_abs*) PG_GETARG_POINTER(0);
-	geometry_array = pgis_accum_finalfn(p, CurrentMemoryContext, fcinfo);
+	geometry_array = pgis_accum_finalfn(p, GetCurrentMemoryContext(), fcinfo);
 	result = PGISDirectFunctionCall1( clusterintersecting_garray, geometry_array );
 	if (!result)
 		PG_RETURN_NULL();
@@ -370,7 +370,7 @@ pgis_geometry_clusterwithin_finalfn(PG_FUNCTION_ARGS)
 		PG_RETURN_NULL();
 	}
 
-	geometry_array = pgis_accum_finalfn(p, CurrentMemoryContext, fcinfo);
+	geometry_array = pgis_accum_finalfn(p, GetCurrentMemoryContext(), fcinfo);
 	result = PGISDirectFunctionCall2( cluster_within_distance_garray, geometry_array, p->data);
 	if (!result)
 		PG_RETURN_NULL();

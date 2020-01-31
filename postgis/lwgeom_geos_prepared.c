@@ -433,7 +433,7 @@ PrepGeomCacheAllocator()
 {
 	PrepGeomCache* prepcache = palloc(sizeof(PrepGeomCache));
 	memset(prepcache, 0, sizeof(PrepGeomCache));
-	prepcache->context_statement = CurrentMemoryContext;
+	prepcache->context_statement = GetCurrentMemoryContext();
 	prepcache->gcache.type = PREP_CACHE_ENTRY;
 	return (GeomCache*)prepcache;
 }

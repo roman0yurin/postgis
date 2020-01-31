@@ -1322,7 +1322,7 @@ static int rtpg_nmapalgebraexpr_callback(
 PG_FUNCTION_INFO_V1(RASTER_nMapAlgebraExpr);
 Datum RASTER_nMapAlgebraExpr(PG_FUNCTION_ARGS)
 {
-	MemoryContext mainMemCtx = CurrentMemoryContext;
+	MemoryContext mainMemCtx = CurrentMemoryContext();
 	rtpg_nmapalgebraexpr_arg arg = NULL;
 	rt_iterator itrset;
 	uint16_t exprpos[3] = {1, 4, 5};

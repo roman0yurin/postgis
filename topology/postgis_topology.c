@@ -168,7 +168,7 @@ cb_loadTopologyByName(const LWT_BE_DATA* be, const char *name)
   Datum dat;
   bool isnull;
   LWT_BE_TOPOLOGY *topo;
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   Datum values[1];
   Oid argtypes[1];
   static SPIPlanPtr plan = NULL;
@@ -805,7 +805,7 @@ fillEdgeFields(LWT_ISO_EDGE* edge, HeapTuple row, TupleDesc rowdesc, int fields)
     if ( ! isnull )
     {
       {
-        MemoryContext oldcontext = CurrentMemoryContext;
+        MemoryContext oldcontext = GetCurrentMemoryContext();
         geom = (GSERIALIZED *)PG_DETOAST_DATUM(dat);
         lwg = lwgeom_from_gserialized(geom);
         MemoryContextSwitchTo( TopMemoryContext );
@@ -926,7 +926,7 @@ cb_getEdgeById(const LWT_BE_TOPOLOGY* topo,
 {
   LWT_ISO_EDGE *edges;
   int spi_result;
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
   int i;
@@ -984,7 +984,7 @@ cb_getEdgeByNode(const LWT_BE_TOPOLOGY* topo,
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
   int i;
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
 
   initStringInfo(sql);
   appendStringInfoString(sql, "SELECT ");
@@ -1044,7 +1044,7 @@ cb_getEdgeByFace(const LWT_BE_TOPOLOGY* topo,
 {
   LWT_ISO_EDGE *edges;
   int spi_result;
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
   int i;
@@ -1127,7 +1127,7 @@ cb_getFacesById(const LWT_BE_TOPOLOGY* topo,
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
   int i;
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
 
   initStringInfo(sql);
   appendStringInfoString(sql, "SELECT ");
@@ -1184,7 +1184,7 @@ cb_getRingEdges(const LWT_BE_TOPOLOGY* topo,
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
   int i;
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
 
   initStringInfo(sql);
   appendStringInfo(sql, "WITH RECURSIVE edgering AS ( "
@@ -1267,7 +1267,7 @@ cb_getNodeById(const LWT_BE_TOPOLOGY* topo,
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
   int i;
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
 
   initStringInfo(sql);
   appendStringInfoString(sql, "SELECT ");
@@ -1318,7 +1318,7 @@ cb_getNodeByFace(const LWT_BE_TOPOLOGY* topo,
 {
   LWT_ISO_NODE *nodes;
   int spi_result;
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
   int i;
@@ -1383,7 +1383,7 @@ cb_getEdgeWithinDistance2D(const LWT_BE_TOPOLOGY* topo,
   int elems_requested = limit;
   size_t hexewkb_size;
   char *hexewkb;
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
   int i;
@@ -1473,7 +1473,7 @@ cb_getNodeWithinDistance2D(const LWT_BE_TOPOLOGY* topo,
                            const LWPOINT* pt, double dist, int* numelems,
                            int fields, int limit)
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   LWT_ISO_NODE *nodes;
   int spi_result;
   size_t hexewkb_size;
@@ -1577,7 +1577,7 @@ static int
 cb_insertNodes( const LWT_BE_TOPOLOGY* topo,
                 LWT_ISO_NODE* nodes, int numelems )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -1636,7 +1636,7 @@ static int
 cb_insertEdges( const LWT_BE_TOPOLOGY* topo,
                 LWT_ISO_EDGE* edges, int numelems )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -1697,7 +1697,7 @@ static int
 cb_insertFaces( const LWT_BE_TOPOLOGY* topo,
                 LWT_ISO_FACE* faces, int numelems )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -1759,7 +1759,7 @@ cb_updateEdges( const LWT_BE_TOPOLOGY* topo,
                 const LWT_ISO_EDGE* upd_edge, int upd_fields,
                 const LWT_ISO_EDGE* exc_edge, int exc_fields )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -1804,7 +1804,7 @@ cb_updateNodes( const LWT_BE_TOPOLOGY* topo,
                 const LWT_ISO_NODE* upd_node, int upd_fields,
                 const LWT_ISO_NODE* exc_node, int exc_fields )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -1847,7 +1847,7 @@ static int
 cb_updateNodesById( const LWT_BE_TOPOLOGY* topo,
                     const LWT_ISO_NODE* nodes, int numnodes, int fields )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int i;
   int spi_result;
   StringInfoData sqldata;
@@ -1920,7 +1920,7 @@ static int
 cb_updateFacesById( const LWT_BE_TOPOLOGY* topo,
                     const LWT_ISO_FACE* faces, int numfaces )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int i;
   int spi_result;
   StringInfoData sqldata;
@@ -1968,7 +1968,7 @@ static int
 cb_updateEdgesById( const LWT_BE_TOPOLOGY* topo,
                     const LWT_ISO_EDGE* edges, int numedges, int fields )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int i;
   int spi_result;
   StringInfoData sqldata;
@@ -2061,7 +2061,7 @@ static int
 cb_deleteEdges( const LWT_BE_TOPOLOGY* topo,
                 const LWT_ISO_EDGE* sel_edge, int sel_fields )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2093,7 +2093,7 @@ cb_deleteEdges( const LWT_BE_TOPOLOGY* topo,
 static LWT_ELEMID
 cb_getNextEdgeId( const LWT_BE_TOPOLOGY* topo )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2142,7 +2142,7 @@ static int
 cb_updateTopoGeomEdgeSplit ( const LWT_BE_TOPOLOGY* topo,
                              LWT_ELEMID split_edge, LWT_ELEMID new_edge1, LWT_ELEMID new_edge2 )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2270,7 +2270,7 @@ static int
 cb_updateTopoGeomFaceSplit ( const LWT_BE_TOPOLOGY* topo,
                              LWT_ELEMID split_face, LWT_ELEMID new_face1, LWT_ELEMID new_face2 )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2404,7 +2404,7 @@ static int
 cb_checkTopoGeomRemEdge ( const LWT_BE_TOPOLOGY* topo,
                           LWT_ELEMID rem_edge, LWT_ELEMID face_left, LWT_ELEMID face_right )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2525,7 +2525,7 @@ static int
 cb_checkTopoGeomRemNode ( const LWT_BE_TOPOLOGY* topo,
                           LWT_ELEMID rem_node, LWT_ELEMID edge1, LWT_ELEMID edge2 )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2592,7 +2592,7 @@ static int
 cb_updateTopoGeomFaceHeal ( const LWT_BE_TOPOLOGY* topo,
                             LWT_ELEMID face1, LWT_ELEMID face2, LWT_ELEMID newface )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2675,7 +2675,7 @@ static int
 cb_updateTopoGeomEdgeHeal ( const LWT_BE_TOPOLOGY* topo,
                             LWT_ELEMID edge1, LWT_ELEMID edge2, LWT_ELEMID newedge )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2756,7 +2756,7 @@ cb_updateTopoGeomEdgeHeal ( const LWT_BE_TOPOLOGY* topo,
 static LWT_ELEMID
 cb_getFaceContainingPoint( const LWT_BE_TOPOLOGY* topo, const LWPOINT* pt )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2822,7 +2822,7 @@ static int
 cb_deleteFacesById( const LWT_BE_TOPOLOGY* topo,
                     const LWT_ELEMID* ids, int numelems )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result, i;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2860,7 +2860,7 @@ static int
 cb_deleteNodesById( const LWT_BE_TOPOLOGY* topo,
                     const LWT_ELEMID* ids, int numelems )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result, i;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2899,7 +2899,7 @@ static LWT_ISO_NODE*
 cb_getNodeWithinBox2D ( const LWT_BE_TOPOLOGY* topo, const GBOX* box,
                         int* numelems, int fields, int limit )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -2983,7 +2983,7 @@ static LWT_ISO_EDGE*
 cb_getEdgeWithinBox2D ( const LWT_BE_TOPOLOGY* topo, const GBOX* box,
                         int* numelems, int fields, int limit )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
@@ -3072,7 +3072,7 @@ static LWT_ISO_FACE*
 cb_getFaceWithinBox2D ( const LWT_BE_TOPOLOGY* topo, const GBOX* box,
                         int* numelems, int fields, int limit )
 {
-  MemoryContext oldcontext = CurrentMemoryContext;
+  MemoryContext oldcontext = GetCurrentMemoryContext();
   int spi_result;
   StringInfoData sqldata;
   StringInfo sql = &sqldata;
