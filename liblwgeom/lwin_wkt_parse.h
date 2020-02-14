@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
-# define YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+#ifndef YY_WKT_YY_HOME_SERGHY_PROJECTS_IPCLEAN_TRUNK_SGAZ_DB_V3_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+# define YY_WKT_YY_HOME_SERGHY_PROJECTS_IPCLEAN_TRUNK_SGAZ_DB_V3_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -89,7 +89,7 @@ union YYSTYPE
 	POINT coordinatevalue;
 	POINTARRAY *ptarrayvalue;
 
-#line 93 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.h" /* yacc.c:1909  */
+#line 93 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -116,4 +116,4 @@ extern YYSTYPE wkt_yylval;
 extern YYLTYPE wkt_yylloc;
 int wkt_yyparse (void);
 
-#endif /* !YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */
+#endif /* !YY_WKT_YY_HOME_SERGHY_PROJECTS_IPCLEAN_TRUNK_SGAZ_DB_V3_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */

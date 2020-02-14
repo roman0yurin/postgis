@@ -179,7 +179,7 @@ int lwgeom_parse_wkt(LWGEOM_PARSER_RESULT *parser_result, char *wktstr, int pars
 
 
 
-#line 183 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:339  */
+#line 183 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -199,8 +199,8 @@ int lwgeom_parse_wkt(LWGEOM_PARSER_RESULT *parser_result, char *wktstr, int pars
 
 /* In a future release of Bison, this section will be replaced
    by #include "lwin_wkt_parse.h".  */
-#ifndef YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
-# define YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+#ifndef YY_WKT_YY_HOME_SERGHY_PROJECTS_IPCLEAN_TRUNK_SGAZ_DB_V3_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
+# define YY_WKT_YY_HOME_SERGHY_PROJECTS_IPCLEAN_TRUNK_SGAZ_DB_V3_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -258,7 +258,7 @@ union YYSTYPE
 	POINT coordinatevalue;
 	POINTARRAY *ptarrayvalue;
 
-#line 262 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:355  */
+#line 262 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -285,11 +285,11 @@ extern YYSTYPE wkt_yylval;
 extern YYLTYPE wkt_yylloc;
 int wkt_yyparse (void);
 
-#endif /* !YY_WKT_YY_HOME_SERGHY_PROJECTS_TRUNK_SGAZ_DB_V2_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */
+#endif /* !YY_WKT_YY_HOME_SERGHY_PROJECTS_IPCLEAN_TRUNK_SGAZ_DB_V3_EXT_LIB_POSTGIS_LIBLWGEOM_LWIN_WKT_PARSE_H_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
-#line 293 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:358  */
+#line 293 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1398,247 +1398,247 @@ yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep, YYLTYPE *yylocatio
           case 32: /* geometry_no_srid  */
 #line 201 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1402 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1402 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 33: /* geometrycollection  */
 #line 202 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1408 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1408 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 35: /* multisurface  */
 #line 209 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1414 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1414 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 36: /* surface_list  */
 #line 188 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1420 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1420 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 37: /* tin  */
 #line 217 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1426 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1426 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 38: /* ref3d  */
 #line 221 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1432 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1432 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 39: /* multimesh  */
 #line 222 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1438 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1438 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 40: /* ref3d_content  */
 #line 220 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1444 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1444 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 41: /* polyhedralsurface  */
 #line 216 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1450 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1450 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 42: /* multipolygon  */
 #line 208 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1456 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1456 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 43: /* polygon_list  */
 #line 189 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1462 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1462 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 44: /* tin_list  */
 #line 223 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1468 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1468 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 45: /* patch_list  */
 #line 190 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1474 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1474 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 46: /* polygon  */
 #line 212 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1480 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1480 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 47: /* polygon_untagged  */
 #line 214 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1486 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1486 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 48: /* tin_untagged  */
 #line 215 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1492 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1492 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 49: /* patch  */
 #line 213 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1498 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1498 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 50: /* curvepolygon  */
 #line 199 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1504 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1504 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 51: /* curvering_list  */
 #line 186 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1510 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1510 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 52: /* curvering  */
 #line 200 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1516 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1516 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 53: /* patchring_list  */
 #line 196 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1522 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1522 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 54: /* ring_list  */
 #line 195 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1528 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1528 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 55: /* patchring  */
 #line 185 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { ptarray_free(((*yyvaluep).ptarrayvalue)); }
-#line 1534 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1534 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 56: /* ring  */
 #line 184 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { ptarray_free(((*yyvaluep).ptarrayvalue)); }
-#line 1540 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1540 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 57: /* compoundcurve  */
 #line 198 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1546 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1546 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 58: /* compound_list  */
 #line 194 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1552 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1552 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 59: /* multicurve  */
 #line 205 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1558 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1558 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 60: /* curve_list  */
 #line 193 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1564 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1564 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 61: /* multilinestring  */
 #line 206 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1570 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1570 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 62: /* linestring_list  */
 #line 192 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1576 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1576 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 63: /* circularstring  */
 #line 197 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1582 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1582 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 64: /* linestring  */
 #line 203 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1588 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1588 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 65: /* linestring_untagged  */
 #line 204 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1594 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1594 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 66: /* triangle_list  */
 #line 187 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1600 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1600 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 67: /* triangle  */
 #line 218 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1606 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1606 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 68: /* triangle_untagged  */
 #line 219 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1612 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1612 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 69: /* multipoint  */
 #line 207 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1618 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1618 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 70: /* point_list  */
 #line 191 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1624 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1624 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 71: /* point_untagged  */
 #line 211 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1630 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1630 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 72: /* point  */
 #line 210 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { lwgeom_free(((*yyvaluep).geometryvalue)); }
-#line 1636 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1636 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
     case 73: /* ptarray  */
 #line 183 "lwin_wkt_parse.y" /* yacc.c:1257  */
       { ptarray_free(((*yyvaluep).ptarrayvalue)); }
-#line 1642 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
+#line 1642 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1257  */
         break;
 
 
@@ -1926,893 +1926,893 @@ yyreduce:
         case 2:
 #line 229 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { wkt_parser_geometry_new((yyvsp[0].geometryvalue), SRID_UNKNOWN); WKT_ERROR(); }
-#line 1930 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1930 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 3:
 #line 231 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { wkt_parser_geometry_new((yyvsp[0].geometryvalue), (yyvsp[-2].integervalue)); WKT_ERROR(); }
-#line 1936 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1936 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 4:
 #line 234 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1942 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1942 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 5:
 #line 235 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1948 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1948 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 6:
 #line 236 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1954 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1954 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 7:
 #line 237 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1960 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1960 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 8:
 #line 238 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1966 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1966 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 9:
 #line 239 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1972 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1972 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 10:
 #line 240 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1978 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1978 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 11:
 #line 241 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1984 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1984 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 12:
 #line 242 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1990 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1990 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 13:
 #line 243 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 1996 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 1996 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 14:
 #line 244 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2002 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2002 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 15:
 #line 245 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2008 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2008 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 16:
 #line 246 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2014 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2014 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 17:
 #line 247 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2020 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2020 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 18:
 #line 248 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2026 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2026 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 19:
 #line 249 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2032 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2032 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 20:
 #line 250 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2038 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2038 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 21:
 #line 254 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2044 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2044 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 22:
 #line 256 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2050 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2050 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 23:
 #line 258 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2056 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2056 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 24:
 #line 260 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COLLECTIONTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2062 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2062 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 25:
 #line 264 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2068 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2068 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 26:
 #line 266 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2074 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2074 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 27:
 #line 270 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2080 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2080 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 28:
 #line 272 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2086 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2086 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 29:
 #line 274 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2092 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2092 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 30:
 #line 276 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTISURFACETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2098 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2098 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 31:
 #line 280 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2104 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2104 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 32:
 #line 282 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2110 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2110 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 33:
 #line 284 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2116 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2116 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 34:
 #line 286 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2122 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2122 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 35:
 #line 288 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2128 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2128 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 36:
 #line 290 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2134 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2134 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 37:
 #line 294 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2140 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2140 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 38:
 #line 296 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2146 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2146 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 39:
 #line 298 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2152 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2152 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 40:
 #line 300 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(TINTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2158 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2158 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 41:
 #line 303 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue);}
-#line 2164 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2164 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 42:
 #line 305 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue);}
-#line 2170 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2170 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 43:
 #line 309 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIMESH_TYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2176 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2176 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 44:
 #line 311 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIMESH_TYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2182 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2182 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 45:
 #line 313 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIMESH_TYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2188 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2188 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 46:
 #line 315 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIMESH_TYPE, NULL, NULL); WKT_ERROR(); }
-#line 2194 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2194 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 47:
 #line 318 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_ref3d_new((yyvsp[-8].doublevalue), (yyvsp[-6].doublevalue), (yyvsp[-5].doublevalue), (yyvsp[-4].doublevalue), (yyvsp[-2].doublevalue), (yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
-#line 2200 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2200 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 48:
 #line 324 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2206 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2206 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 49:
 #line 326 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2212 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2212 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 50:
 #line 328 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2218 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2218 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 51:
 #line 330 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(POLYHEDRALSURFACETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2224 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2224 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 52:
 #line 334 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2230 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2230 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 53:
 #line 336 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2236 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2236 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 54:
 #line 338 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2242 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2242 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 55:
 #line 340 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOLYGONTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2248 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2248 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 56:
 #line 344 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2254 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2254 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 57:
 #line 346 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2260 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2260 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 58:
 #line 350 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2266 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2266 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 59:
 #line 352 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2272 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2272 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 60:
 #line 356 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2278 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2278 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 61:
 #line 358 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2284 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2284 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 62:
 #line 362 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_finalize((yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2290 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2290 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 63:
 #line 364 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_finalize((yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2296 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2296 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 64:
 #line 366 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2302 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2302 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 65:
 #line 368 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, NULL); WKT_ERROR(); }
-#line 2308 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2308 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 66:
 #line 372 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue); }
-#line 2314 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2314 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 67:
 #line 374 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_finalize(NULL, NULL); WKT_ERROR(); }
-#line 2320 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2320 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 68:
 #line 378 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue); }
-#line 2326 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2326 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 69:
 #line 380 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_tin_finalize(NULL, NULL); WKT_ERROR(); }
-#line 2332 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2332 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 70:
 #line 383 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[-1].geometryvalue); }
-#line 2338 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2338 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 71:
 #line 387 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize((yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2344 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2344 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 72:
 #line 389 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize((yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2350 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2350 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 73:
 #line 391 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2356 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2356 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 74:
 #line 393 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_finalize(NULL, NULL); WKT_ERROR(); }
-#line 2362 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2362 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 75:
 #line 397 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2368 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2368 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 76:
 #line 399 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_curvepolygon_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2374 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2374 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 77:
 #line 402 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2380 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2380 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 78:
 #line 403 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2386 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2386 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 79:
 #line 404 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2392 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2392 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 80:
 #line 405 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = (yyvsp[0].geometryvalue); }
-#line 2398 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2398 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 81:
 #line 409 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].ptarrayvalue),'Z'); WKT_ERROR(); }
-#line 2404 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2404 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 82:
 #line 411 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_new((yyvsp[0].ptarrayvalue),'Z'); WKT_ERROR(); }
-#line 2410 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2410 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 83:
 #line 415 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_add_ring((yyvsp[-2].geometryvalue),(yyvsp[0].ptarrayvalue),'2'); WKT_ERROR(); }
-#line 2416 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2416 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 84:
 #line 417 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_polygon_new((yyvsp[0].ptarrayvalue),'2'); WKT_ERROR(); }
-#line 2422 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2422 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 85:
 #line 420 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.ptarrayvalue) = (yyvsp[-1].ptarrayvalue); }
-#line 2428 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2428 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 86:
 #line 423 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.ptarrayvalue) = (yyvsp[-1].ptarrayvalue); }
-#line 2434 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2434 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 87:
 #line 427 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2440 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2440 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 88:
 #line 429 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2446 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2446 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 89:
 #line 431 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2452 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2452 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 90:
 #line 433 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(COMPOUNDTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2458 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2458 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 91:
 #line 437 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2464 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2464 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 92:
 #line 439 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2470 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2470 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 93:
 #line 441 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2476 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2476 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 94:
 #line 443 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2482 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2482 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 95:
 #line 445 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2488 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2488 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 96:
 #line 447 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_compound_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2494 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2494 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 97:
 #line 451 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2500 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2500 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 98:
 #line 453 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2506 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2506 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 99:
 #line 455 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2512 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2512 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 100:
 #line 457 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTICURVETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2518 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2518 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 101:
 #line 461 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2524 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2524 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 102:
 #line 463 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2530 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2530 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 103:
 #line 465 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2536 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2536 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 104:
 #line 467 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2542 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2542 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 105:
 #line 469 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2548 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2548 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 106:
 #line 471 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2554 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2554 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 107:
 #line 473 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2560 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2560 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 108:
 #line 475 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2566 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2566 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 109:
 #line 479 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2572 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2572 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 110:
 #line 481 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2578 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2578 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 111:
 #line 483 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2584 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2584 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 112:
 #line 485 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTILINETYPE, NULL, NULL); WKT_ERROR(); }
-#line 2590 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2590 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 113:
 #line 489 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2596 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2596 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 114:
 #line 491 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2602 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2602 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 115:
 #line 495 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_circularstring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2608 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2608 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 116:
 #line 497 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_circularstring_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2614 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2614 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 117:
 #line 499 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_circularstring_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2620 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2620 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 118:
 #line 501 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_circularstring_new(NULL, NULL); WKT_ERROR(); }
-#line 2626 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2626 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 119:
 #line 505 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2632 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2632 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 120:
 #line 507 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2638 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2638 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 121:
 #line 509 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2644 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2644 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 122:
 #line 511 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, NULL); WKT_ERROR(); }
-#line 2650 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2650 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 123:
 #line 515 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2656 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2656 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 124:
 #line 517 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_linestring_new(NULL, NULL); WKT_ERROR(); }
-#line 2662 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2662 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 125:
 #line 521 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2668 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2668 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 126:
 #line 523 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2674 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2674 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 127:
 #line 527 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2680 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2680 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 128:
 #line 529 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), (yyvsp[-5].stringvalue)); WKT_ERROR(); }
-#line 2686 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2686 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 129:
 #line 531 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_triangle_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2692 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2692 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 130:
 #line 533 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_triangle_new(NULL, NULL); WKT_ERROR(); }
-#line 2698 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2698 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 131:
 #line 537 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_triangle_new((yyvsp[-2].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2704 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2704 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 132:
 #line 541 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, (yyvsp[-1].geometryvalue), NULL); WKT_ERROR(); }
-#line 2710 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2710 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 133:
 #line 543 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, (yyvsp[-1].geometryvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2716 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2716 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 134:
 #line 545 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2722 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2722 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 135:
 #line 547 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_finalize(MULTIPOINTTYPE, NULL, NULL); WKT_ERROR(); }
-#line 2728 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2728 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 136:
 #line 551 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_add_geom((yyvsp[-2].geometryvalue),(yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2734 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2734 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 137:
 #line 553 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_collection_new((yyvsp[0].geometryvalue)); WKT_ERROR(); }
-#line 2740 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2740 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 138:
 #line 557 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new(wkt_parser_ptarray_new((yyvsp[0].coordinatevalue)),NULL); WKT_ERROR(); }
-#line 2746 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2746 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 139:
 #line 559 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new(wkt_parser_ptarray_new((yyvsp[-1].coordinatevalue)),NULL); WKT_ERROR(); }
-#line 2752 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2752 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 140:
 #line 561 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new(NULL, NULL); WKT_ERROR(); }
-#line 2758 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2758 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 141:
 #line 565 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new((yyvsp[-1].ptarrayvalue), NULL); WKT_ERROR(); }
-#line 2764 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2764 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 142:
 #line 567 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new((yyvsp[-1].ptarrayvalue), (yyvsp[-3].stringvalue)); WKT_ERROR(); }
-#line 2770 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2770 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 143:
 #line 569 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new(NULL, (yyvsp[-1].stringvalue)); WKT_ERROR(); }
-#line 2776 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2776 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 144:
 #line 571 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.geometryvalue) = wkt_parser_point_new(NULL,NULL); WKT_ERROR(); }
-#line 2782 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2782 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 145:
 #line 575 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.ptarrayvalue) = wkt_parser_ptarray_add_coord((yyvsp[-2].ptarrayvalue), (yyvsp[0].coordinatevalue)); WKT_ERROR(); }
-#line 2788 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2788 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 146:
 #line 577 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.ptarrayvalue) = wkt_parser_ptarray_new((yyvsp[0].coordinatevalue)); WKT_ERROR(); }
-#line 2794 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2794 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 147:
 #line 581 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.coordinatevalue) = wkt_parser_coord_2((yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
-#line 2800 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2800 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 148:
 #line 583 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.coordinatevalue) = wkt_parser_coord_3((yyvsp[-2].doublevalue), (yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
-#line 2806 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2806 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
   case 149:
 #line 585 "lwin_wkt_parse.y" /* yacc.c:1646  */
     { (yyval.coordinatevalue) = wkt_parser_coord_4((yyvsp[-3].doublevalue), (yyvsp[-2].doublevalue), (yyvsp[-1].doublevalue), (yyvsp[0].doublevalue)); WKT_ERROR(); }
-#line 2812 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2812 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
     break;
 
 
-#line 2816 "/home/serghy/Projects/trunk_sgaz_db_v2/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
+#line 2816 "/home/serghy/Projects/ipclean/trunk_sgaz_db_v3/ext_lib/postgis/liblwgeom/lwin_wkt_parse.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
