@@ -17,7 +17,7 @@ get_property(POSTGRES_SRC_DIR GLOBAL PROPERTY POSTGRES_SRC_DIR)
 get_property(POSTGRES_BIN_DIR GLOBAL PROPERTY POSTGRES_BIN_DIR)
 
 #модульные зависимости Postgis
-set(POSTGIS_SUBMODULES postgres pq geos-static geos_c gdal proj4 sfcgal CGAL CGAL_Core CGAL_ImageIO)
+set(POSTGIS_SUBMODULES geos-static geos_c gdal proj4 sfcgal CGAL CGAL_Core CGAL_ImageIO)
 
 #Устанавливаем корневые папки для модуля CGAL
 set(CMAKE_POSTGIS_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})

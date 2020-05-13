@@ -255,7 +255,7 @@ add_library(${LIB_NAME} SHARED
   ${HHEADERS}
 )
 
-target_link_libraries(${LIB_NAME}  postgres CGAL)
+target_link_libraries(${LIB_NAME} CGAL)
 if(PROTOBUF_FOUND)
     target_link_libraries(${LIB_NAME}  ${Protobuf_LIBRARIES})
 endif()
